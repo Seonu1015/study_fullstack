@@ -33,12 +33,12 @@ public class homework02 {
 
 		n = 1;
 		for (int i = 0; i < 5; i++) {
-			if (i % 2 == 1) {
-				for (int j = 0; j < 5; j++) {
+			if (i % 2 == 0) {
+				for (int j = 4; j >= 0; j--) {
 					arr[i][j] = n++;
 				}
 			} else {
-				for (int j = 4; j >= 0; j--) {
+				for (int j = 0; j < 5; j++) {
 					arr[i][j] = n++;
 				}
 			}
@@ -54,12 +54,12 @@ public class homework02 {
 
 		n = 1;
 		for (int j = 0; j < 5; j++) {
-			if (j % 2 == 1) {
-				for (int i = 4; i >= 0; i--) {
+			if (j % 2 == 0) {
+				for (int i = 0; i < 5; i++) {
 					arr[i][j] = n++;
 				}
 			} else {
-				for (int i = 0; i < 5; i++) {
+				for (int i = 4; i >= 0; i--) {
 					arr[i][j] = n++;
 				}
 			}
