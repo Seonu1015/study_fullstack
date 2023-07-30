@@ -22,8 +22,8 @@ public class homework03 {
 			String role2 = scan.next();
 
 			// 각 카드의 인덱스 찾기
-			int role1index = -1;
-			int role2index = -1; // 초기화를 시켜줘야 하므로 수치 입력, 노예 카드의 인덱스가 0이므로 그보다 낮은 수 입력
+			int role1index = 0;
+			int role2index = 0; // 초기화를 시켜줘야 하므로 수치 입력
 
 			for (int i = 0; i < 4; i++) {
 				if (role[i].equals(role1)) {
@@ -35,7 +35,7 @@ public class homework03 {
 			}
 
 			// 점수 판정
-			if (role1index != -1 && role2index != -1) {
+			if ((role1index >= 0 && role1index < 4) && (role2index >= 0 && role2index < 4)) {
 				if ((role1.equals("노예") && role2.equals("왕")) || (role1.equals("왕") && role2.equals("노예"))) {
 					if (role1.equals("노예")) {
 						score1 = 100; // 마지막 승리여부 판단을 위해 높은 점수를 부여 <- 다른 방법이 있을까?
@@ -44,8 +44,8 @@ public class homework03 {
 						score2 = 100;
 						System.out.println("노예가 왕을 죽였습니다. 게임이 종료됩니다.");
 					}
-					break; // 노예가 왕을 죽이고 게임을 승리 <- break는 가장 가까운 반복문인 for문을 빠져나오게 한다
-							// 즉, break가 실행되면 아래 else~ sys출력까지 진행이 이뤄지지 않음
+					break; // 노예가 왕을 죽이고 게임을 승리 <- break는 가장 가까운 반복문을 빠져나오게 한다
+							// 즉, break가 실행되면 아래 else~ sys 누적점수출력까지 진행이 이뤄지지 않음
 				} else { // 라운드 승리자에게 점수 부여&누적
 					if (score[role1index] > score[role2index]) {
 						score1 += score[role1index];
@@ -65,9 +65,9 @@ public class homework03 {
 		}
 
 		if (score1 > score2) {
-			System.out.println("축하합니다! 당신이 최종 승리하였습니다!");
+			System.out.println("축하합니다! 당신이 승리하였습니다!");
 		} else if (score1 < score2) {
-			System.out.println("상대방이 최종 승리하였습니다. 다음에 다시 도전해보세요!");
+			System.out.println("상대방이 승리하였습니다. 다음에 다시 도전해보세요!");
 		} else {
 			System.out.println("무승부입니다. 재미있는 게임이었습니다!");
 		}
