@@ -1,27 +1,56 @@
 package review;
 
-public class review_hw_03 {
-	public static void main(String[] args) {
-		
+//왕과 거지게임
+import java.util.Scanner;
 
+public class review_hw_03 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String[] cardGame = {"거지", "시민", "귀족", "왕"};
+		int score1 = 0;
+		int score2 = 0;
+		int hr1 = 0;
+		
+		for(int i=0; i<4; i++) {
+			System.out.println("카드 : {1.거지, 2.시민, 3.귀족, 4.왕}");
+			System.out.println("플레이어 1 차례 : ");
+			int player1 = sc.nextInt();
+			System.out.println("플레이어 2 차례 : ");
+			int player2 = sc.nextInt();
+			
+			if((player1 == 1 && player2 == 4) || (player1 == 4 && player2 == 1)) {
+				System.out.println("노예와 왕이 만났습니다!");
+				if(player1 == 1) {
+					score1 += 4;
+					hr1 = 1;
+				} else {
+					score2 += 4;
+				}
+				break;
+			}
+			else if(player1 > player2) {
+				score1++;
+			} else if(player2 > player1) {
+				score2++;
+			}
+		}
+		
+		if(hr1 == 1) {
+			System.out.println("Player 1이 히든 룰로 승리하였습니다.");
+		}
+		else if(score1 > score2) {
+			System.out.println("Player 1이 승리하였습니다.");
+		} else if(score1 < score2) {
+			System.out.println("Player 2가 승리하였습니다.");
+		} else {
+			System.out.println("무승부입니다.");
+		}
 	}
 }
 
-//왕 거지 게임
-//{"노예" < "시민" < "귀족" < "왕"}
-//노예가 왕을 만나면 왕을 죽이고 게임을 승리
+//{"거지", "시민", "귀족", "왕"}
+//{"거지", "시민", "귀족", "왕"}
 
-//if (role1.equals("노예")) {
-//	score1 = 100; // 마지막 승리여부 판단을 위해 높은 점수를 부여 <- 다른 방법이 있을까?
-//	System.out.println("노예가 왕을 죽였습니다. 게임이 종료됩니다.");
-//} else {
-//	score2 = 100;
-//	System.out.println("노예가 왕을 죽였습니다. 게임이 종료됩니다.");
-//}
-//break; // 노예가 왕을 죽이고 게임을 승리 <- break는 가장 가까운 반복문을 빠져나오게 한다
-//		// 즉, break가 실행되면 아래 else~ sys 누적점수출력까지 진행이 이뤄지지 않음
-
-//이 부분에서 100점을 부여하는 방식 외에
-//int hr = 0 <- 히든룰에 대한 점수를 주는 방식도 있다
-//대신 마지막에 최종승패여부를 가리는 부분에
-//새로운 hr에 대한 if문을 추가적으로 작성하여야 한다
+//계급 순으로 승패가 갈린다.
+//거지와 왕이 만나면 거지를 낸 플레이어가 게임에서 승리한다.
