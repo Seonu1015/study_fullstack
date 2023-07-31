@@ -10,7 +10,7 @@ public class class02_practice {
 		int b = 20;
 
 		System.out.println(a++);
-		System.out.println(b++); // 11 21
+		System.out.println(b++); // 11 21 <- a = a + 1 로 대입연산자가 있다!! 그래서 밑으로도 계속 적용 중!!
 		func1();
 		System.out.println("1. a : " + a + ", b : " + b); // 11 21
 		func2(a, b);
