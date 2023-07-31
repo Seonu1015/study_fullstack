@@ -1,4 +1,4 @@
-package study_0731_new;
+package study_0731;
 
 public class class01 {
 	public static void main(String[] args) {
