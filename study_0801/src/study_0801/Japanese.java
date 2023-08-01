@@ -2,8 +2,8 @@ package study_0801;
 
 public class Japanese extends Restaurant {
 
-	String[] menu = new String[3];
-	int[] price = new int[3];
+	String[] menu;
+	int[] price;
 	
 	Japanese() {
 		setting();
@@ -28,7 +28,10 @@ public class Japanese extends Restaurant {
 		this.price = price;		
 	}
 	
-	void setting() { // 이부분 수정 필요?
+	void setting() {
+
+		menu = new String[3];
+		price = new int[3];
 		
 		for (int i=0; i<menu.length; i++) {
 			menu[i] = "SOLD OUT";

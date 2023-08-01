@@ -3,8 +3,8 @@ package study_0801;
 //가게 -> 메뉴, 가격 (자식 클래스)
 public class Korean extends Restaurant {
 
-	String[] menu = new String[3];
-	int[] price = new int[3];
+	String[] menu;
+	int[] price;
 
 	Korean() {
 		setting();
@@ -31,10 +31,10 @@ public class Korean extends Restaurant {
 		this.price = price;
 	}
 
-	void setting() { // 이부분 수정 필요?
+	void setting() {
 
-		String[] menu = new String[3];
-		int[] price = new int[3];
+		menu = new String[3];
+		price = new int[3];
 		
 		for (int i = 0; i < menu.length; i++) {
 			menu[i] = "SOLD OUT";
