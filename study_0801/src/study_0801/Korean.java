@@ -25,8 +25,6 @@ public class Korean extends Restaurant {
 
 	Korean(String nation, String name, int point, String[] menu, int[] price) {
 		super(nation, name, point);
-
-		this.setting();
 		this.menu = menu;
 		this.price = price;
 	}
