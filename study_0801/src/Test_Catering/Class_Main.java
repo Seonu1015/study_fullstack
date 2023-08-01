@@ -1,5 +1,7 @@
 package Test_Catering;
 
+import java.util.ArrayList;
+
 public class Class_Main {
 	public static void main(String[] args) {
 		
@@ -10,8 +12,20 @@ public class Class_Main {
 		cafe1.printRes();
 		
 		KoreanRes kres1 = new KoreanRes("Bres", 4, "김밥", 2500);
-		kres1.printKRes(); // 얘가 오류가 나고 있어
+		kres1.printKRes();
 		
+		JapaneseRes jres1 = new JapaneseRes("jAres", 3, "카레", 11000);
+		jres1.printKRes();
+		
+		System.out.println("-------------------------");
+		
+		//ArrayList<객체> 어레이리스트명 = new ArrayList<>();
+		
+		ArrayList<Catering> caterList = new ArrayList<>();
+		ArrayList<Restaurant> resList = new ArrayList<>();
+		ArrayList<KoreanRes> kresList = new ArrayList<>();
+		
+
 		
 	}
 }
