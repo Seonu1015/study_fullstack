@@ -41,7 +41,6 @@ public class class01_practice {
 		
 		Student s4 = new Student("010-1234-5678");
 		Student s5 = new Student("jack");
-		// 위 두 경우는 학번이 이어서 증가가 안되는데?
 		
 		//System.out.println((int)'0'); <- 아스키 코드를 찾아서 Student클래스에서 s4번과 같이 확인
 		

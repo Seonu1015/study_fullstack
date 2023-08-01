@@ -1,5 +1,6 @@
 package study_0801;
 
+//class01 과 연결
 public class Person {
 
 	String name; // = "park";
