@@ -6,8 +6,6 @@ public class DiceGame {
 		Player p1dice = new Player("선우");
 		Player p2dice = new Player("상근");
 		
-		System.out.println(p1dice.name);
-		
 		int score1 = 0;
 		int score2 = 0;
 		
