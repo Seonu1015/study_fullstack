@@ -27,22 +27,34 @@ public class Class05 {
 			System.out.println();
 		}
 		
-		System.out.println("--------------------------");
+		System.out.println();
+		System.out.println("숙제 ----------------------");
+		
+		num = 0;
 		
 		for(int i=0; i<8; i++) {
 			for(int j=0; j<8; j++) {
-				if (i>= 1 && i <7) {
-					for()
-					
+				if((i==1 || i==6) && (j>=1 && j<7)) {
+					num++;
+					arr[i][j] = 0;
+					System.out.print(arr[i][j] + " ");
+				} else if((j==1 || j==6) && (i>=1 && i<7)) {
+					num++;
+					arr[i][j] = 0;
+					System.out.print(arr[i][j] + " ");
+				} else if((i==3||i==4) && (j == 3 || j==4)) {
+					num++;
+					arr[i][j] = 0;
+					System.out.print(arr[i][j] + " ");
 				}
-				
-				num++;
-				arr[i][j] = num;
-				System.out.print(arr[i][j] + " ");
+				else {
+					num++;
+					arr[i][j] = num;
+					System.out.print(arr[i][j] + " ");
+				}
 			}
+			System.out.println();
 		}
-		
-
 	}
 }
 
