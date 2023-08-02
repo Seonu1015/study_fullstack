@@ -13,6 +13,11 @@ public class Class04 {
 		System.out.println("급행입니까? (y, n) : ");
 		String express = sc.next(); 
 		
+		if(!(express.equals("y") || express.equals("n"))) {
+			System.out.println("잘못된 입력입니다. 급행 여부를 다시 입력해주세요. (y, n) : ");
+			express = sc.next();
+		}
+		
 		System.out.println("1.김포공항, 2.공항시장, 3.마곡나루, 4.양천향교, 5.가양, 6.증미, 7.당산, 8.국회의사당, 9.여의도");
 		System.out.println("어느 역에서 타시겠습니까? (번호로 입력해주세요) : ");
 		int start = sc.nextInt()-1;
@@ -44,7 +49,7 @@ public class Class04 {
 		System.out.println("타실 역은 " + station[start] + " 입니다.");
 		System.out.println("내리실 역은 " + station[end] + " 입니다.");
 		
-		for(int i=start+1; i<end; i++) {
+		for(int i=start+1; i<end; i++) { // 급행은 급행역만 출력되게 바꿔보자
 			System.out.print(station[i] + " ");
 		}
 		

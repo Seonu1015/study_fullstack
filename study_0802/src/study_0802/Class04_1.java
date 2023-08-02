@@ -19,7 +19,7 @@ public class Class04_1 {
 			express = sc.next();
 		}
 
-		System.out.println("1.김포공항, 2.공항시장, 3.마곡나루, 4.양천향교, 5.가양, 6.증미, 7.당산, 8.국회의사당, 9.여의도");
+		System.out.println("김포공항, 공항시장, 마곡나루, 양천향교, 가양, 증미, 당산, 국회의사당, 여의도");
 		System.out.println("어느 역에서 타시겠습니까? : ");
 
 		String start = sc.next();
@@ -89,4 +89,3 @@ public class Class04_1 {
 
 //힌트 - 급행역과 일반역이 번갈아가면서 존재한다.
 
-//일반역에서 탔는데 급행으로 바꾸고 싶다면???
