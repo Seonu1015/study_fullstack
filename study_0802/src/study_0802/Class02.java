@@ -15,8 +15,24 @@ public class Class02 {
 			System.out.println("가위입니다.");
 		} else if(input == 2) {
 			System.out.println("바위입니다.");
-		} else {
+		} else if(input == 3) {
 			System.out.println("보입니다.");
+		} else {
+			System.out.println("잘못된 입력입니다.");
+		}
+		
+		switch (input) {
+		case 1:
+			System.out.println("가위입니다.");
+			break;
+		case 2:
+			System.out.println("바위입니다.");
+			break;
+		case 3:
+			System.out.println("보입니다.");
+			break;
+		default:
+			System.out.println("잘못된 입력입니다.");
 		}
 		
 		// switch
@@ -43,6 +59,7 @@ public class Class02 {
 		}
 
 		// break; 를 입력하지 않으면 걸리는 모든 case의 결과값을 출력하게 된다.
-
+		
+		
 	}
 }
