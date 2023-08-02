@@ -21,11 +21,11 @@ public class Class_Main {
 		
 		//ArrayList<객체> 어레이리스트명 = new ArrayList<>();
 		
-		ArrayList<Catering> caterList = new ArrayList<>();
-		ArrayList<Restaurant> resList = new ArrayList<>();
-		ArrayList<KoreanRes> kresList = new ArrayList<>();
+//		ArrayList<Catering> caterList = new ArrayList<>();
+//		ArrayList<Restaurant> resList = new ArrayList<>();
+//		ArrayList<KoreanRes> kresList = new ArrayList<>();
 		
-
+		
 		
 	}
 }

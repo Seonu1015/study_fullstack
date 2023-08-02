@@ -21,6 +21,14 @@ public class Class02_practice {
 			System.out.println("Player2 : ");
 			int player2 = sc.nextInt();
 			
+			while(true) { //a != 1 && a != 2 && a != 3
+				if(player1 == 1 || player1 == 2 || player1 == 3) {
+					break;
+				}
+				System.out.println("잘못된 입력입니다.");
+				player1 = sc.nextInt();
+			}
+			
 			if(player1 == player2) {
 				System.out.println("무승부입니다.");
 				score3++;

@@ -102,7 +102,7 @@ public class class02_practice {
 	}
 }
 
-//객체는 매열에 못넣나?
+//객체는 배열에 못넣나?
 //String[] -> 객체를 배열에 넣어서 사용했었다.
 
 //배열(Array) List
