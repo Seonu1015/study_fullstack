@@ -31,7 +31,7 @@ public class Computer {
     }
     
 	void printCom() {
-		System.out.println("컴퓨터가 뽑은 카드 : " + cardIndex);
+		System.out.println("컴퓨터가 뽑은 카드 : " + (cardIndex+1) + ". " + cards[cardIndex]);
 	}
 	
 	// 승패 여부를 가리기 위해 숫자로 가져오기로 결정!

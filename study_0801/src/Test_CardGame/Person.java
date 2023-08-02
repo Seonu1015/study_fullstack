@@ -18,6 +18,7 @@ public class Person {
 	}
 	
 	void printPer() {
-		System.out.println("플레이어가 뽑은 카드 : " + card);
+		String[] arr = {"거지", "시민", "귀족", "왕"};
+		System.out.println("플레이어가 뽑은 카드 : " + card + ". " + arr[card-1]);
 	}
 }
