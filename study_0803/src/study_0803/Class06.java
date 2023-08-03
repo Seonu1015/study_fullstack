@@ -28,35 +28,43 @@ public class Class06 {
 		// 새 - ???
 		// y 라면 산책 간식 잠 중에서 선택
 		
-		System.out.println("{ 산책가자, 간식먹자, 잘래? } 중 반려동물과 하고싶은 행동을 선택하세요.");
-		String command = sc.next();
+		System.out.println("반려동물이 주위에 보이나요? (y, n) : ");
+		String near = sc.next();
 		
-		if(command.equals("산책가자")) {
-			if(typeAnimal == 1) {
-				d1.wlk();				
-			} else if(typeAnimal == 2) {
-				c1.wlk();
+		if(near.equals("y")) {
+			System.out.println("{ 산책가자, 간식먹자, 잘래? } 중 반려동물과 하고싶은 행동을 선택하세요.");
+			String command = sc.next();
+						
+			//배열을 사용해서 반복문으로 수정해보자 - 다차원 배열????
+			
+			if(command.equals("산책가자")) {
+				if(typeAnimal == 1) {
+					d1.wlk();				
+				} else if(typeAnimal == 2) {
+					c1.wlk();
+				} else {
+					b1.wlk();
+				}
+			} else if(command.equals("간식먹자")) {
+				if(typeAnimal == 1) {
+					d1.trt();				
+				} else if(typeAnimal == 2) {
+					c1.trt();
+				} else {
+					b1.trt();
+				}
 			} else {
-				b1.wlk();
-			}
-		} else if(command.equals("간식먹자")) {
-			if(typeAnimal == 1) {
-				d1.trt();				
-			} else if(typeAnimal == 2) {
-				c1.trt();
-			} else {
-				b1.trt();
+				if(typeAnimal == 1) {
+					d1.slp();				
+				} else if(typeAnimal == 2) {
+					c1.slp();
+				} else {
+					b1.slp();
+				}
 			}
 		} else {
-			if(typeAnimal == 1) {
-				d1.slp();				
-			} else if(typeAnimal == 2) {
-				c1.slp();
-			} else {
-				b1.slp();
-			}
+			System.out.println("지금 " );
 		}
-		
 		
 	}
 }
