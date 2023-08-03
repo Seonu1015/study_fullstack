@@ -28,6 +28,7 @@ public class Computer {
 //				break;
 //			}
 //		} 중복으로 뽑히는 거 해결 못함.... ㅠㅠ -> 라운드마다 새로 4개를 뽑아오는 것 같음
+//			함수니까 return을 적용해서 수정해보자
 	}
 
 	void printCom() {

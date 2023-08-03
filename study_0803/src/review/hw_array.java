@@ -99,10 +99,12 @@ public class hw_array {
 					arr[i][j] = 0;
 				}
 
-				if ((i > 0 && i < arr.length - 1) || ( j > 0 && j < arr.length - 1)) {
-					if(i ==0 || j==0) {
-						continue;
-					} else if(i+j == 3 || i+j==6 || i+j==8 || i+j ==11) {
+				// 수정 필요함!!
+				if ((i > 0 && i < arr.length - 1) && ( j > 0 && j < arr.length - 1)) {
+					if(i+j == 3 || i+j==6 || i+j==8 || i+j ==11) {
+						if(i ==0 || j==0) {
+							continue;
+						}
 						arr[i][j] = 0;
 					}
 				}
