@@ -2,15 +2,16 @@ package study_0803;
 
 public class Player {
 
-	String name;
-	int level;
-	int experience;
+	String name; // 인스턴스 변수
+	int level; // 인스턴스 변수
+	int experience; // 인스턴스 변수
 
 //	Player() {
 //		
 //	} <- 기본 생성자 없어도 괜찮다
 //	main 클래스에서 Player p1 = new Player(); 처럼 매개변수 없이 입력할 때 필요함
 
+	// ↓ 생성자
 	Player(String name) {
 		this.name = name;
 		this.level = 1;
@@ -29,8 +30,9 @@ public class Player {
 		this.experience = experience;
 	}
 
+	// ↓ 메소드
 	void infor() {
-		System.out.println("캐릭터명 : " + name + ". level : " + level);
+		System.out.println("캐릭터명 : " + name + ", level : " + level);
 	}
 
 	void fight() {
