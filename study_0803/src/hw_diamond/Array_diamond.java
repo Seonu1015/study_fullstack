@@ -1,6 +1,6 @@
-package homework;
+package hw_diamond;
 
-public class hw01 {
+public class Array_diamond {
 	public static void main(String[] args) {
 
 		int[][] arr = new int[8][8];
@@ -8,13 +8,29 @@ public class hw01 {
 
 		System.out.println("1번 ----------------------");
 
-		// 다이아몬드 만들기?
+//		다이아몬드(?)
+
+//		1	2	3	0	0	6	7	8
+//		9	10	0	12	13	0	15	16
+//		17	0	19	20	21	22	0	24
+//		0	26	27	28	29	30	31	0
+//		0	34	35	36	37	38	39	0
+//		41	0	43	44	45	46	0	48
+//		49	50	0	52	53	0	55	56
+//		57	58	59	0	0	62	63	64
+
+//		a[0][3], a[0][4]		a[4][0], a[4][7]
+//		a[1][2], a[1][5]		a[5][1], a[5][6]
+//		a[2][1], a[2][6]		a[6][2], a[6][5]
+//		a[3][0], a[3][7]		a[7][3], a[7][4]
+
 		for (int i = 0; i < 8; i++) {
 			for (int j = 0; j < 8; j++) {
 				if ((i + j == 3) || (i + j == 11)) {
 					arr[i][j] = 0;
-				} else if ((i >= 4) || (j >= 4)) {
-					if((i + j == 4) || (i + j == 6) || (i + j == 8) || (i + j == 10))
+				} else if (i < 4 && (i + 4 == j)) {
+					arr[i][j] = 0;
+				} else if (j < 4 && (j + 4 == i)) {
 					arr[i][j] = 0;
 				} else {
 					arr[i][j] = (i * 8) + j + 1;
@@ -72,16 +88,15 @@ public class hw01 {
 					arr[i][j] = 0;
 				}
 
-				// 수정 필요함!!
 				if ((i > 0 && i < arr.length - 1) && (j > 0 && j < arr.length - 1)) {
-					if (i + j == 3 || i + j == 6 || i + j == 8 || i + j == 11) {
-//						if(i ==0 || j==0) {
-//							continue;
-//						}
+					if ((i + j == 3) || (i + j == 11)) {
+						arr[i][j] = 0;
+					} else if (i < 4 && (i + 4 == j)) {
+						arr[i][j] = 0;
+					} else if (j < 4 && (j + 4 == i)) {
 						arr[i][j] = 0;
 					}
 				}
-
 			}
 		}
 

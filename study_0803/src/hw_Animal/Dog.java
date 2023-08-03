@@ -1,9 +1,9 @@
-package study_0803;
+package hw_Animal;
 
 public class Dog extends Animal {
 
 	String leash;
-	int dig;
+	int gardenDamage;
 	
 	Dog(String type) {
 		super(type);
@@ -16,7 +16,7 @@ public class Dog extends Animal {
 	Dog(String type, String name, int age, String leash) {
 		super(type, name, age);
 		this.leash = leash;
-		this.dig = dig;
+		this.gardenDamage = 0;
 	}
 
 	void spk() {
@@ -36,15 +36,17 @@ public class Dog extends Animal {
 		System.out.println(name + " 이(가) 개껌을 먹습니다.");
 	}
 	
-	void digDistance(int digCm) {
-		System.out.println(name + " 이(가) 땅을 파고 있습니다.");
-		System.out.println("오늘은 " + dig + "cm 만큼 팠습니다.");
-		
+	void digging(int digging) {
+		System.out.println(name + " 이(가) 정원에서 신나게 땅을 파고 있습니다.");
+		System.out.println("현재 정원의 손상도는 " + digging + "% 입니다.");
+		gardenDamage(digging);
 	}
-
-	void digging() {
-		System.out.println(name + " 이(가) 땅을 파고 있습니다.");
-		System.out.println("오늘은 " + dig + "cm 만큼 팠습니다.");
-		this.dig +=
+	
+	void gardenDamage(int gardenDamage) {
+		this.gardenDamage += gardenDamage;
+		if(this.gardenDamage >= 100) {
+			System.out.println("정원의 손상도가 100%를 넘어섰습니다. 정원을 청소하세요.");
+			this.gardenDamage = 0;
+		}
 	}
 }

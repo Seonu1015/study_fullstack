@@ -1,4 +1,4 @@
-package study_0803;
+package hw_Animal;
 
 public class Bird extends Animal {
 
@@ -32,5 +32,15 @@ public class Bird extends Animal {
 	void trt() {
 		System.out.println(name + " 이(가) " + this.favorSeed + " 를 먹습니다.");
 	}
-
+	
+	void stealing() {
+		int num = (int) (Math.random() * 2) + 1;
+		if(num ==1) {
+			System.out.println(name + " 이(가) 당신의 보석함을 뒤지다가 당신에게 걸렸습니다.");
+		} else {
+			System.out.println(name + " 이(가) 당신의 보석함에서 당신의 귀중품을 훔쳤습니다. 새장을 뒤져 귀중품을 되찾으세요.");
+		}
+		
+	}
+	
 }

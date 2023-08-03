@@ -1,4 +1,4 @@
-package study_0803;
+package hw_Animal;
 
 public class Animal {
 
@@ -19,7 +19,7 @@ public class Animal {
 	}
 
 	void spk() {
-		System.out.println("종류 : " + type + ", 이름 : " + name + ", 나이는 : " + age);
+		System.out.println("[ 종류 : " + type + ", 이름 : " + name + ", 나이는 : " + age + " ]");
 	}
 
 	void wlk() {

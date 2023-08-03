@@ -1,8 +1,9 @@
-package study_0803;
+package hw_Animal;
 
 public class Cat extends Animal {
 
 	String catTower;
+	int hairball;
 	
 	Cat(String type) {
 		super(type);
@@ -15,6 +16,7 @@ public class Cat extends Animal {
 	Cat(String type, String name, int age, String catTower) {
 		super(type, name, age);
 		this.catTower = catTower;
+		this.hairball = 0;
 	}
 
 	void spk() {
@@ -31,6 +33,20 @@ public class Cat extends Animal {
 
 	void trt() {
 		System.out.println(name + " 이(가) 츄르를 먹습니다.");
+	}
+	
+	void grooming(int grooming) {
+		System.out.println(name + " 이(가) 털을 고르고 있습니다. 집 안에 털 뭉치가 굴러다니기 시작합니다.");
+		System.out.println("현재 집 안의 털 뭉치가 " + grooming + "개 생겨났습니다.");
+		hairball(grooming);
+	}
+	
+	void hairball(int hairball) {
+		this.hairball += hairball;
+		if(this.hairball >= 10) {
+			System.out.println("집 안에 털 뭉치가 10개 이상이 굴러다니고 있습니다. 청소를 시작하세요.");
+			this.hairball = 0;
+		}
 	}
 
 }
