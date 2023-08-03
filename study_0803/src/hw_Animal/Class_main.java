@@ -66,7 +66,6 @@ public class Class_main {
 	                    }
 	                    break;
 	                default:
-	                    System.out.println("잘못된 반려동물 타입입니다.");
 	                    break;
 	            }
 			} else {
