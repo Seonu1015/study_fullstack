@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Class06 {
 	public static void main(String[] args) {
 		
-		Dog d1 = new Dog("강아지", "세바스찬", 3, "빨간하네스");
+		Dog d1 = new Dog("강아지", "세바스찬", 3, "빨간 하네스");
 		Cat c1 = new Cat("고양이", "프랑소와", 1, "원목캣타워");
 		Bird b1 = new Bird("새", "알프레드", 2, "해바라기씨");
 		
@@ -20,6 +20,14 @@ public class Class06 {
 		
 		System.out.println("어떤 반려동물을 선택하시겠습니까? {1. " + d1.name + ", 2. " + c1.name + ", 3. " + b1.name + " }");
 		int typeAnimal = sc.nextInt();
+		
+		// 반려동물이 옆에 있습니까?
+		// n 라면 개별 행동을 하고 있는 중
+		// 강아지 - 땅파기 > 일정 수치 이상이면 덮어주는 작업
+		// 고양이 - 털고르기 > 일정 수치 이상이면 집 청소
+		// 새 - ???
+		// y 라면 산책 간식 잠 중에서 선택
+		
 		System.out.println("{ 산책가자, 간식먹자, 잘래? } 중 반려동물과 하고싶은 행동을 선택하세요.");
 		String command = sc.next();
 		

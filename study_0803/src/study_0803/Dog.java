@@ -3,6 +3,7 @@ package study_0803;
 public class Dog extends Animal {
 
 	String leash;
+	int dig;
 	
 	Dog(String type) {
 		super(type);
@@ -14,7 +15,8 @@ public class Dog extends Animal {
 	
 	Dog(String type, String name, int age, String leash) {
 		super(type, name, age);
-		this.leash = leash
+		this.leash = leash;
+		this.dig = dig;
 	}
 
 	void spk() {
@@ -33,5 +35,16 @@ public class Dog extends Animal {
 	void trt() {
 		System.out.println(name + " 이(가) 개껌을 먹습니다.");
 	}
+	
+	void digDistance(int digCm) {
+		System.out.println(name + " 이(가) 땅을 파고 있습니다.");
+		System.out.println("오늘은 " + dig + "cm 만큼 팠습니다.");
+		
+	}
 
+	void digging() {
+		System.out.println(name + " 이(가) 땅을 파고 있습니다.");
+		System.out.println("오늘은 " + dig + "cm 만큼 팠습니다.");
+		this.dig +=
+	}
 }
