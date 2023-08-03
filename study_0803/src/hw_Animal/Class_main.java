@@ -21,6 +21,7 @@ public class Class_main {
 		System.out.println("어떤 반려동물을 선택하시겠습니까? {1. " + d1.name + ", 2. " + c1.name + ", 3. " + b1.name + " }");
 		int typeAnimal = sc.nextInt();
 		
+		
 		// 반려동물이 옆에 있습니까?
 		// y 라면 산책 간식 잠 중에서 선택
 		// n 라면 개별 행동을 하고 있는 중
@@ -36,31 +37,38 @@ public class Class_main {
 				System.out.println("{ 산책가자, 간식먹자, 잘래? } 중 반려동물과 하고싶은 행동을 선택하세요.");
 				String command = sc.next();
 				
-				if(command.equals("산책가자")) {
-					if(typeAnimal == 1) {
-						d1.wlk();				
-					} else if(typeAnimal == 2) {
-						c1.wlk();
-					} else {
-						b1.wlk();
-					}
-				} else if(command.equals("간식먹자")) {
-					if(typeAnimal == 1) {
-						d1.trt();				
-					} else if(typeAnimal == 2) {
-						c1.trt();
-					} else {
-						b1.trt();
-					}
-				} else {
-					if(typeAnimal == 1) {
-						d1.slp();				
-					} else if(typeAnimal == 2) {
-						c1.slp();
-					} else {
-						b1.slp();
-					}
-				}
+				 switch (typeAnimal) {
+	                case 1:
+	                    if (command.equals("산책가자")) {
+	                        d1.wlk();
+	                    } else if (command.equals("간식먹자")) {
+	                        d1.trt();
+	                    } else {
+	                        d1.slp();
+	                    }
+	                    break;
+	                case 2:
+	                    if (command.equals("산책가자")) {
+	                        c1.wlk();
+	                    } else if (command.equals("간식먹자")) {
+	                        c1.trt();
+	                    } else {
+	                        c1.slp();
+	                    }
+	                    break;
+	                case 3:
+	                    if (command.equals("산책가자")) {
+	                        b1.wlk();
+	                    } else if (command.equals("간식먹자")) {
+	                        b1.trt();
+	                    } else {
+	                        b1.slp();
+	                    }
+	                    break;
+	                default:
+	                    System.out.println("잘못된 반려동물 타입입니다.");
+	                    break;
+	            }
 			} else {
 				if(typeAnimal == 1) {
 					d1.digging((int) (Math.random() * 90) + 10);				
