@@ -22,58 +22,57 @@ public class Class_main {
 		int typeAnimal = sc.nextInt();
 		
 		// 반려동물이 옆에 있습니까?
+		// y 라면 산책 간식 잠 중에서 선택
 		// n 라면 개별 행동을 하고 있는 중
-		// 강아지 - 땅파기 > 땅이 파인 정도(랜덤) 정원의 손상도 일정수치 이상이면 흙을 덮어주는 작업
+		// 강아지 - 땅파기 > 땅이 파인 정도(랜덤) 정원의 손상도 일정수치 이상이면 정원 청소
 		// 고양이 - 털고르기 > 먼지가 쌓이는 정도(랜덤) 집안의 청결도 일정 수치 이상이면 집 청소
 		// 새 - 악세사리 뒤지기 > 랜덤으로 걸렸다/훔쳤다 > 훔쳤다 : 새장을 뒤져 당신의 귀중품을 찾으세요.
-		// y 라면 산책 간식 잠 중에서 선택
-		
-		System.out.println("반려동물이 주위에 보이나요? (y, n) : ");
-		String near = sc.next();
-		
-		if(near.equals("y")) {
-			System.out.println("{ 산책가자, 간식먹자, 잘래? } 중 반려동물과 하고싶은 행동을 선택하세요.");
-			String command = sc.next();
-						
-			//배열? 반복문?으로 수정해보자
-			
-			if(command.equals("산책가자")) {
-				if(typeAnimal == 1) {
-					d1.wlk();				
-				} else if(typeAnimal == 2) {
-					c1.wlk();
+
+				
+		for(int i=0; i>=0; i++) {
+			System.out.println("반려동물이 주위에 보이나요? (y, n) : ");
+			String near = sc.next();
+			if(near.equals("y")) {
+				System.out.println("{ 산책가자, 간식먹자, 잘래? } 중 반려동물과 하고싶은 행동을 선택하세요.");
+				String command = sc.next();
+				
+				if(command.equals("산책가자")) {
+					if(typeAnimal == 1) {
+						d1.wlk();				
+					} else if(typeAnimal == 2) {
+						c1.wlk();
+					} else {
+						b1.wlk();
+					}
+				} else if(command.equals("간식먹자")) {
+					if(typeAnimal == 1) {
+						d1.trt();				
+					} else if(typeAnimal == 2) {
+						c1.trt();
+					} else {
+						b1.trt();
+					}
 				} else {
-					b1.wlk();
-				}
-			} else if(command.equals("간식먹자")) {
-				if(typeAnimal == 1) {
-					d1.trt();				
-				} else if(typeAnimal == 2) {
-					c1.trt();
-				} else {
-					b1.trt();
+					if(typeAnimal == 1) {
+						d1.slp();				
+					} else if(typeAnimal == 2) {
+						c1.slp();
+					} else {
+						b1.slp();
+					}
 				}
 			} else {
 				if(typeAnimal == 1) {
-					d1.slp();				
-				} else if(typeAnimal == 2) {
-					c1.slp();
-				} else {
-					b1.slp();
+					d1.digging((int) (Math.random() * 90) + 10);				
+				}
+				else if(typeAnimal == 2) {
+					c1.grooming((int) (Math.random() * 9) + 1);
+				}
+				else {
+					b1.stealing();
 				}
 			}
-		} else {
-			if(typeAnimal == 1) {
-				d1.digging((int) (Math.random() * 90) + 10);				
-			}
-			else if(typeAnimal == 2) {
-				c1.grooming((int) (Math.random() * 9) + 1);
-			}
-			else {
-				b1.stealing();
-			}
 		}
-		
 	}
 }
 

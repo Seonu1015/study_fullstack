@@ -12,12 +12,8 @@ public class Person {
 	
 	void chooseCard() {
 		Scanner sc = new Scanner(System.in);
-		System.out.println("카드 : 1.거지, 2.시민, 3.귀족, 4.왕");
 		System.out.println("플레이어 차례 : ");
-		this.card = sc.nextInt();		
-	}
-	
-	void printPer() {
+		this.card = sc.nextInt();
 		String[] arr = {"거지", "시민", "귀족", "왕"};
 		System.out.println("플레이어가 뽑은 카드 : " + card + ". " + arr[card-1]);
 	}

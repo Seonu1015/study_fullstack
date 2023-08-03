@@ -25,7 +25,7 @@ public class Dog extends Animal {
 
 	void wlk() {
 		System.out.println(name + " 이(가) 꼬리를 흔들면 산책나갈 준비를 합니다.");
-		System.out.println(this.leash + " 를 준비해주세요.");
+		System.out.println(this.leash + " 을(를) 준비해주세요.");
 	}
 
 	void slp() {
@@ -45,7 +45,7 @@ public class Dog extends Animal {
 	void gardenDamage(int gardenDamage) {
 		this.gardenDamage += gardenDamage;
 		if(this.gardenDamage >= 100) {
-			System.out.println("정원의 손상도가 100%를 넘어섰습니다. 정원을 청소하세요.");
+			System.out.println("!!비상!! 정원의 손상도가 100%를 넘어섰습니다. 정원을 청소하세요.");
 			this.gardenDamage = 0;
 		}
 	}

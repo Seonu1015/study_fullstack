@@ -44,7 +44,7 @@ public class Cat extends Animal {
 	void hairball(int hairball) {
 		this.hairball += hairball;
 		if(this.hairball >= 10) {
-			System.out.println("집 안에 털 뭉치가 10개 이상이 굴러다니고 있습니다. 청소를 시작하세요.");
+			System.out.println("!!비상!! 집 안에 털 뭉치가 10개 이상이 굴러다니고 있습니다. 청소를 시작하세요.");
 			this.hairball = 0;
 		}
 	}
