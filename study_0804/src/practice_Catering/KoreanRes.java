@@ -1,4 +1,4 @@
-package review_Catering;
+package practice_Catering;
 
 public class KoreanRes extends Restaurant {
 
@@ -29,10 +29,9 @@ public class KoreanRes extends Restaurant {
 		}
 	}
 	
-	void printMenu(int popularity) {
-		super.info();
+	void printMenu() {
 		for (int i = 0; i < koreanFood.length; i++) {
-			if(popularity >=4) {
+			if(this.popularity[i] >=4) {
 				System.out.println("메뉴 : " + koreanFood[i] + "★");
 			} else {
 				System.out.println("메뉴 : " + koreanFood[i]);

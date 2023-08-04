@@ -1,4 +1,4 @@
-package review_Catering;
+package practice_Catering;
 
 public class Restaurant extends Catering {
 
@@ -12,7 +12,7 @@ public class Restaurant extends Catering {
 		this.openAlltime = openAlltime;
 	}
 	
-	void info(int openTime, int closeTime) {
+	void infoRes(int openTime, int closeTime) {
 		super.info();
 		if(this.openAlltime) {
 			System.out.println("24시간 운영 중");

@@ -1,4 +1,4 @@
-package review_Catering;
+package practice_Catering;
 
 public class Catering {
 
