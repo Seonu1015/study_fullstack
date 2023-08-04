@@ -70,7 +70,7 @@ public class Class_main {
 	            }
 			} else {
 				if(typeAnimal == 1) {
-					d1.digging((int) (Math.random() * 90) + 10);				
+					d1.digging((int) (Math.random() * 30) + 10);				
 				}
 				else if(typeAnimal == 2) {
 					c1.grooming((int) (Math.random() * 9) + 1);

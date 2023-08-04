@@ -1,5 +1,6 @@
 package Test_CardGame;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CardGame {
@@ -35,6 +36,23 @@ public class CardGame {
 				player1card = player1.card;
 				Computer player2 = new Computer();
 				player2.drawCard();
+				
+//				// 어레이리스트 써서 중복을 피할 수 있을까?
+//				ArrayList<Computer> p2List = new ArrayList<>();
+//				
+//				p2List.add(player2);
+//				System.out.println(p2List.get(i).cardIndex);
+//				
+//				int check = 0;
+//				for (int j = 0; j <= i; ++j) {
+//					player2.drawCard();
+//					
+//					if(p2List.get(i).cardIndex == ) {
+//						
+//					}
+//				}
+				
+				
 				player2card = player2.cardIndex+1;
 			} else {
 				Computer player1 = new Computer();

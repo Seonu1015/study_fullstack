@@ -17,9 +17,9 @@ public class Bird extends Animal {
 		this.favorSeed = favorSeed;
 	}
 
-	void spk() {
-		super.spk();
-	}
+//	void spk() {
+//		super.spk();
+//	}
 
 	void wlk() {
 		System.out.println(name + " 이(가) 종이를 뜯어 몸을 치장하며 딴청을 부립니다.");
@@ -41,7 +41,8 @@ public class Bird extends Animal {
 		} else {
 			System.out.println("!!비상!! " + name + " 이(가) 당신의 보석함에서 당신의 귀중품을 훔쳤습니다. 새장을 뒤져 귀중품을 되찾으세요.");
 		}
-
 	}
+	
 
+	
 }

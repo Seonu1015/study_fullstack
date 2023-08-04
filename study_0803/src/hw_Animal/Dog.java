@@ -19,9 +19,9 @@ public class Dog extends Animal {
 		this.gardenDamage = 0;
 	}
 
-	void spk() {
-		super.spk();
-	}
+//	void spk() { // <- 어차피 부모클래스인 Animal에 있는 메소드니까 굳이 또 써줄 필요가 없다
+//		super.spk();
+//	}
 
 	void wlk() {
 		System.out.println(name + " 이(가) 꼬리를 흔들면 산책나갈 준비를 합니다.");
@@ -44,8 +44,8 @@ public class Dog extends Animal {
 	
 	void gardenDamage(int gardenDamage) {
 		this.gardenDamage += gardenDamage;
-		if(this.gardenDamage >= 100) {
-			System.out.println("!!비상!! 정원의 손상도가 100%를 넘어섰습니다. 정원을 청소하세요.");
+		if(this.gardenDamage >= 70) {
+			System.out.println("!!비상!! 정원의 손상도가 70%를 넘어섰습니다. 정원을 수리하세요.");
 			this.gardenDamage = 0;
 		}
 	}

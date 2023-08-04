@@ -3,8 +3,8 @@ package Test_DiceGame;
 public class DiceGame {
 	public static void main(String[] args) {
 		
-		Player p1dice = new Player("선우");
-		Player p2dice = new Player("상근");
+		Player p1dice = new Player("대한");
+		Player p2dice = new Player("민국");
 		
 		int score1 = 0;
 		int score2 = 0;
