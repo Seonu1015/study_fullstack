@@ -2,45 +2,18 @@ package review_Catering;
 
 public class KidsCafe extends Cafe {
 
-	String[] menu;
-	int[] price;
-
-	KidsCafe() {
-		setting();
+	int kidsNum;
+	
+	KidsCafe(String type, String name, boolean takeout, int kidsNum) {
+		super(type, name, takeout);
+		this.kidsNum = kidsNum;
 	}
-
-	KidsCafe(String name, int rank) {
-		super(name, rank);
-		this.setting();
-	}
-
-	KidsCafe(String name, int rank, String menu, int price) {
-		super(name, rank);
-		this.menu = new String[] { menu };
-		this.price = new int[] { price };
-	}
-
-	KidsCafe(String name, int rank, String[] menu, int[] price) {
-		super(name, rank);
-		this.setting();
-		this.menu = menu;
-		this.price = price;
-	}
-
-	void setting() {
-		menu = new String[2];
-		price = new int[2];
-
-		for (int i = 0; i < menu.length; i++) {
-			menu[i] = "SOLD OUT";
-			price[i] = 0;
-		}
-	}
-
-	void printKRes() {
-		super.printRes();
-		for (int i = 0; i < menu.length; i++) {
-			System.out.println("메뉴 : " + menu[i] + ", 가격 : " + price[i]);
+	
+	void reservation() {
+		if(this.kidsNum >= 5) {
+			System.out.println("아이가 5명 이상인 경우 예약이 필요합니다.");
+		} else {
+			System.out.println("아이가 4명 이하라면 예약없이 바로 이용이 가능합니다.");
 		}
 	}
 
