@@ -1,4 +1,4 @@
-package Test_CardGame;
+package hw_CardGame;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -35,15 +35,12 @@ public class CardGame {
 				player1.chooseCard();
 				player1card = player1.card;
 				Computer player2 = new Computer();
-				player2.drawCard();
-				player2card = player2.cardIndex+1;
+				player2card = player2.card;
 			} else {
 				Computer player1 = new Computer();
-				player1.drawCard();
-				player1card = player1.cardIndex+1;
+				player1card = player1.card;
 				Computer player2 = new Computer();
-				player2.drawCard();
-				player2card = player2.cardIndex+1;
+				player2card = player2.card;
 			}
 			
 
@@ -87,3 +84,4 @@ public class CardGame {
 
 //3. 카드게임 -> 객체화
 //컴퓨터와 사람을 각각 객체화 한다. 컴퓨터vs컴퓨터, 컴퓨터vs사람, 사람vs사람
+//컴퓨터 클래스와 사람의 공통된 사항을 부모클래스를 만들어서 해보자

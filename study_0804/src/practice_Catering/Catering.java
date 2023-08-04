@@ -5,7 +5,7 @@ public class Catering {
 	String type;
 	String name;
 
-
+	
 	Catering(String type, String name) {
 		this.type = type;
 		this.name = name;

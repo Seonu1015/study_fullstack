@@ -64,7 +64,7 @@ public class review_hw {
 		for(int k = 0; k < arr.length; k++) {
 			if(arr[k] == computer) {
 				computer = (int)(Math.random()*4+1);
-				k = -1;// k = 0; 문제의 원인 -> k++ 1번째 검사를 한다.
+				k = -1;// k = 0로 할 경우 -> k++ 1번째부터 검사가 되기 때문에 가장 처음 인덱스는 비교를 하지 않게 된다.
 				continue;
 			}
 			else if(arr[k] == 0) {

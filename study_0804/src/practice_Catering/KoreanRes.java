@@ -32,7 +32,7 @@ public class KoreanRes extends Restaurant {
 	void printMenu() {
 		for (int i = 0; i < koreanFood.length; i++) {
 			if(this.popularity[i] >=4) {
-				System.out.println("메뉴 : " + koreanFood[i] + "★");
+				System.out.println("메뉴 : " + koreanFood[i] + " ★추천★");
 			} else {
 				System.out.println("메뉴 : " + koreanFood[i]);
 			}
