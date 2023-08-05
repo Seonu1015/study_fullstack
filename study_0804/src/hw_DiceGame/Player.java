@@ -9,12 +9,6 @@ public class Player {
 		this.name = name;
 	}
 	
-	Player(String name, int dice) {
-		this.setting();
-		this.name = name;
-		this.dice = dice;
-	}
-	
 	void setting() {
 		dice = (int) (Math.random()*6) +1;
 	}
