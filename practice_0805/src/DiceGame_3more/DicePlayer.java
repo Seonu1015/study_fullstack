@@ -6,11 +6,8 @@ public class DicePlayer extends Player {
 
 	Player[] players;
 	int diceValue;
+	int score;
 	int roundCount;
-
-	DicePlayer() {
-		super();
-	}
 
 	void playGame(int playerCount) {
 		this.players = new Player[playerCount];

@@ -27,7 +27,7 @@ public class Player {
 	}
 
 	// static 없이 했더니 메인에서 빨간줄...
-	// static 이 있고 없고 차이
+	// static 을 쓰는 이유?
 	// static 이 없으면 생성되는 객체마다 고유한 값을 가지게 되고
 	// static 이 있으면 모든 객체가 하나의 count 변수를 공유하게 된다
 
