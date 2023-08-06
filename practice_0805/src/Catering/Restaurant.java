@@ -2,7 +2,7 @@ package Catering;
 
 public class Restaurant extends Catering {
 
-	//boolean domestic;
+//	boolean domestic;
 	boolean openAlltime;
 //	int openTime;
 //	int closeTime;
