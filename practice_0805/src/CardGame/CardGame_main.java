@@ -16,7 +16,7 @@ public class CardGame_main {
 		Computer computer2 = new Computer();
 		// 그동안 계속 카드가 중복된 이유
 		// 매 라운드마다 객체를 새로 생성했기 때문
-		// 이게 지역변수와 전역변수!!!!
+		// 지역변수 구별인 것인가?!
 		
 		Score score = new Score();
 
@@ -37,8 +37,10 @@ public class CardGame_main {
 				System.out.println("플레이어2 카드: " + playerCard2);
 				
 				score.calScore(playerCard1, playerCard2);
-				//System.out.println("플레이어1 : " + score.getScorePlayer1() + ", 플레이어2 : "+ score.getScorePlayer2());
-
+				
+				if (score.poorMeetKing()) {
+                    break;
+                }
 				System.out.println();
 			}
 			break;
@@ -56,8 +58,10 @@ public class CardGame_main {
 				System.out.println("플레이어2 카드: " + playerCard2);
 				
 				score.calScore(playerCard1, playerCard2);
-				//System.out.println("플레이어1 : " + score.getScorePlayer1() + ", 플레이어2 : "+ score.getScorePlayer2());
-
+				
+				if (score.poorMeetKing()) {
+                    break;
+                }
 				System.out.println();
 			}
 			break;
@@ -72,9 +76,8 @@ public class CardGame_main {
 				System.out.println("플레이어2 카드: " + playerCard2);
 				
 				score.calScore(playerCard1, playerCard2);
-                //System.out.println("플레이어1 : " + score.getScorePlayer1() + ", 플레이어2 : "+ score.getScorePlayer2());
-
-                if (score.isGameFinished()) {
+                
+                if (score.poorMeetKing()) {
                     break;
                 }
 				System.out.println();
@@ -85,20 +88,10 @@ public class CardGame_main {
 		int finalScore1 = score.getScorePlayer1();
         int finalScore2 = score.getScorePlayer2();
 
-        if (score.isGameFinished()) {
-            if (score.hr == 1) {
-                System.out.println("최종 승자는 플레이어1입니다!");
-            } else if (score.hr == 2) {
-                System.out.println("최종 승자는 플레이어2입니다!");
-            }
+        if (score.poorMeetKing()) {
+            score.printWinnerPoor();
         } else {
-            if (finalScore1 > finalScore2) {
-                System.out.println("플레이어1이 최종 승자입니다!");
-            } else if (finalScore1 < finalScore2) {
-                System.out.println("플레이어2가 최종 승자입니다!");
-            } else {
-                System.out.println("무승부입니다!");
-            }
+            score.printWinner();
         }
 	}
 }

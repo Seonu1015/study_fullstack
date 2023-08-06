@@ -29,10 +29,10 @@ public class Score {
 				System.out.println("무승부입니다!");
 				return;
 			} else if (power1 > power2) {
-				System.out.println("플레이어1이 승리하였습니다!");
+				System.out.println("플레이어1이 이겼습니다!");
 				score1++;
 			} else if (power1 < power2) {
-				System.out.println("플레이어2가 승리하였습니다!");
+				System.out.println("플레이어2가 이겼습니다!");
 				score2++;
 			}
 		} else if (hr ==1) {
@@ -64,15 +64,25 @@ public class Score {
         return score2;
     }
     
-    boolean isGameFinished() {
+    boolean poorMeetKing() {
         return hr == 1 || hr == 2;
+    }
+    
+    void printWinnerPoor() {
+    	if (hr == 1) {
+        	System.out.println();
+            System.out.println("최종 승자는 플레이어1입니다!");
+        } else if (hr == 2) {
+        	System.out.println();
+            System.out.println("최종 승자는 플레이어2입니다!");
+        }
     }
     
     void printWinner() {
         if (score1 > score2) {
-            System.out.println("플레이어1이 승리하였습니다!");
+            System.out.println("플레이어1이 최종 우승하였습니다!");
         } else if (score1 < score2) {
-            System.out.println("플레이어2가 승리하였습니다!");
+            System.out.println("플레이어2가 최종 우승하였습니다!");
         } else {
             System.out.println("무승부입니다!");
         }
