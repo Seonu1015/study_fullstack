@@ -3,7 +3,7 @@ package Food_reservation_hw;
 public class Main {
 	public static void main(String[] args) {
 
-		Korean kor1 = new Korean("한국", "삼계탕", "우리", "참이슬", 50);
+		Korean kor1 = new Korean("한국", "삼계탕", "우리", "참이슬", 25);
 		Customer cus1 = new Customer("홍길동");
 
 		kor1.printInfo();
