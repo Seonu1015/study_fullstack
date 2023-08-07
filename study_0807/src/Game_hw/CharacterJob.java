@@ -21,5 +21,4 @@ public class CharacterJob extends Character {
 		System.out.println("체력 : " + this.getHealth());
 		System.out.println("공격력 : " + this.getAttack() + " (" + this.getName() + " 은(는) 직업을 가졌기에 기본 공격력이 증가합니다.)");
 	}
-
 }
