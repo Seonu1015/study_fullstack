@@ -3,8 +3,13 @@ package study_0807;
 public class Class02 {
 	public static void main(String[] args) {
 		
-		Movie movie = new Movie("기생충", 129);
-
+		Moviee movie = new Moviee("기생충", 132);
+		
+		movie.playMovie();
+		
+		movie.setTime(142);
+		System.out.println(movie.getTitle() + movie.getTime());
+		
 	}
 }
 
@@ -29,7 +34,6 @@ public class Class02 {
 //private int num; <- 변수 자체로는 접근이 안되지만
 //getNum(), setNum(int num) <- 메서드를 통해서 접근하겠다 : getter, setter 메서드 <- 개발자들의 약속(?)
 
-getter, setter -> 인스턴스 변수의 값을 변경하는 역할을 한다.
-게터와 세터를 통해 정보 은닉을 유지하고, 외부에서도 필요한 데이터에 접근을 가능하게 한다.
-
+//getter, setter -> 인스턴스 변수의 값을 변경하는 역할을 한다.
+//게터와 세터를 통해 정보 은닉을 유지하고, 외부에서도 필요한 데이터에 접근을 가능하게 한다.
 

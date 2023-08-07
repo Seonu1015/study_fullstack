@@ -1,11 +1,11 @@
 package study_0807;
 
-public class Movie {
+public class Moviee {
 
-	private String title;
-	public int time;
+	String title;
+	int time;
 
-	private Movie(String title, int time) {
+	Moviee(String title, int time) {
 		this.title = title;
 		this.time = time;
 	}
@@ -18,4 +18,19 @@ public class Movie {
 		System.out.println("영화 장르 : 알 수 없음");
 	}
 	
+	String getTitle() {
+		return title;
+	}
+	
+	int getTime() {
+		return time;
+	}
+	
+	void setTitle(String title) {
+		this.title = title;
+	}
+	
+	void setTime(int time) {
+		this.time = time;		
+	}
 }
