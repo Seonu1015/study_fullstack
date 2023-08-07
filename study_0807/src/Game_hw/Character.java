@@ -1,4 +1,4 @@
-package Game;
+package Game_hw;
 
 public class Character extends Unit {
 
@@ -34,7 +34,7 @@ public class Character extends Unit {
 			System.out.println(this.getAttack()+ "만큼의 데미지를 주었습니다.");
 			
 			//몬스터 최대 체력에서 캐릭터 공격력만큼 체력이 줄어들게끔
-			//unit.getHealth() 
+			//unit.getHealth() <- setter를 써보자
 			
 		} else if(this.getAttack() >= unit.getHealth()) {
 			System.out.println(this.getName() + " 이(가) " + unit.getName() + " 을(를) 쓰러뜨렸습니다.");

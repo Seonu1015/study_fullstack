@@ -1,12 +1,16 @@
-package Food_reservation;
+package Food_reservation_hw;
 
 public class Restaurant extends Food {
 
-	String menu;
+	private String menu;
 
 	Restaurant(String nation, String menu) {
 		super(nation);
 		this.menu = menu;
+	}
+	
+	String getMenu() {
+		return this.menu;
 	}
 	
 	void printInfo() {

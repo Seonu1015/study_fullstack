@@ -1,4 +1,4 @@
-package Food_reservation;
+package Food_reservation_hw;
 
 public class Food {
 

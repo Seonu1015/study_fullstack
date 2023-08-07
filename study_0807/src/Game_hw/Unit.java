@@ -1,4 +1,4 @@
-package Game;
+package Game_hw;
 
 public class Unit {
 
@@ -23,18 +23,6 @@ public class Unit {
 	
 	int getAttack() {
 		return this.attack;
-	}
-	
-	void setName() {
-		return;
-	}
-	
-	void setHealth() {
-		return;
-	}
-	
-	void setAttack() {
-		return;
 	}
 	
 	void unitInfo() {

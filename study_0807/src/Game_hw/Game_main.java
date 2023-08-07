@@ -1,4 +1,4 @@
-package Game;
+package Game_hw;
 
 public class Game_main {
 	public static void main(String[] args) {

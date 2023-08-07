@@ -1,4 +1,4 @@
-package Game;
+package Game_hw;
 
 public class CharacterJob extends Character {
 
