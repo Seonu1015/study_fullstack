@@ -1,28 +1,26 @@
 package Food_reservation;
 
-import java.util.Scanner;
-
 public class Korean extends Restaurant {
-	
+
 	String name;
 	String soju;
 	private int seat;
-	
-	Scanner sc = new Scanner(System.in);
 
-	Korean(String nation, String menu, String name, String soju) {
-		super(nation, menu);
-		this.name = name;
-		this.soju = soju;
-	}
-	
 	Korean(String nation, String menu, String name, String soju, int seat) {
 		super(nation, menu);
-		this.soju = soju;
 		this.name = name;
+		this.soju = soju;
 		this.seat = seat;
 	}
-	
+
+	int getSeat() {
+		return this.seat;
+	}
+
+	void setSeat(Customer cus) {
+		this.seat -= cus.getPeopleNum();
+	}
+
 	@Override
 	void printInfo() {
 		super.printNation();
@@ -31,24 +29,5 @@ public class Korean extends Restaurant {
 		System.out.println("음식과 어울리는 술로 " + soju + "을(를) 추천합니다.");
 		return;
 	}
-	
-	int getSeat() {
-		return this.seat;
-	}
-	
-	void reservation() {
-		System.out.println();
-		System.out.println("몇 명 예약하시겠습니까? 예약 가능한 좌석 수(" + this.getSeat() + ")");
-		int peopleNumber = sc.nextInt();
-		
-		if(peopleNumber <= seat) {
-			System.out.println("예약이 완료되었습니다.");
-			return;
-		} else {
-			System.err.println("예약 가능한 인원을 초과하였습니다. 예약이 불가능합니다.");
-			return;
-		}
-	}
-
 
 }
