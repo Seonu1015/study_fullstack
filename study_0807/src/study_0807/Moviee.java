@@ -2,9 +2,13 @@ package study_0807;
 
 public class Moviee {
 
-	String title;
-	int time;
+	private String title;
+	private int time;
 
+	private Moviee() {
+		
+	}
+	
 	Moviee(String title, int time) {
 		this.title = title;
 		this.time = time;

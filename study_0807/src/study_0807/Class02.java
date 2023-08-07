@@ -6,8 +6,11 @@ public class Class02 {
 		Moviee movie = new Moviee("기생충", 132);
 		
 		movie.playMovie();
+		//System.out.println(movie.title + movie.time); <- 이대로 쓰면 오류가 뜬다 (정보 은닉 성공)
 		
-		movie.setTime(142);
+		
+		//movie.time += 10; <- 이것도 정보가 private로 은닉되어 있어서 오류
+		movie.setTime(142); // <- 이렇게 getter 나 setter를 써서 작업해야 한다
 		System.out.println(movie.getTitle() + movie.getTime());
 		
 	}
