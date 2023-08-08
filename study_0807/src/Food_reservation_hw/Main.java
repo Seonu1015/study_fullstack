@@ -4,19 +4,26 @@ public class Main {
 	public static void main(String[] args) {
 
 		Korean kor1 = new Korean("한국", "삼계탕", "우리", "참이슬", 25);
-		Customer cus1 = new Customer("홍길동");
-
 		kor1.printInfo();
-		cus1.reservation(kor1);
-
-		Customer cus2 = new Customer("성춘향");
-		cus2.reservation(kor1);
 		
-		cus1.outTeam(kor1);
+//		Customer cus1 = new Customer("홍길동");
+//		cus1.reservation(kor1);
+//
+//		Customer cus2 = new Customer("성춘향");
+//		cus2.reservation(kor1);
+//		
+//		cus1.outTeam(kor1);
 		
 		Customer cus3 = new Customer("김대한");
 		cus3.reservation(kor1);
 
+		System.out.println();
+		OffCustomer offcus1 = new OffCustomer("김마리", 3);
+		offcus1.entrance(kor1);
+		
+		System.out.println();
+		OffCustomer offcus2 = new OffCustomer("이몽룡", 5);
+		offcus2.entrance(kor1);
 		
 	}
 }

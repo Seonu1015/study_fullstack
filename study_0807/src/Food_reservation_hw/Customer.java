@@ -6,6 +6,9 @@ public class Customer {
 	
 	private String name;
 	private int peopleNum;
+	private int startTime;
+	private int endTime;
+	
 	
 	Customer(String name) {
 		this.name = name;
@@ -25,6 +28,15 @@ public class Customer {
 		peopleNum = sc.nextInt();
 	}
 	
+	void setStartTime() {
+		startTime = sc.nextInt();
+	}
+	
+	void setEndTime() {
+		endTime = sc.nextInt();
+	}
+	
+	
 	void reservation(Korean kor) {
 		System.out.println();
 		System.out.println(this.name + "님 몇 명을 예약하시겠습니까? 예약 가능한 좌석 수(" + kor.getSeat() + ")");
@@ -42,7 +54,7 @@ public class Customer {
 		}
 	}
 	
-	void outTeam(Korean kor) {
+	void exit(Korean kor) {
 		System.out.println();
 		System.out.println("이전 " + this.getName() + " 팀이 나갔습니다.");	
 		kor.setSeat(-this.peopleNum);
