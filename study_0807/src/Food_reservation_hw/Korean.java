@@ -16,13 +16,9 @@ public class Korean extends Restaurant {
 	int getSeat() {
 		return this.seat;
 	}
-
-	int minusSeat(Customer cus) {
-		return this.seat -= cus.getPeopleNum();
-	}
 	
-	int plusSeat(Customer cus) {
-		return this.seat += cus.getGonePeople();
+	void setSeat(int peopleNum) {
+		this.seat -= peopleNum;
 	}
 
 	@Override
