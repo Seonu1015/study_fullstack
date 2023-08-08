@@ -3,8 +3,9 @@ package hw_Student;
 public class Student22 extends Student {
 
     private static int studentNumberInit = 22000000;
-    private int studentNumber;
     private static int count = 1;
+    
+    private int studentNumber;
 	
     Student22(String name, int age, String major) {
         super(name, age, major);
