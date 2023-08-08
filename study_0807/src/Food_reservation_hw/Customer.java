@@ -46,10 +46,11 @@ public class Customer {
 	}
 	
 	void reservationTime(Korean kor) {
+		System.out.println();
 		System.out.println(this.name + "님 몇 시를 예약하시겠습니까?");
-		this.getStartTime();
+		this.setStartTime();
 		
-		if(kor.timeTable[this.getStartTime()] == this.getStartTime()) {
+		if(kor.timeTable[this.getStartTime()-6] == this.getStartTime()) {
 			System.out.println("해당 시간은 예약이 불가능합니다. 다른 시간을 예약하시겠습니까?");
 			String changeTime = sc.next();
 			if(changeTime.equals("예")) {
@@ -65,7 +66,7 @@ public class Customer {
 		
 		if(this.peopleNum <= kor.getSeat()) {
 			System.out.println("예약이 완료되었습니다.");
-			System.out.println("예약자명 : " + this.getName() + ", 예약인원수 : " + this.peopleNum);
+			System.out.println("예약자 : " + this.name /* this.getName() */ + ", 인원 수 : " + this.peopleNum); // 같은 클래스 내이므로 this.name 으로 써도 무방
 			System.out.println("현재 남은 좌석 수 : " + (kor.getSeat()-this.peopleNum));			
 			kor.setSeat(peopleNum);
 			return;

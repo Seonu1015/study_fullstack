@@ -25,7 +25,7 @@ public class Unit {
 	}
 
 	void setAttack(int attack) {
-		this.attack = attack;
+		this.attack += attack;
 	}
 
 	void setHealth(int health) {

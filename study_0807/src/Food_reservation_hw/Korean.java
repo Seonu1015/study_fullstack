@@ -25,21 +25,20 @@ public class Korean extends Restaurant {
 	}
 	
 	int[] getTimeTable() {
-		System.out.println("예약이 불가능한 시간 : ");
-		for(int i=0; i<7; i++) {
-			System.out.println(this.timeTable[i] + " ");
-		}
-		return timeT
+		return timeTable;
 	}
 	
 	
 	void inputTimeTable(Customer cus) {
 		timeTable[cus.getStartTime()-6] = cus.getStartTime();
+
+		for(int i=0;i<7;i++) {
+			System.out.print(timeTable[i] + " ");
+		}
 	}
 
 	@Override
 	void printInfo() {
-		super.printNation();
 		System.out.println("어서오십시오. \"" + this.name + "\" 입니다.");
 		System.out.println("저희의 메인 메뉴는 " + this.getMenu() + "입니다.");
 		System.out.println("음식과 어울리는 술로 " + this.soju + "을(를) 추천합니다.");

@@ -22,7 +22,7 @@ public class OffCustomer extends Customer {
 	void entrance(Korean kor, Customer cus) {
 		System.out.println(this.getName() + " 외 " + this.offPeople + "명이 방문하였습니다.");
 		if(kor.getSeat() < (this.offPeople+1)) {
-			System.out.println("자리가 충분하지 않습니다. 대기 시간은 " +  + "분 입니다. 기다리시겠습니까?");
+			System.out.println("자리가 충분하지 않습니다. 대기 시간은 ??분 입니다. 기다리시겠습니까?");
 			String wait = sc.next();
 			if(wait.equals("예")) {
 				System.out.println("대기명단에 올려두겠습니다.");

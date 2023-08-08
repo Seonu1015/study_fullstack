@@ -7,9 +7,13 @@ public class Main {
 		kor1.printInfo();
 		
 		Customer cus1 = new Customer("홍길동");
+		cus1.reservationTime(kor1);
 		cus1.reservation(kor1);
 
+		kor1.inputTimeTable(cus1);
+		
 		Customer cus2 = new Customer("성춘향");
+		cus2.reservationTime(kor1);
 		cus2.reservation(kor1);
 		
 		cus1.exit(kor1);
@@ -19,11 +23,11 @@ public class Main {
 
 		System.out.println();
 		OffCustomer offcus1 = new OffCustomer("김마리", 3, 3);
-		offcus1.entrance(kor1);
+		offcus1.entrance(kor1, cus2);
 		
 		System.out.println();
 		OffCustomer offcus2 = new OffCustomer("이몽룡", 5, 6);
-		offcus2.entrance(kor1);
+		offcus2.entrance(kor1,cus2);
 		
 	}
 }

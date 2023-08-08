@@ -12,7 +12,7 @@ public class Food {
 		this.nation = nation;
 	}
 	
-	void printNation() {
+	void printInfo() {
 		System.out.println(nation + " 본토의 맛을 느낄 수 있습니다.");
 		return; // <- void는 반환값이 없다
 	}
