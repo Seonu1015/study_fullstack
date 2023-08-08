@@ -1,14 +1,15 @@
 package Food_reservation_hw;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Customer {
 	
 	private String name;
 	private int peopleNum;
+	
 	private int startTime;
 	private int endTime;
-	
 	
 	Customer(String name) {
 		this.name = name;
@@ -28,6 +29,14 @@ public class Customer {
 		peopleNum = sc.nextInt();
 	}
 	
+	int getStartTime() {
+		return this.startTime;
+	}
+	
+	int getEndTime() {
+		return this.endTime;
+	}
+	
 	void setStartTime() {
 		startTime = sc.nextInt();
 	}
@@ -36,6 +45,18 @@ public class Customer {
 		endTime = sc.nextInt();
 	}
 	
+	void reservationTime(Korean kor) {
+		System.out.println(this.name + "님 몇 시를 예약하시겠습니까?");
+		this.getStartTime();
+		
+		if(kor.timeTable[this.getStartTime()] == this.getStartTime()) {
+			System.out.println("해당 시간은 예약이 불가능합니다. 다른 시간을 예약하시겠습니까?");
+			String changeTime = sc.next();
+			if(changeTime.equals("예")) {
+				this.setStartTime();
+			}
+		}
+	}
 	
 	void reservation(Korean kor) {
 		System.out.println();

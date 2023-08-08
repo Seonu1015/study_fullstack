@@ -19,13 +19,13 @@ public class OffCustomer extends Customer {
 		return this.offPeople;
 	}
 	
-	void entrance(Korean kor) {
+	void entrance(Korean kor, Customer cus) {
 		System.out.println(this.getName() + " 외 " + this.offPeople + "명이 방문하였습니다.");
 		if(kor.getSeat() < (this.offPeople+1)) {
-			System.out.println("자리가 충분하지 않습니다. 기다리시겠습니까? ");
+			System.out.println("자리가 충분하지 않습니다. 대기 시간은 " +  + "분 입니다. 기다리시겠습니까?");
 			String wait = sc.next();
 			if(wait.equals("예")) {
-				//System.out.println((this.offPeople+1 - kor.getSeat())*3 + "분 기다려주세요.");
+				System.out.println("대기명단에 올려두겠습니다.");
 			}
 		} else {
 			System.out.println("현재 남은 좌석 수 : " + (kor.getSeat()-(this.offPeople+1)));
