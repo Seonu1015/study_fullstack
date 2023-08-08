@@ -1,6 +1,7 @@
-package Movie;
+package hw_Movie;
 
-public class Movie {//요소 : 제목, 상영시간, 행동: 영화소개, 장르 소개
+public class Movie {
+	
 	String title;
 	int duration;
 	
