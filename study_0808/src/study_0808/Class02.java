@@ -26,4 +26,7 @@ public class Class02 {
 //한식당 -> nation = "한국" -> static final nation = "한국"
 
 //1. 학생 - 23학번, 22학번, 21학번, 20학번 <- 학번
+// 23000001, 23000002, 23000003
+// 23123401, 23123402 <- 과 번호 추가
+
 //2. Movie -> SFMovie 장르 : SF <- static final 함께 적용해보기
