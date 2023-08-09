@@ -5,17 +5,19 @@ package hw_AreaCal;
 
 public class Main {
 	public static void main(String[] args) {
-		
+
 		Circle circle = new Circle();
 		System.out.println(circle.toString(2));
-		
+
 		Square square = new Square();
 		System.out.println(square.toString(4));
 		System.out.println(square.toString(4, 7));
 		System.out.println(square.toString(2, 3, 5));
-		
-		Triangle triangle = new Triangle();
-		System.out.println(triangle.toString(3, 4));
+
+		Triangle triangle1 = new Triangle(2, 3);
+		triangle1.shapeArea();
+		Triangle triangle2 = new Triangle();
+		System.out.println(triangle2.toString(3, 4));
 
 	}
 }
