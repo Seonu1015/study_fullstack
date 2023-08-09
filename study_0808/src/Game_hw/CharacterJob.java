@@ -70,17 +70,17 @@ public class CharacterJob extends Character {
 		}
 	}
 	
-	void playGameSkill(Monster mob) {
+	void playGameSkill(Monster mob) { // 변수명을 간단하게 다시 선언해서 할 수도 있다
 		this.criticalAttack(mob);
 		if ((this.getAttack() + this.criticalAttack) < mob.getHealth()) {
-			System.out.println(this.getName() + "이 " + mob.getName() + "에게 "
+			System.out.println(this.getName() + " 이(가) " + mob.getName() + "에게 "
 					+ (this.getAttack() + this.criticalAttack) + "만큼의 데미지를 주었습니다.");
 
 			mob.setHealth(mob.getHealth() - (this.getAttack() + this.criticalAttack));
 			System.out.println(mob.getName() + "의 남은 체력 : " + mob.getHealth());
 
 		} else if ((this.getAttack() + this.criticalAttack) >= mob.getHealth()) {
-			System.out.println(this.getName() + "이 " + mob.getName() + "에게 "
+			System.out.println(this.getName() + " 이(가) " + mob.getName() + "에게 "
 					+ (this.getAttack() + this.criticalAttack) + "만큼의 데미지를 주었습니다.");
 			System.out.println(this.getName() + " 이(가) " + mob.getName() + " 을(를) 쓰러뜨렸습니다.");
 

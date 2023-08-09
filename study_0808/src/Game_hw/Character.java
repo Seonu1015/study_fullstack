@@ -3,10 +3,17 @@ package Game_hw;
 public class Character extends Unit {
 
 	private int level;
-	private int exp;
+	private double exp;
 	
 	Character(Unit unit) {
 		super(unit.getName(), unit.getHealth(), unit.getAttack());
+		//super(unit); <- Unit 클래스에서 Unit을 자료형으로 가진 메서드를 만들어준다
+		level = 1;
+		exp = 0;
+	}
+	
+	Character(String name) {
+		super(name, 100, 10); // <- 미리 입력하는 식으로 이렇게 표현도 가능함
 		level = 1;
 		exp = 0;
 	}
@@ -39,14 +46,14 @@ public class Character extends Unit {
 		
 		if (this.getAttack() < mob.getHealth()) {
 			System.out
-					.println(this.getName() + "이 " + mob.getName() + "에게 " + this.getAttack() + "만큼의 데미지를 주었습니다.");
+					.println(this.getName() + " 이(가) " + mob.getName() + "에게 " + this.getAttack() + "만큼의 데미지를 주었습니다.");
 			
 			mob.setHealth(mob.getHealth() - this.getAttack());
 			System.out.println(mob.getName() + "의 남은 체력 : " + mob.getHealth());
 
 		} else if (this.getAttack() >= mob.getHealth()) {
 			System.out
-					.println(this.getName() + "이 " + mob.getName() + "에게 " + this.getAttack() + "만큼의 데미지를 주었습니다.");
+					.println(this.getName() + " 이(가) " + mob.getName() + " 에게 " + this.getAttack() + "만큼의 데미지를 주었습니다.");
 			System.out.println(this.getName() + " 이(가) " + mob.getName() + " 을(를) 쓰러뜨렸습니다.");
 			
 			mob.setHealth(mob.getHealth() - this.getAttack());
@@ -64,17 +71,17 @@ public class Character extends Unit {
 		}
 	}
 	
-	int getExp() {		
+	double getExp() {		
 		return this.exp;
 	}
 	
-	int setExp() {
-		exp = (int) (Math.random() * 90);
+	double setExp() {
+		exp = (double) (Math.random() * 90);
 		System.out.println(exp + "의 경험치를 획득하였습니다.");
 		return this.getExp();
 	}
 	
-	int accumulateExp() {
+	double accumulateExp() {
 		this.exp += this.setExp();
 		//System.out.println("누적 경험치 : " + this.getExp());
 		if (this.exp >= 100) {

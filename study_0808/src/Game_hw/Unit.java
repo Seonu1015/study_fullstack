@@ -16,7 +16,13 @@ public class Unit {
 		return this.name;
 	}
 
-	int getHealth() {
+	Unit(Unit unit) { // Unit을 자료형으로 가진 메서드
+		this.name = name;
+		this.health = health;
+		this.attack = attack;
+	}
+	
+	int getHealth() { // 호출할 일이 없다면 불필요
 		return this.health;
 	}
 
@@ -34,7 +40,7 @@ public class Unit {
 
 	void unitInfo() {
 		System.out.println("-----------------------");
-		System.out.println("┌ 유닛명 : " + this.getName());
+		System.out.println("┌ 유닛명 : " + this.getName()); // 같은 클래스 내에서 get을 쓰면 복잡해짐 없애도 무방!
 		System.out.println("│ 체력 : " + this.getHealth());
 		System.out.println("└ 공격력 : " + this.getAttack());
 	}
