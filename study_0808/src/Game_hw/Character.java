@@ -31,6 +31,10 @@ public class Character extends Unit {
 	}
 	
 	void playGame(Monster mob) {
+		this.playGameCommon(mob);
+	}
+	
+	void playGameCommon(Monster mob) {
 		System.out.println(mob.getName() + " 와(과) 전투를 시작하였습니다.");
 		
 		if (this.getAttack() < mob.getHealth()) {

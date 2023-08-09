@@ -11,10 +11,10 @@ public class CharacterJob extends Character {
 	private int criticalAttack;
 
 	Scanner sc = new Scanner(System.in);
-	
+
 	CharacterJob(Unit unit) {
-		unit.setAttack(unit.getAttack()+10);
-		super();
+		super(new Unit(unit.getName(), unit.getHealth(),unit.getAttack() + 10));
+		//Unit 자료형으로 가진 메서드
 	}
 
 	CharacterJob(String name, int health, int attack) {
@@ -64,44 +64,34 @@ public class CharacterJob extends Character {
 		String useSkill = sc.next();
 
 		if (useSkill.equals("예") || useSkill.equals("y")) {
-			this.criticalAttack(mob);
-			if ((this.getAttack() + this.criticalAttack) < mob.getHealth()) {
-				System.out.println(this.getName() + "이 " + mob.getName() + "에게 "
-						+ (this.getAttack() + this.criticalAttack) + "만큼의 데미지를 주었습니다.");
-				
-				mob.setHealth(mob.getHealth() - (this.getAttack() + this.criticalAttack));
-				System.out.println(mob.getName() + "의 남은 체력 : " + mob.getHealth());
-
-			} else if ((this.getAttack() + this.criticalAttack) >= mob.getHealth()) {
-				System.out.println(this.getName() + "이 " + mob.getName() + "에게 "
-						+ (this.getAttack() + this.criticalAttack) + "만큼의 데미지를 주었습니다.");
-				System.out.println(this.getName() + " 이(가) " + mob.getName() + " 을(를) 쓰러뜨렸습니다.");
-				
-				mob.setHealth(mob.getHealth() - (this.getAttack() + this.criticalAttack));
-				this.accumulateExp();
-			}
+			this.playGameSkill(mob);
 		} else {
-			if (this.getAttack() < mob.getHealth()) {
-				System.out
-						.println(this.getName() + "이 " + mob.getName() + "에게 " + this.getAttack() + "만큼의 데미지를 주었습니다.");
-				
-				mob.setHealth(mob.getHealth() - this.getAttack());
-				System.out.println(mob.getName() + "의 남은 체력 : " + mob.getHealth());
+			this.playGameCommon(mob);
+		}
+	}
+	
+	void playGameSkill(Monster mob) {
+		this.criticalAttack(mob);
+		if ((this.getAttack() + this.criticalAttack) < mob.getHealth()) {
+			System.out.println(this.getName() + "이 " + mob.getName() + "에게 "
+					+ (this.getAttack() + this.criticalAttack) + "만큼의 데미지를 주었습니다.");
 
-			} else if (this.getAttack() >= mob.getHealth()) {
-				System.out
-						.println(this.getName() + "이 " + mob.getName() + "에게 " + this.getAttack() + "만큼의 데미지를 주었습니다.");
-				System.out.println(this.getName() + " 이(가) " + mob.getName() + " 을(를) 쓰러뜨렸습니다.");
-				
-				mob.setHealth(mob.getHealth() - this.getAttack());
-				this.setExp();
-			}
+			mob.setHealth(mob.getHealth() - (this.getAttack() + this.criticalAttack));
+			System.out.println(mob.getName() + "의 남은 체력 : " + mob.getHealth());
+
+		} else if ((this.getAttack() + this.criticalAttack) >= mob.getHealth()) {
+			System.out.println(this.getName() + "이 " + mob.getName() + "에게 "
+					+ (this.getAttack() + this.criticalAttack) + "만큼의 데미지를 주었습니다.");
+			System.out.println(this.getName() + " 이(가) " + mob.getName() + " 을(를) 쓰러뜨렸습니다.");
+
+			mob.setHealth(mob.getHealth() - (this.getAttack() + this.criticalAttack));
+			this.accumulateExp();
 		}
 	}
 
 	@Override
 	void playRepeat(Monster mob) {
-		System.out.println("-----------------------");		
+		System.out.println("-----------------------");
 		for (int i = 0; i >= 0; i++) {
 			if (mob.getHealth() <= 0) {
 				break;
