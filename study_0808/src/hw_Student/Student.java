@@ -18,6 +18,7 @@ public class Student {
 		this.age = age;
 		this.major = major;
 		this.majorNum = majorNumber();
+		setMajorList();
 	}
 
 	String getName() {
@@ -61,7 +62,7 @@ public class Student {
 		} else if (major.equals("무용과")) {
 			majorNum = 456000;
 		} else {
-			majorNum = 567000;
+			majorNum = 999000;
 		}
 		return majorNum;
 	}

@@ -6,9 +6,16 @@ package hw_AreaCal;
 public class Main {
 	public static void main(String[] args) {
 		
-		Figure figure = new Figure();
+		Circle circle = new Circle();
+		System.out.println(circle.toString(2));
 		
-		System.out.println(figure.length);
+		Square square = new Square();
+		System.out.println(square.toString(4));
+		System.out.println(square.toString(4, 7));
+		System.out.println(square.toString(2, 3, 5));
+		
+		Triangle triangle = new Triangle();
+		System.out.println(triangle.toString(3, 4));
 
 	}
 }
