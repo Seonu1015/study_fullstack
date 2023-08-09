@@ -12,6 +12,11 @@ public class Class01 {
 		System.out.println(counter1.count);
 		System.out.println(counter2.count);
 		System.out.println(counter3.count);
+
+//		결국 위와 같은 표현방식이다
+//		System.out.println(Counter.count);
+//		System.out.println(Counter.count);
+//		System.out.println(Counter.count);
 		
 		int result = MathUtils.sun(5, 3);
 		System.out.println(result);
@@ -27,7 +32,7 @@ public class Class01 {
 		
 	}
 	
-	static void printCount() { // 같은 위치에서 끌고 와줘야 한다
+	static void printCount() { // 같은 위치에서 끌고 와줘야 한다 <- 여기서 static을 지우면 위 printCount();에 빨간 줄
 		System.out.println("카운트는 ??");
 	}
 	
@@ -36,11 +41,11 @@ public class Class01 {
 class Counter {
 	static int count=0;
 	
-	Counter() {
+	Counter() { // 여기에 private를 작성하면 Counter라는 객체를 절대 만들 수 없게된다.
 		count++;
 	}
 	
-	Counter(int count) { // 정보 은닉
+	Counter(int count) { // 앞에 private를 붙이면 정보 은닉
 		
 	}
 }
@@ -49,10 +54,10 @@ class Singleton {
 	private static int count=0;
 	private static Singleton singleton;
 	
-	private Singleton() {
-		count++;
-	}
-	
+	private Singleton() { // 이렇게 되면 객체를 만들 수 없게된다 그래서 객체를 생성하는 메서드를 만들자!
+		count++;								//↓
+	}											//↓
+												//↓
 	public static Singleton getInstance() { // 이 부분이 없다면 이 클래스는 사용할 방도가 없다
 		if(count==0) {
 			singleton = new Singleton();
@@ -61,7 +66,7 @@ class Singleton {
 	}
 }
 
-class MathUtils {
+class MathUtils { // 메소드를 공유
 	static int sun(int a, int b) {
 		return a+b;
 	}

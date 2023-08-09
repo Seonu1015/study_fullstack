@@ -13,6 +13,7 @@ public class Student20 extends Student {
     }
 	
     int setStudentNum() {
+    	
         int currentStudentNumber = studentNumberInit + this.getMajorNum()+ count;
         count++;
         return currentStudentNumber;

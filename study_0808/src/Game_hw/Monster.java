@@ -32,9 +32,9 @@ public class Monster extends Unit {
 	@Override
 	void unitInfo() {
 		System.out.println("-----------------------");
-		System.out.println("몬스터명(" + this.type + "속성) : " + this.getName());
-		System.out.println("체력 : " + this.getHealth());
-		System.out.println("공격력 : " + this.getAttack());
+		System.out.println("┌ 몬스터명(" + this.type + "속성) : " + this.getName());
+		System.out.println("│ 체력 : " + this.getHealth());
+		System.out.println("└ 공격력 : " + this.getAttack());
 	}
 
 }

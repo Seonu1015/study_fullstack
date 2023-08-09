@@ -2,7 +2,7 @@ package hw_Movie;
 
 public class SFMovie extends Movie{
 	
-	private static final String GENRE = "SF";
+	private static final String genre = "SF";
 	
 	SFMovie(String title, int duration) {
 		super(title, duration);
@@ -15,6 +15,6 @@ public class SFMovie extends Movie{
 	
 	@Override
 	void displayGenre() {
-        System.out.println("장르 : " + GENRE);
+        System.out.println("장르 : " + genre);
     }
 }

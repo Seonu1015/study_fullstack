@@ -45,14 +45,14 @@ public class Student {
 		return majorNum;
 	}
 	
-//    public static final String MAJOR_KOREAN = "국문과";
-//    public static final int MAJOR_NUM_KOREAN = 123400;
-//    public static final String MAJOR_MATH = "수학과";
-//    public static final int MAJOR_NUM_MATH = 234500;
-//    public static final String MAJOR_BUSINESS = "경영학과";
-//    public static final int MAJOR_NUM_BUSINESS = 345600;
-//    public static final String MAJOR_DANCE = "무용과";
-//    public static final int MAJOR_NUM_DANCE = 456700;
+//    public static final String majorKorean = "국문과";
+//    public static final int majorNumKorean = 123400;
+//    public static final String majorMath = "수학과";
+//    public static final int majorNumMath = 234500;
+//    public static final String majorBusiness = "경영학과";
+//    public static final int majorNumBusiness = 345600;
+//    public static final String majorDance = "무용과";
+//    public static final int majorNumDance = 456700;
 
 	void studentInfo() {
 		System.out.println("이름 : " + this.getName() + ", 나이 : " + this.getAge() + ", 전공 : " + this.getMajor());
