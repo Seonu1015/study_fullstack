@@ -1,11 +1,17 @@
 package hw_Student;
 
+import java.util.ArrayList;
+
 public class Student {
 
 	private String name;
 	private int age;
 	private String major;
 	private int majorNum;
+	
+	Student() {
+		
+	}
 
 	Student(String name, int age, String major) {
 		this.name = name;
@@ -25,6 +31,18 @@ public class Student {
 	String getMajor() {
 		return this.major;
 	}
+		
+	static ArrayList<String> majorList = new ArrayList<>();
+	
+	ArrayList<String> getMajorList() {
+		return this.majorList;
+	}
+	
+	void setMajorList() {
+		// ArrayList 안에 있다면 입력하지 않고 없다면 추가!
+		majorList.add(major);
+		System.out.println(majorList);
+	}
 
 	int getMajorNum() {
 		return this.majorNum;
@@ -32,15 +50,15 @@ public class Student {
 
 	int majorNumber() {
 		if (major.equals("국문과")) {
-			majorNum = 123400;
+			majorNum = 123000;
 		} else if (major.equals("수학과")) {
-			majorNum = 234500;
+			majorNum = 234000;
 		} else if (major.equals("경영학과")) {
-			majorNum = 345600;
+			majorNum = 345000;
 		} else if (major.equals("무용과")) {
-			majorNum = 456700;
+			majorNum = 456000;
 		} else {
-			majorNum = 567800;
+			majorNum = 567000;
 		}
 		return majorNum;
 	}

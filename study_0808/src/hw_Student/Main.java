@@ -33,5 +33,19 @@ public class Main {
 		//Student22 student221 = new Student22("A", 21, "경영학과");
 		//student221.studentInfo();
 		
+		
+		student201.setMajorList();
+		student202.setMajorList();
+		student203.setMajorList();
+		student204.setMajorList();
+		student205.setMajorList();
+		student206.setMajorList();
+		student207.setMajorList();
+		student208.setMajorList();
+		student209.setMajorList();
+		student2010.setMajorList();
+		student2011.setMajorList();
+		student2012.setMajorList();
+		
 	}
 }
