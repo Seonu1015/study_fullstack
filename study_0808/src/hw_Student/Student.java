@@ -33,15 +33,18 @@ public class Student {
 	}
 		
 	static ArrayList<String> majorList = new ArrayList<>();
+	// 생성된 객체가 해당 어레이리스트를 "공유"해서
+	// 어레이리스트 안에 쌓이게 하려면 static!!
 	
 	ArrayList<String> getMajorList() {
 		return this.majorList;
 	}
 	
 	void setMajorList() {
-		// ArrayList 안에 있다면 입력하지 않고 없다면 추가!
-		majorList.add(major);
-		System.out.println(majorList);
+		if(!majorList.contains(major)) {
+			majorList.add(major);
+			System.out.println(majorList);
+		}
 	}
 
 	int getMajorNum() {

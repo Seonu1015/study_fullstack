@@ -13,8 +13,8 @@ public class ComedyMovie extends Movie{
 		System.out.println("영화 \"" + title +"\"을 재생합니다. 총 " + duration+"분의 상영 시간입니다.");
 	}
 	
-	@Override
-	void displayGenre() {
+	
+	static final void displayGenre() {
         System.out.println("장르 : " + genre);
     }
 }

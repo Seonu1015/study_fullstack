@@ -16,36 +16,27 @@ public class Main {
 		Student20 student2011 = new Student20("B", 23, "국문과");		
 		Student20 student2012 = new Student20("C", 24, "수학과");
 		
-		student201.studentInfo();
-		student202.studentInfo();
-		student203.studentInfo();
-		student204.studentInfo();
-		student205.studentInfo();
-		student206.studentInfo();
-		student207.studentInfo();
-		student208.studentInfo();
-		student209.studentInfo();
-		student2010.studentInfo();
-		student2011.studentInfo();
-		student2012.studentInfo();
+//		student201.studentInfo();
+//		student202.studentInfo();
+//		student203.studentInfo();
+//		student204.studentInfo();
+//		student205.studentInfo();
+//		student206.studentInfo();
+//		student207.studentInfo();
+//		student208.studentInfo();
+//		student209.studentInfo();
+//		student2010.studentInfo();
+//		student2011.studentInfo();
+//		student2012.studentInfo();
 		
 		
 		//Student22 student221 = new Student22("A", 21, "경영학과");
 		//student221.studentInfo();
 		
-		
-		student201.setMajorList();
-		student202.setMajorList();
-		student203.setMajorList();
-		student204.setMajorList();
-		student205.setMajorList();
-		student206.setMajorList();
-		student207.setMajorList();
-		student208.setMajorList();
-		student209.setMajorList();
-		student2010.setMajorList();
-		student2011.setMajorList();
 		student2012.setMajorList();
 		
+//		System.out.println(student2012.majorList.size());
+//		
+//		student2012.setcount();
 	}
 }
