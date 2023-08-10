@@ -8,6 +8,7 @@ public class Main {
 
 		Circle circle = new Circle();
 		System.out.println(circle.toString(2));
+		
 
 		Square square = new Square();
 		System.out.println(square.toString(4));

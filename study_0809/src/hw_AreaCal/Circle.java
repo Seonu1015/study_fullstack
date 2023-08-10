@@ -3,7 +3,7 @@ package hw_AreaCal;
 public class Circle extends Figure {
 
 	private double radius;
-	static final double pi = 3.14;
+	private static final double pi = 3.14;
 
 	public Circle() {
 		super("원");
