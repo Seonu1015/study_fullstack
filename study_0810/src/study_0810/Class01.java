@@ -83,6 +83,8 @@ class Tiger extends Animal {
 //Parent p2 = new Child(); <- 가능!
 //Child c2 = new Parent(); <- 불가능!
 //Person pp = new Person();
+//Child c2 = (Child)P2;
+
 
 //참조 변수의 타입변환 (캐스팅)
 //p1(new Parent), p2(new Child)

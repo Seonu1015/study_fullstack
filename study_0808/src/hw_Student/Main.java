@@ -22,28 +22,32 @@ public class Main {
 		Student student2012 = new Student20("C", 24, "수학과");
 		Student student2013 = new Student20("A", 23, "유아교육과");
 		Student student2014 = new Student20("B", 23, "통계학과");		
-		Student student2015 = new Student20("C", 24, "법학과");
+		Student student2015 = new Student20("C", 24, "영문과");
 		
-		student201.studentInfo();
-		student202.studentInfo();
-		student203.studentInfo();
-		student204.studentInfo();
-		student205.studentInfo();
-		student206.studentInfo();
-		student207.studentInfo();
-		student208.studentInfo();
-		student209.studentInfo();
-		student2010.studentInfo();
-		student2011.studentInfo();
-		student2012.studentInfo();
-		student2013.studentInfo();
-		student2014.studentInfo();
-		student2015.studentInfo();
+//		student201.studentInfo();
+//		student202.studentInfo();
+//		student203.studentInfo();
+//		student204.studentInfo();
+//		student205.studentInfo();
+//		student206.studentInfo();
+//		student207.studentInfo();
+//		student208.studentInfo();
+//		student209.studentInfo();
+//		student2010.studentInfo();
+//		student2011.studentInfo();
+//		student2012.studentInfo();
+//		student2013.studentInfo();
+//		student2014.studentInfo();
+//		student2015.studentInfo();
 		
+		// student2012.setMajorList();
 		
-
-		
-
+//		System.out.println("----------------------------------");		
+//		Student.countMajorStudent();
+//		System.out.println("----------------------------------");
+//		Student.majorStudentsInfo();
+		System.out.println("----------------------------------");
+		Student.searchStudentInfo();
 		
 	}
 }

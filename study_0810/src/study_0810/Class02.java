@@ -44,6 +44,6 @@ public class Class02 {
 //p1 instanceof Parent -> p1 클래스가 Parent야? true
 //p1 instanceof Object -> p1 클래스가 Object야? true
 
-//c1 instanceof Child -> p1 클래스가 Child야? true
-//c1 instanceof Parent -> p1 클래스가 Parent야? true
-//c1 instanceof Object -> p1 클래스가 Object야? true
+//c1 instanceof Child -> c1 클래스가 Child야? true
+//c1 instanceof Parent -> c1 클래스가 Parent야? true
+//c1 instanceof Object -> c1 클래스가 Object야? true

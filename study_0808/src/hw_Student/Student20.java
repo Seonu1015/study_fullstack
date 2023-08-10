@@ -28,6 +28,10 @@ public class Student20 extends Student {
 //        }
 		this.studentNumber = setStudentNum();
 	}
+	
+	int getStudentNum() {
+		return studentNumber;
+	}
 
 	int getMajorIndex() {
 		for (int i = 0; i < MAJORS.length; i++) {
@@ -83,7 +87,6 @@ public class Student20 extends Student {
 
 	@Override
 	void studentInfo() {
-		System.out.println();
 		System.out.print("학번 : " + studentNumber + " ");
 		super.studentInfo();
 	}
