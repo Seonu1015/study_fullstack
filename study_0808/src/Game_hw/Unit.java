@@ -44,5 +44,14 @@ public class Unit {
 		System.out.println("│ 체력 : " + this.getHealth());
 		System.out.println("└ 공격력 : " + this.getAttack());
 	}
+	
+//	@Override
+//	public boolean equals(Object obj) {
+//		if(obj instanceof Unit) {
+//			Unit unit = (Unit) obj;
+//			return this.name == obj.name && (this.level == unit.level);
+//		}
+//		return false;
+//	}
 
 }

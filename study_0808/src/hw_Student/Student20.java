@@ -85,7 +85,7 @@ public class Student20 extends Student {
 	void studentInfo() {
 		System.out.println();
 		System.out.print("학번 : " + studentNumber + " ");
-		System.out.println("이름 : " + this.getName() + ", 나이 : " + this.getAge() + ", 전공 : " + this.getMajor());
+		super.studentInfo();
 	}
 
 }

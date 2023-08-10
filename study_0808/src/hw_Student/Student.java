@@ -19,6 +19,7 @@ public class Student {
 		this.major = major;
 		this.majorNum = majorNumber();
 		setMajorList();
+		//addStudents(student);
 	}
 
 	String getName() {
@@ -44,7 +45,7 @@ public class Student {
 	void setMajorList() {
 		if(!majorList.contains(major)) {
 			majorList.add(major);
-			System.out.println(majorList);
+			//System.out.println(majorList);
 		}
 	}
 
@@ -78,6 +79,22 @@ public class Student {
 
 	void studentInfo() {
 		System.out.println("이름 : " + this.getName() + ", 나이 : " + this.getAge() + ", 전공 : " + this.getMajor());
+	}
+	
+	
+//	public boolean equals(Object obj) {
+//		if(obj instanceof Student) {
+//			Student student = (Student) obj;
+//			return majorList.get(0).equals(obj);
+//		}
+//		return false;
+//	} // 이거 뭔가 잘못됐다....
+	
+	ArrayList<Student> students = new ArrayList<>();
+	
+	void addStudents(Student student) {
+		students.add(student);
+		
 	}
 
 }
