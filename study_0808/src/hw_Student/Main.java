@@ -42,10 +42,10 @@ public class Main {
 		
 		// student2012.setMajorList();
 		
-//		System.out.println("----------------------------------");		
-//		Student.countMajorStudent();
-//		System.out.println("----------------------------------");
-//		Student.majorStudentsInfo();
+		System.out.println("----------------------------------");		
+		Student.countMajorStudent();
+		System.out.println("----------------------------------");
+		Student.majorStudentsInfo();
 		System.out.println("----------------------------------");
 		Student.searchStudentInfo();
 		
