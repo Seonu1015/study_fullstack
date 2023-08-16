@@ -22,8 +22,9 @@
 # print(lst)
 # 이건 살짝 아쉬운 답, 숫자값이 바뀌어도 진행이 가능하도록!
 
+s = 123456
 lst = []
-while s > 0 :
+while s > 0:
     a = s % 10
     lst.insert(0, a)
     s //= 10
@@ -34,23 +35,20 @@ print(lst)
 a = [3, 6, 9, 20, -7, 5]
 
 for i in range(len(a)):
-    for j in range(i+1, len(a)):
-        if a[i] > a[j] :
+    for j in range(i + 1, len(a)):
+        if a[i] > a[j]:
             a[i], a[j] = a[j], a[i]
 print(a)
 
 # 3번.
 # lst = [[0, 0], [0, 0], [0, 0], [0, 0], [0, 0]]
 
-r = 5
-c = 2
-num = 1
-
 lst = []
-for i in range(r):
-    r = []
-    for j in range(c):
-        r.append(num)
+num = 1
+for i in range(5):
+    temp = []
+    for j in range(2):
+        temp.append(num)
         num += 1
-    lst.append(r)
+    lst.append(temp)
 print(lst)
