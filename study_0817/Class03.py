@@ -78,7 +78,7 @@ print(fruit_list)
 print("====================================")
 
 fruit = "carrotapplecornpear"  # 만약 구분자가 없다면, 단어 데이터베이스를 만들어서 진행
-fruit_list = ['apple', 'pear', 'corn', 'carrot']
+fruit_list = ['apple', 'pear', 'corn', 'carrot']  # 임시 데이터베이스
 lst = []
 s = 0
 for i in range(len(fruit)):
@@ -86,5 +86,18 @@ for i in range(len(fruit)):
         lst.append(fruit[s:i])
         s = i
 lst.append(fruit[s:len(fruit)])
+print(lst)
+
+fruit = "carrotapplecornpear"
+fruit_list = ['apple', 'pear', 'corn', 'carrot']
+lst = []
+s = ''
+for i in fruit:
+    s += i
+    if s in fruit_list:
+        lst.append(s)
+        s = ''
+if s in fruit_list:
+    lst.append(s)
 print(lst)
 

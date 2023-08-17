@@ -25,3 +25,6 @@ print(lst)
 # 컴퓨터가 반복문을 돌려서 찾는거라 결국 같은 표현이나 마찬가지
 # 꺼내서 생각해보는 것도 좋을 것 같다!
 
+lst =[]
+lst = person1 - person2
+print(lst)
