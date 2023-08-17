@@ -1,7 +1,7 @@
 # 리스트에서 공통된 요소를 찾아보자
 
-person1 = ["치킨", "피자", "족발", "삼겹살"]
-person2 = ["김밥", "김치찌개", "삼겹살", "치킨"]
+person1 = ["치킨", "김치찌개", "족발", "삼겹살"]
+person2 = ["김밥", "보쌈", "삼겹살", "치킨"]
 person3 = ["치킨", "김치찌개", "떡볶이", "초밥", "삼겹살", "족발", "햄버거", "보쌈", "한우", "아이스크림"]
 
 lst =[]
@@ -22,9 +22,13 @@ for i in range(len(person1)):
 lst = set(lst)
 print(lst)
 
-# 컴퓨터가 반복문을 돌려서 찾는거라 결국 같은 표현이나 마찬가지
+# 컴퓨터가 반복문을 돌려서 찾는거라 결국 연산횟수는 같음
 # 꺼내서 생각해보는 것도 좋을 것 같다!
 
-lst =[]
-lst = person1 - person2
-print(lst)
+lst=[]
+for i in person1:
+    if i in person2 and i in person3:
+        lst.append(i)
+print(set(lst))
+
+# 같은 거 아닌가? 아무리 생각해도 줄일 방법이 떠오르지 않음

@@ -22,15 +22,21 @@ a = [i * j for i in range(2, 10) for j in range(1, 10)]
 print(a)
 
 a = [0 for i in range(100)]
+# a = [i-i for i in range(100)] <- 이렇게도 생각할 수 있다
+a = [0 for _ in range(10)]
 print(a)
 
 word = ["school", "game", "piano", "science", "hotel", "mountian"]
 wordSix = [word[i] for i in range(len(word)) if len(word[i]) >= 6]
+a = [i for i in word if len(i) >= 6]
 print(wordSix)
+print(a)
 
 word = ["school", "game", "piano", "science", "hotel", "mountian"]
 wordLen = [len(word[i]) for i in range(len(word))]
+a = [len(i) for i in word]
 print(wordLen)
+print(a)
 
 # o를 포함하는 단어
 word = ["school", "game", "piano", "science", "hotel", "mountian"]
