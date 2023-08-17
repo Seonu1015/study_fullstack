@@ -41,7 +41,6 @@ print(lst)
 # 2번
 
 a = [3, 6, 9, 20, -7, 5]
-
 for i in range(len(a)):
     for j in range(i + 1, len(a)):
         if a[i] > a[j]:
@@ -60,3 +59,4 @@ for i in range(5):
         num += 1
     lst.append(temp)
 print(lst)
+
