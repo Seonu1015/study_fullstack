@@ -52,8 +52,9 @@ person3 = ["치킨", "김치찌개", "떡볶이", "초밥", "삼겹살", "족발
 lst =[]
 for i in range(len(person1)):
     for j in range(len(person2)):
-        if person1[i] == person2[j]:
-            lst.append(person1[i])
+        for k in range(len(person3)):
+            if person1[i] == person2[j] and person1[i] == person3[k]:
+                lst.append(person1[i])
 lst = set(lst)
 print(lst)
 
