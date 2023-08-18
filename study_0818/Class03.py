@@ -68,7 +68,6 @@ print('\n'.join(star4))
 star5 = [' ' * i + '*' * (5 - i) for i in range(5)]
 print('\n'.join(star5))
 
-
 # 리버스를 써보자
 print("--------------------------")
 lst = []
@@ -95,4 +94,12 @@ for i in range(5):
 for i in lst:
     i.reverse()
 for i in lst:
+    print(i)
+
+star = [" " * i + "* " * (5 - i) for i in range(5)]
+for i in star:
+    print(i)
+
+star = [" " * i + "* " * (5 - i) for i in range(5)]
+for i in reversed(star):
     print(i)

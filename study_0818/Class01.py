@@ -60,3 +60,4 @@ for num in range(2, 101):
     if isPrime:
         a.append(num)
 print("100 이하의 소수 : ", a)
+
