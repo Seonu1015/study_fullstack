@@ -29,6 +29,11 @@ lst=[]
 for i in person1:
     if i in person2 and i in person3:
         lst.append(i)
+        print(lst)
 print(set(lst))
 
 # 같은 거 아닌가? 아무리 생각해도 줄일 방법이 떠오르지 않음
+
+lst1 = [i for i in person1 if i in person2]
+lst2 = [i for i in lst1 if i in person3]
+print(set(lst2))

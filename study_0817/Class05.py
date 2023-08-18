@@ -36,14 +36,14 @@ print(a)
 
 a = []
 for num in range(2, 101):
-    is_prime = True
+    isPrime = True
     for i in range(2, num):
         if num % i == 0:
-            is_prime = False
+            isPrime = False
             break
-    if is_prime:
+    if isPrime:
         a.append(num)
-print(a)
+print("100 이하의 소수 : ", set(a))
 
 a = [num for num in range(2, 101) if all(num % i != 0 for i in range(2, num))]
 print(a)
