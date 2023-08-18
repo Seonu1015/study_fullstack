@@ -22,8 +22,17 @@ print("100 이하의 소수 : ", a)
 number = [i + 1 for i in range(10)]  # 1...10
 lst = [x for x in number if x % 2 == 0]
 
+# all
 res = all(x % 2 == 0 for x in number)
 print(res)
-
 res = all(x % 2 == 0 for x in lst)
 print(res)
+
+# any
+res = any(x == 5 for x in number)
+print(res)
+res = any(x == 5 for x in lst)
+print(res)
+
+a = [x for x in range(2, 101) if all(x % i != 0 for i in range(2, x))]
+print("100 이하의 소수 : ", a)

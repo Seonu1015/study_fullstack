@@ -9,13 +9,13 @@ for i in range(len(a)):
     lst.append(temp)
 print(lst)
 
-# for x, y in lst:
-#     print(x, y)
-#
-# for i in lst:
-#     for j in i:
-#         print(j, end=' ')
-#     print()
+for x, y in lst:
+    print(x, y)
+
+for i in lst:
+    for j in i:
+        print(j, end=' ')
+    print()
 
 # [[1,2],[3,4],[5,6]] 리스트 컴프리핸션으로 만들기
 # 2차원 10X10 리스트 0으로 채우기 리스트 컴프리핸션으로 만들기
