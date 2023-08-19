@@ -8,21 +8,20 @@ def f_odd(a, b):
     if a % 2 == 1:
         print(a, end=" ")
     f_odd(a + 1, b)
-f_odd(1, 10)
 
+f_odd(1, 10)
 print()
 
 
 # 피보나치 수열 1 1 2 3 5 8 13 21 34 ... 몇 번째 피보나치 수열을 구할 것인가
 # fibo(6) = 8
-# fibo(0) = 0 / fibo(1) = 1 / fibo(2) = 1 / fibo(3) = 2 / fibo(4) = 3
+# fibo(0) = 0 / fibo(1) = 1 / fibo(2) = 1 / fibo(3) = 2 / fibo(4) = 3 / fibo(5) = 5
 def fibo(n):
     if n == 0:
         return 0
     if n == 1:
         return 1
     return fibo(n-1) + fibo(n-2)
-    fibo(n-1)
 
 print(fibo(6))
 
@@ -36,5 +35,6 @@ def binary(n):
         return
     binary(n // 2)
     print(n % 2, end="")
+
 binary(2)
 print()
