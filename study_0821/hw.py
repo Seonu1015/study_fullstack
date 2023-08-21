@@ -23,7 +23,7 @@ print(list(filter(lambda x: x.find(".jpg") != -1, files)))
 
 # 숙제
 files = ["memo.txt", "1.jpg", "32.jpgpg", "23.jpg", "223.jpg"]
-print(list(filter(lambda x: x[len(x) - 4:len(x)] == ".jpg", files)))
+print(list(filter(lambda x: x[len(x) - 4:] == ".jpg", files)))
 
 # 코드를 좀 깔끔하게 정리해보자!!
 
