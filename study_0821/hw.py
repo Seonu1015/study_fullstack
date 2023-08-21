@@ -10,6 +10,17 @@ def flatten(data, temp=[]):
     return temp
 print(flatten(example))
 
+def flatten(data):
+    temp = []
+    for i in data:
+        if type(i) == list:
+            temp += flatten(i)
+        else:
+            temp.append(i)
+            # print("temp : ", temp)
+    return temp
+print(flatten(example))
+
 # [1,2,3] 까지 출력해서 고정하고 이런 식으로 진행하면....
 
 
