@@ -111,6 +111,9 @@ numbers = [12, 32, 55, 12, 32, 4, 86, 50]
 lst = map(lambda x: "합격" if x > 60 else "대기" if x > 50 and x <= 60 else "불합격", numbers)
 print(list(lst))
 
+numbers = [12, 32, 55, 12, 32, 4, 86, 50]
+print(list(map(lambda x: "합격" if x > 60 else "대기" if x > 50 else "불합격", numbers)))
+                                                    # 컴퓨터는 순서대로 진행하기 때문에 and x <= 60 빼도 된다.
 
 def findJPG(x):
     return ".jpg" in x
@@ -125,5 +128,6 @@ lst = filter(lambda x: ".jpg" in x, files)
 print(list(lst))
 
 files = ["memo.txt", "1.jpg", "32.png", "23.jpg", "223.jpg"]
-lst = filter(lambda x: ".jpg", files)
-print(list(lst))
+print(list(filter(lambda x: x.find(".jpg") != -1, files)))
+
+# in, .jpg 사용하지 않고

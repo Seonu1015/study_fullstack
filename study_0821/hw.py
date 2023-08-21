@@ -14,3 +14,13 @@ def flatten(data):
 flatten(example)
 
 # [1,2,3] 까지 출력해서 고정하고 이런 식으로 진행하면....
+
+
+# in, .jpg 사용하지 않고 아래 코드 다시 작성해보기
+
+files = ["memo.txt", "1.jpg", "32.png", "23.jpg", "223.jpg"]
+lst = filter(lambda x: ".jpg" in x, files)
+print(list(lst))
+
+files = ["memo.txt", "1.jpg", "32.png", "23.jpg", "223.jpg"]
+print(list(filter(lambda x: x.find(".jpg") != -1, files)))
