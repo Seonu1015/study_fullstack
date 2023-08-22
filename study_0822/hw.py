@@ -35,4 +35,4 @@ while i < len(str):
         i += 1
 print(count)
 
-# 숙제3 Class03 Atm 부분 마무리하기 - 완료
+# 숙제3 Class03 Atm 부분 마무리하기
