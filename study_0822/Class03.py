@@ -62,13 +62,18 @@ class AtmAccount(Account):
             print("만원 단위로만 출금이 가능합니다.")
             return
         print("출금하려는 지폐 단위를 선택해주세요.")
-        select = int(input("1. 5만원권 최대한 많이 | 2. 5만원권 선택, 나머지 만원권 : | 3. 1만원권만"))
-        # 케이스 추가하기
+        select = int(input("1. 5만원권 최대한 많이 | 2. 5만원권 선택, 나머지 만원권 | 3. 1만원권만 :"))
         a = amount // 50000
         b = (amount - ((amount // 50000) * 50000)) // 10000
         c = amount // 10000
         if select == 1:
             print("5만원권 : {}장, 1만원권 : {}장".format(a, b))
+        elif select == 2:
+            count = int(input("5만원권을 몇장 선택하시겠습니까? : "))
+            if count * 50000 > amount:
+                print("출금하려는 금액보다 많이 선택하셨습니다.")
+            else:
+                print("5만원권 : {}장, 1만원권 : {}장".format(count, (amount - (count * 50000)) // 10000))
         else:
             print("1만원권 : {}장".format(c))
         super().set_balance(-amount)
