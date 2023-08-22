@@ -17,15 +17,22 @@ print(len(list(filter(lambda x: x == "jpg", [str[i:i+3] for i in range(len(str)-
 # 숙제1 gpjgpj가 몇개 있는지 gpjgpjgpj - 1개 (겹치는건 체크되지 않게끔)
 str = "jpgpgjgpjpgjgpjgpjgpjpgjpjgp"
 
+# str = "gpjgpjgpjgpjgpjgpjgpjgpjgpj"
+# count = 0
+# for i in range(len(str)-5):
+#     if str[i:i + 6] == "gpjgpj":
+#         count += 1
+# print(count)
+
 str = "gpjgpjgpjgpjgpjgpjgpjgpjgpj"
 count = 0
-x = range(len(str)-6)
-for i in x:
-    if str[i:i + 6] == "gpjgpj":
+i = 0
+while i < len(str):
+    if str[i:i+6] == "gpjgpj":
         count += 1
-        print("count", count, i, "번째 ", str[i:i+6])
-        x = range(i+6, len(str))
-        # str = str[i+6:]
+        i += 6
+    else:
+        i += 1
 print(count)
 
 # 숙제3 Class03 Atm 부분 마무리하기 - 완료
