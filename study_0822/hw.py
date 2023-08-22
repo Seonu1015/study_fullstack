@@ -24,3 +24,5 @@ for i in x:
         x = range(i+6, len(str))
         # str = str[i+6:]
 print(count)
+
+# 숙제3 Class03 Atm 부분 마무리하기
