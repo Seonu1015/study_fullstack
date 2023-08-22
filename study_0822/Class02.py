@@ -13,7 +13,7 @@ class Student:
         return self._grade
 
     def studentInfo(self):
-        print("이름 : {}, 학년 : {}, 학번 : {}".format(self._name, self._grade, self._studentNumber))
+        return print("이름 : {}, 학년 : {}, 학번 : {}".format(self._name, self._grade, self._studentNumber))
 
 
 stud1 = Student(name="우리")
@@ -112,7 +112,7 @@ class Student23(Student):
 student = []
 for i in range(4):
     student.append(Student20())
-print(len(student))
+# print(len(student))
 
 for i in student:
     i.studentInfo()
