@@ -24,15 +24,20 @@ class Pizza(Food):
     def __init__(self, name, price, crust, *topping):
         super().__init__(name, price)
         self._crust = crust
-        self._topping = topping
+        self._topping = []
+        for i in topping:
+            if type(i) == list:
+                self._topping += i
+            else :
+                self._topping.append(i)
         self.set_topping()
 
-    def get_topping(self):
-        return self._topping
-
-    def set_topping(self):
-        while type(self._topping) == list:
-            self._topping += self._topping
+    # def get_topping(self):
+    #     return self._topping
+    #
+    # def set_topping(self):
+    #     while type(self._topping) == list:
+    #         self._topping += self._topping
 
     def add_topping(self, *toppingadd):
         if type(toppingadd) == list:
