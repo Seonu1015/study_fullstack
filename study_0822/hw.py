@@ -22,12 +22,12 @@ str = "jpgpgjgpjpgjgpjgpjgpjpgjpjgp"
 # for i in range(len(str)-5):
 #     if str[i:i + 6] == "gpjgpj":
 #         count += 1
-# print(count)
+# print(count) <- 겹치는 부분이 중복으로 카운트 되고 있음
 
 str = "gpjgpjgpjgpjgpjgpjgpjgpjgpj"
 count = 0
 i = 0
-while i < len(str):
+while i < len(str)-5:
     if str[i:i+6] == "gpjgpj":
         count += 1
         i += 6

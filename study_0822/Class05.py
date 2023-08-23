@@ -18,12 +18,16 @@ class Food(metaclass=ABCMeta):
         pass
 
 class Pizza(Food):
-    def __init__(self, name, price, topping, crust):
+    def __init__(self, name, price, crust, *topping):
         super().__init__(name, price)
-        self._topping = topping
+        self._topping = ", ".join(topping)
         self._crust = crust
+
     def order(self):
-        print("{} 크러스트에 {}을 올린 피자 : {}원 결제해주세요.".format(self._crust, self._topping, super().get_price()))
+        print("{} 크러스트에 {}을 올린 {} 피자 : {}원 결제해주세요.".format(self._crust, self._topping, super().get_name(), super().get_price()))
+
+pizza1 = Pizza("콤비네이션", 27900, "치즈", "페퍼로니", "미트볼")
+pizza1.order()
 
 class Hamburger(Food):
     def __init__(self, name, price):
@@ -34,8 +38,9 @@ class Hamburger(Food):
             super().set_price(super().get_price()+1500)
             print("총 결제 금액은 {}원 입니다.".format(super().get_price()))
 
-# burger1 = Hamburger("치즈버거", 2100)
-# burger1.order()
+burger1 = Hamburger("치즈버거", 2100)
+burger1.order()
+
 class Kimbap(Food):
     def __init__(self, name, price, type):
         super().__init__(name, price)
