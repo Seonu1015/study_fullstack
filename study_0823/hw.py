@@ -1,6 +1,7 @@
 # 음식 (추상클래스) - 피자, 햄버거, 김밥
 # 매개변수에 리스트를 넣을 수도, 가변인수로 여러개를 넣을 수도 있는 경우까지 만들어보자 <- Pizza에서 만드는 중
 # 숙제1 - topping, addTopping() -> 리스트, 값 여러개, 값 하나
+# hw02에 강사님이 작성한 코드 일부가 있음
 
 from abc import *
 
@@ -23,12 +24,15 @@ class Pizza(Food):
     def __init__(self, name, price, crust, *topping):
         super().__init__(name, price)
         self._crust = crust
-        self._topping = []
-        if type(topping) == list:
-            self._topping += topping
-        else:
-            self._topping = topping
+        self._topping = topping
+        self.set_topping()
 
+    def get_topping(self):
+        return self._topping
+
+    def set_topping(self):
+        while type(self._topping) == list:
+            self._topping += self._topping
 
     def add_topping(self, *toppingadd):
         if type(toppingadd) == list:
@@ -36,7 +40,7 @@ class Pizza(Food):
         elif type(toppingadd) == str:
             self._topping += ", " + toppingadd
     def order(self):
-        print("{} 크러스트에 토핑은 {}인 {} 피자 : {}원 결제해주세요.".format(self._crust, ", ".join(self._topping), super().get_name(), super().get_price()))
+        print("{} 크러스트에 토핑은 {}인 {} 피자 : {}원 결제해주세요.".format(self._crust, self.get_topping(), super().get_name(), super().get_price()))
 
 pizza1 = Pizza("콤비네이션", 27900, "치즈", ["페퍼로니", "미트볼"])
 pizza1.order()
