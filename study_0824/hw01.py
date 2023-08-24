@@ -28,15 +28,18 @@ def write_stud():
     }
 
     with open("score_lst.p", "wb") as f:
-        for i in range(6):  # 반복문 사용해서 처리해보자
-            pickle.dump(stud_score, f)
+        pickle.dump(stud_score, f)
 
 def read_stud():
-    with open("score_lst.p", "rb") as f:
-        data = pickle.load(f)
-        print("[{}] 이름 : {}, 수학 : {}, 과학 : {}, 영어 : {}".format(0, data["이름"], data["수학"], data["과학"],
-                                                                   data["영어"]))
-        return data
+    try:
+        with open("score_lst.p", "rb") as f:
+            data = pickle.load(f)
+            for i in range(len(data)):
+                print("[{}] 이름 : {}, 수학 : {}, 과학 : {}, 영어 : {}".format(i, data[i]["이름"], data[i]["수학"], data[i]["과학"],
+                                                                       data[i]["영어"]))
+            return data
+    except FileNotFoundError:
+        print("파일이 존재하지 않습니다.")
 
 def delete_stud():
     data = read_stud()
