@@ -28,7 +28,7 @@ def write_stud():
     }
 
     with open("score_lst.p", "wb") as f:
-        for i in range(6):
+        for i in range(6):  # 반복문 사용해서 처리해보자
             pickle.dump(stud_score, f)
 
 def read_stud():
