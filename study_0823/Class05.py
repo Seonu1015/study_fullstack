@@ -57,8 +57,6 @@ while True:
     if exit == "y":
         break
 
-# 누적된 횟수를 초기화 하고 싶으면??? gamedata 파일 삭제 말고 다른 방법도 있나???
-
 # def read_game():
 #     try:
 #         with open("gamedata.p", "rb") as f:

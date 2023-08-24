@@ -50,6 +50,3 @@ def delete_stud():
 
 while True:
     menu()
-
-# 리스트에 넣어서 출력하는게 아니라
-# 한줄한줄 입력되도록 해서 출력되게 해보자
