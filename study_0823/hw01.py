@@ -5,6 +5,7 @@
 
 from abc import *
 
+
 class Food(metaclass=ABCMeta):
     def __init__(self, name, price):
         self._name = name
@@ -12,13 +13,17 @@ class Food(metaclass=ABCMeta):
 
     def get_name(self):
         return self._name
+
     def get_price(self):
         return self._price
+
     def set_price(self, price):
         self._price = price
+
     @abstractmethod
     def order(self):
         pass
+
 
 class Pizza(Food):
     def __init__(self, name, price, crust, *topping):
@@ -26,8 +31,12 @@ class Pizza(Food):
         self._crust = crust
         self._topping = []
         for i in topping:
-            if type(i) == list:
+            if type(i) == list:  # isinstance(i, list) 로 작성할 수도 있다.
                 self._topping += i
+            elif type(i) == str:  # 만약 토핑에 "a, b"라고 입력했을 경우도 추가
+                topping_str = i.split(',')
+                for j in topping_str:
+                    self._topping.append(j)
             else:
                 self._topping.append(i)
 
@@ -39,9 +48,11 @@ class Pizza(Food):
                 self._topping.append(i)
 
     def order(self):
-        print("{} 크러스트에 토핑은 {}인 {} 피자 : {}원 결제해주세요.".format(self._crust, ", ".join(self._topping), super().get_name(), super().get_price()))
+        print("{} 크러스트에 토핑은 {}인 {} 피자 : {}원 결제해주세요.".format(self._crust, ", ".join(self._topping), super().get_name(),
+                                                            super().get_price()))
 
-pizza1 = Pizza("콤비네이션", 27900, "치즈", ["페퍼로니", "미트볼"])
+
+pizza1 = Pizza("콤비네이션", 27900, "치즈", ["페퍼로니", "미트볼"], ['hvhgg'], "saf,adsf")
 pizza1.order()
 pizza1.add_topping("포테이토", "치킨")
 pizza1.order()
@@ -49,6 +60,7 @@ pizza1.add_topping(["피망", "올리브"])
 pizza1.order()
 pizza1.add_topping("양파 듬뿍")
 pizza1.order()
+
 
 class Hamburger(Food):
 
@@ -99,18 +111,22 @@ class Hamburger(Food):
             print(f"  - {side}, 가격: {self.side_menu[side]}원")
         print("총 결제 금액은 {}원 입니다.".format(total_price))
 
+
 burger1 = Hamburger("치즈버거", 2100)
 burger1.select_side()
 burger1.order()
+
 
 class Kimbap(Food):
     def __init__(self, name, price, type):
         super().__init__(name, price)
         self._type = type
+
     def order(self):
         count = int(input(f"{self._type}{super().get_name()} 몇 개 주문하시겠습니까? : "))
-        super().set_price(super().get_price()*count)
+        super().set_price(super().get_price() * count)
         print(f"{self._type}{super().get_name()} {count}개 주문하셨어요. {super().get_price()}원입니다.")
+
 
 kimbap1 = Kimbap("김밥", 2100, "야채")
 kimbap1.order()

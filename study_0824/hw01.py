@@ -1,5 +1,4 @@
 import random
-import pickle
 
 
 def play():
@@ -31,39 +30,34 @@ def play():
     else:
         print("패배")
         count = 1
-
-    gamedata["게임 횟수"] += count
-    gamedata["승리횟수"] += win
-
+    return count, win
 
 def write_game():
-    with open("gamedata.p", "wb") as f:
-        pickle.dump(gamedata, f)
-
+    accumulate_count, accumulate_win = read_game()
+    accumulate_count += count
+    accumulate_win += win
+    with open("gamedata.txt", "w") as f:
+        f.write(f"게임 횟수 : {accumulate_count}, 승리 횟수 : {accumulate_win}")
+        return accumulate_count, accumulate_win
 
 def read_game():
-    with open("gamedata.p", "rb") as f:
-        return pickle.load(f)
+    try:
+        with open("gamedata.txt", "r") as f:
+            res = f.read()
+            print(res)
 
+    except FileNotFoundError:
+        accumulate_count = 0
+        accumulate_win = 0
+        print(f"게임 횟수 : {accumulate_count}, 승리 횟수 : {accumulate_win}")
+        return accumulate_count, accumulate_win # 요기를 다시 써보자
 
-gamedata = {"게임 횟수": 0, "승리횟수": 0}
 
 while True:
-    play()
+    count, win = play()
     write_game()
-    print(gamedata)
 
-    exit = input("게임을 종료하시겠습니까? (y/n): ")
-    if exit == "y":
-        break
 
-# 누적된 횟수를 초기화 하고 싶으면??? gamedata 파일 삭제 말고 다른 방법도 있나???
-
-# def read_game():
-#     try:
-#         with open("gamedata.p", "rb") as f:
-#             return pickle.load(f)
-#     except FileNotFoundError:
-#         return {"게임 횟수": 0, "승리횟수": 0}
-#
-# gamedata = read_game()
+    # exit = input("게임을 종료하시겠습니까? (y/n): ")
+    # if exit == "y":
+    #     break

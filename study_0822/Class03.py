@@ -46,6 +46,8 @@ class AtmAccount(Account):
     def __init__(self, account_num="145-59-145896", balance=100000):
         super().__init__(account_num, balance)
 
+    # cash를 통화별로 리스트? 딕셔너리? 로 설정해서 하면 메서드들이 더 깔끔해질 수 있을지도?
+
     def deposit(self):
         print("얼마를 입금하시겠습니까?")
         a = int(input("5만원권 : "))
@@ -120,7 +122,7 @@ class CreditAccount(Account):
         super().__init__(account_num, balance)
 
     def payment(self, amount_payment):
-        if CreditAccount.total_payment + amount_payment > 500000:
+        if CreditAccount.total_payment + amount_payment > 500000: # 다음 달에 리밋을 다시 불러오려면 변수로 작성하는게 좋다
             print("결제 한도가 초과되었습니다. 승인이 취소됩니다.")
             return
         else:
