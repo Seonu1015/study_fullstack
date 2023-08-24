@@ -57,6 +57,7 @@ print(arr2)
 
 # 변환 함수
 # 배열 형태 변환
+print("====================")
 
 # 1차원 배열을 2차원 배열도 변환
 arr = np.array([1,2,3,4,5,6])
@@ -80,3 +81,29 @@ arr_int = arr_str.astype(int)
 print(arr_int)
 
 # 축 변환
+b = np.array([[1,2],[3,4],[5,6]])
+trans = b.transpose()
+print(trans)
+
+print(np.transpose(trans))
+
+# 집계 함수
+print("====================")
+print(b)
+print(b.sum())
+print(b.mean())
+print(b.std())
+print(b.max())
+print(b.min())
+print(b.argmax())
+print(b.argmin())
+
+# 논리 함수
+print("====================")
+arr1 = np.array([True, False, False, True])
+arr2 = np.array([True, True, False, False])
+
+print(np.logical_and(arr1, arr2))
+print(np.logical_or(arr1, arr2))
+print(np.logical_not(arr1))
+print(np.logical_not(arr2))
