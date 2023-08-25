@@ -1,4 +1,5 @@
 # readline(), readlines() 를 이용해서 0824 hw01 을 수정해보자
+# ab 모드도 써보자
 
 import pickle
 

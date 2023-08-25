@@ -158,6 +158,8 @@ df = pd.DataFrame(data)
 print(df)
 # 도시 기준으로 정렬
 df_city = df.sort_values('City')
+df_city = df.sort_values('City', ascending=True) # 오름차순
+df_city = df.sort_values('City', ascending=False) # 내림차순
 print(df_city)
 # 평균 나이 구하기
 print(df['Age'].mean())
@@ -187,3 +189,15 @@ print(city_counts)
 np.random.seed(0)
 df['Gender'] = np.random.choice(['Male', 'Female'], size=df.shape[0])
 print(df)
+
+# groupby : 데이터 특정 조건에 따라 그룹으로 분류하는 함수
+
+data = pd.DataFrame({
+    'City': ['Seoul', 'Seoul', 'Busan', 'Busan'],
+    'Fruit': ['Apple', 'Banana', 'Apple', 'Banana'],
+    'Quantity': [10, 15, 7, 12],
+    'Price': [1000, 2000, 1500, 2500]
+})
+
+group = data.groupby(['City', 'Fruit'])['Quantity'].sum()
+print(group)
