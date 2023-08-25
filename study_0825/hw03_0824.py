@@ -3,7 +3,7 @@
 import numpy as np
 
 arr = np.random.rand(10, 10)
-print(arr)
+# print(arr)
 
 # arr[0, 0] - arr[0, 1]
 # arr[0, 1] - arr[0, 2]
@@ -15,7 +15,7 @@ print(arr)
 # arr[1, 2] - arr[1, 3]
 # ...
 
-arr1 = arr.flat
+arr1 = arr.flatten()
 lst = []
 for i in arr1:
     lst.append(i)
@@ -43,11 +43,12 @@ for i in range(len(lst) - 1):
         min_diff = diff
         min_idx = i
 
-print(len(diff_lst))
+print("연산 횟수 :", len(diff_lst))
 print("가장 작은 차이 :", min_diff)
 print(f"두 원소 : {lst[min_idx]}, {lst[min_idx + 1]}")
 
-print("---------------------------------------------------")
+print("▲ 연산횟수 기존보다 줄일 수 있게 수정 -------------------------")
+print()
 
 min_idx = (0, 0, 0, 0)
 min_diff = arr[0, 0] - arr[0, 1]
@@ -68,12 +69,13 @@ for i in range(10):
                 if min_diff > diff:
                     min_diff = diff
                     min_idx = (i, j, x, y)
-print(len(diff_lst))
+print("연산 횟수 :", len(diff_lst))
 print("가장 작은 차이 :", min_diff)
 print(
     f"arr{min_idx[0], min_idx[1]} : {arr[min_idx[0], min_idx[1]]}, arr{min_idx[2], min_idx[3]} : {arr[min_idx[2], min_idx[3]]}")
 
-print("---------------------------------------------------")
+print("---------------------------------------------------------")
+print()
 # 두 원소의 차이의 절대값이 가장 큰 두 원소를 찾아보자
 
 max_i = [i for i in str(arr.argmax())]
