@@ -17,7 +17,7 @@ def write_stud():
         }
 
         data = read_stud()
-        data.append(stud_score) # 도저히 append를 안하고 줄로 입력 받아서 하는 방법을 못찾겄다... 반복문까지 이것저것 써봤는데... 너무 졸리다...
+        data.append(stud_score)
 
         with open("score_lst.p", "wb") as f:
             for i in data:
@@ -52,7 +52,7 @@ def delete_stud():
                 pickle.dump(i, f)
         print("삭제가 완료되었습니다.")
     else:
-        print("삭제할 레코드가 없습니다.")
+        print("삭제할 자료가 없습니다.")
 
 
 while True:

@@ -14,7 +14,9 @@ def menu():
 
 
 def write_stud():
-    stud_lst = read_stud()
+    stud_lst = []
+    with open("score_lst.p", "rb") as f:
+        stud_lst.append(pickle.load(f))
 
     name = str(input("이름을 입력해주세요. : "))
     math = int(input("수학 점수를 입력해주세요. : "))
