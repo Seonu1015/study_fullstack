@@ -1,6 +1,3 @@
-# readline(), readlines() 를 이용해서 0824 hw01 을 수정해보자
-# ab 모드도 써보자
-
 import pickle
 
 def write_stud():
@@ -20,44 +17,54 @@ def write_stud():
         }
 
         with open("score_lst.p", "ab") as f:
-            for i in data:
-                pickle.dump(i, f)
+            pickle.dump(stud_score, f)
 
-def read_stud():
+def read_stud(): # readline 은 쓸 수가 없음 오류가 계속 발생, 아마 피클에서는 안되는걸지도??
     try:
         with open("score_lst.p", "rb") as f:
-            line = f.readline()
-            while line:
-                print(line.strip())
-                line = f.readline()
+            count = 0
+            while True:
+                try:
+                    stud_score = pickle.load(f)
+                    print(f"[{count}] 이름 : {stud_score['이름']}, 수학 : {stud_score['수학']}, 과학 : {stud_score['과학']}, 영어 : {stud_score['영어']}")
+                except EOFError:
+                    break
     except FileNotFoundError:
         print("파일이 존재하지 않습니다.")
 
 def delete_stud():
-    with open("score_lst.p", "rb") as f:
-        line = f.readline()
-        while line:
-            print(line.strip())
-            line = f.readline()
-        sel_del = int(input("삭제할 번호를 입력해주세요. : "))
-        data.pop(sel_del)
-        with open("score_lst.p", "wb") as f:
-            for i in data:
-                pickle.dump(i, f)
-        print("삭제가 완료되었습니다.")
+    try:
+        with open("score_lst.p", "rb") as f:
+            data = []
+            count = 0
+            while True:
+                try:
+                    stud_score = pickle.load(f)
+                    print(f"[{count}] 이름 : {stud_score['이름']}, 수학 : {stud_score['수학']}, 과학 : {stud_score['과학']}, 영어 : {stud_score['영어']}")
+                    count += 1
+                    data.append(stud_score)
+                except EOFError:
+                    break
 
+            sel_del = int(input("삭제할 번호를 입력해주세요. : "))
+            if sel_del < len(data):
+                del data[sel_del]
+
+                with open("score_lst.p", "wb") as f:
+                    for i in data:
+                        pickle.dump(i, f)
+                print("삭제가 완료되었습니다.")
+            else:
+                print("잘못된 번호입니다.")
+    except FileNotFoundError:
+        print("파일이 존재하지 않습니다.")
 
 while True:
     select_menu = int(input("메뉴를 선택해주세요. 1-입력, 2-조회, 3-삭제, 0-종료 : "))
     if select_menu == 1:
         write_stud()
     elif select_menu == 2:
-        data = read_stud()
-        print(data)
-        idx = 0
-        for i in data:
-            print("[{}] 이름 : {}, 수학 : {}, 과학 : {}, 영어 : {}".format(idx, i["이름"], i["수학"], i["과학"], i["영어"]))
-            idx += 1
+        read_stud()
     elif select_menu == 3:
         delete_stud()
     elif select_menu == 0:
