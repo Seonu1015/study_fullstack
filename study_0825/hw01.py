@@ -30,6 +30,7 @@ def read_stud():  # readline 은 쓸 수가 없음 오류가 계속 발생, 아�
                     stud_score = pickle.load(f)
                     print(
                         f"[{count}] 이름 : {stud_score['이름']}, 수학 : {stud_score['수학']}, 과학 : {stud_score['과학']}, 영어 : {stud_score['영어']}")
+                    count += 1
                 except EOFError:
                     break
     except FileNotFoundError:
@@ -53,12 +54,14 @@ def delete_stud():
 
             sel_del = int(input("삭제할 번호를 입력해주세요. : "))
             if 0 <= sel_del < len(data):
-                del data[sel_del]
-
+                # 파일을 불러오고 새로 저장하는 과정을 거치게 되므로 삭제할 레코드를 빼고 저장하게 하면
+                # 원하는 부분을 삭제한 것처럼 처리가 가능하다.
                 with open("score_lst.p", "wb") as f:
-                    for i in data:
-                        pickle.dump(i, f)
-                print("삭제가 완료되었습니다.")
+                    for i, d in enumerate(data):
+                        if i == sel_del:
+                            print("삭제가 완료되었습니다.")
+                        else:
+                            pickle.dump(d, f)
             else:
                 print("잘못된 번호입니다.")
     except FileNotFoundError:
