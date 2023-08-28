@@ -31,3 +31,10 @@ plt.xlabel('월')
 plt.ylabel('판매량')
 plt.title('서초구 상점 물건 판매량')
 plt.show()
+
+print(calendar.calendar(2023))
+print(calendar.month(2023,8))
+print(calendar.weekday(2023,8,28))
+
+print(list(calendar.month_name)[1:])
+print(list(calendar.month_abbr)[1:])
