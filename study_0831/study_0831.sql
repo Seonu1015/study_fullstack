@@ -1,31 +1,31 @@
 DESC EMP;
 DESC DEPT;
 
--- я┐╜▀░я┐╜ я┐╜я┐╜я┐╜я┐╜ 'я┐╜╪┤я┐╜ я┐╜я┐╜я┐╜я┐╜ я┐╜я┐╜я┐╜я┐╜', 'я┐╜▀░я┐╜ я┐╜я┐╜я┐╜я┐╜ я┐╜я┐╜я┐╜я┐╜', 'я┐╜▀░я┐╜ я┐╜я┐╜я┐╜я┐╜ xx'
+-- ├▀░б ╝Ў┤ч '╟╪┤ч ╗ч╟╫ ╛°└╜', '├▀░б ╝Ў┤ч ╛°└╜', '├▀░б ╝Ў┤ч xx'
 SELECT ENAME,
 CASE
-WHEN COMM IS NULL THEN 'я┐╜╪┤я┐╜ я┐╜я┐╜я┐╜я┐╜ я┐╜я┐╜я┐╜я┐╜'
-WHEN COMM = 0 THEN 'я┐╜▀░я┐╜ я┐╜я┐╜я┐╜я┐╜ я┐╜я┐╜я┐╜я┐╜'
-ELSE CONCAT('я┐╜▀░я┐╜ я┐╜я┐╜я┐╜я┐╜ : ', TO_CHAR(COMM))
+WHEN COMM IS NULL THEN '╟╪┤ч ╗ч╟╫ ╛°└╜'
+WHEN COMM = 0 THEN '├▀░б ╝Ў┤ч ╛°└╜'
+ELSE CONCAT('├▀░б ╝Ў┤ч : ', TO_CHAR(COMM))
 END AS COMM
 FROM EMP;
 
 SELECT EMPNO, ENAME,
 CASE
-WHEN COMM IS NULL THEN 'я┐╜╪┤я┐╜ я┐╜я┐╜я┐╜я┐╜ я┐╜я┐╜я┐╜я┐╜'
-WHEN COMM = 0 THEN 'я┐╜▀░я┐╜ я┐╜я┐╜я┐╜я┐╜ я┐╜я┐╜я┐╜я┐╜'
-WHEN COMM > 0 THEN 'я┐╜▀░я┐╜ я┐╜я┐╜я┐╜я┐╜ : ' || COMM
+WHEN COMM IS NULL THEN '╟╪┤ч ╗ч╟╫ ╛°└╜'
+WHEN COMM = 0 THEN '├▀░б ╝Ў┤ч ╛°└╜'
+WHEN COMM > 0 THEN '├▀░б ╝Ў┤ч : ' || COMM
 END AS COMM
 FROM EMP;
 
--- EMP я┐╜я┐╜я┐╜╠║я┐╜я┐╜я┐╜ DEPT я┐╜я┐╜я┐╜╠║я┐╜я┐╜я┐╜я┐╜я┐╜ я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜ я┐╜╓┤я┐╜ я┐╜╬╝я┐╜я┐╜я┐╜╚г я┐╜я┐╜я┐╜
+-- EMP ┼╫└╠║э░· DEPT ┼╫└╠║э┐б╝н ░°┼ы└╕╖╬ └╓┤┬ ║╬╝н╣°╚г ├т╖┬
 SELECT DEPTNO
 FROM EMP
 INTERSECT
 SELECT DEPTNO
 FROM DEPT;
 
--- я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜ я┐╜╬╝я┐╜я┐╜я┐╜ я┐╜╬┐я┐╜я┐╜я┐╜
+-- ┐м╡╡║░ ║╬╝н║░ └╬┐°╝Ў
 SELECT EXTRACT(YEAR FROM HIREDATE) AS HIREYEAR, DEPTNO, COUNT(*)
 FROM EMP
 GROUP BY GROUPING SETS((EXTRACT(YEAR FROM HIREDATE)), (DEPTNO), (EXTRACT(YEAR FROM HIREDATE), DEPTNO));
@@ -36,7 +36,7 @@ GROUP BY TO_CHAR(HIREDATE, 'YYYY'), DEPTNO;
 
 
 
--- я┐╜я┐╜ я┐╜╬╝я┐╜я┐╜я┐╜, я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜, я┐╜╫╖я┐╜╚ня┐╜я┐╜ я┐╜╬╝я┐╜ + я┐╜я┐╜ я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜, я┐╜я┐╜├╝ я┐╜╬┐я┐╜я┐╜я┐╜, я┐╜▐┐я┐╜ я┐╜╤╛я┐╜ (я┐╜╫╖я┐╜╚ня┐╜я┐╜ я┐╜╬╝я┐╜ : GROUP_DEPT, я┐╜╫╖я┐╜╚ня┐╜я┐╜ я┐╜я┐╜я┐╜я┐╜ : GROUP_JOB)
+-- ░в ║╬╝н║░, ┴ў╛ў║░, ▒╫╖ь╚н╡╚ ║╬╝н + ░в ┴ў╛ў║░, └№├╝ └╬┐°╝Ў, ▒▐┐й ├╤╛╫ (▒╫╖ь╚н╡╚ ║╬╝н : GROUP_DEPT, ▒╫╖ь╚н╡╚ ┴ў╛ў : GROUP_JOB)
 SELECT DEPTNO, JOB, COUNT(*), SUM(SAL), GROUPING(DEPTNO) AS GROUP_DEPT, GROUPING(JOB) AS GROUP_JOB
 FROM EMP
 GROUP BY GROUPING SETS((DEPTNO), (JOB), (DEPTNO, JOB));
@@ -64,7 +64,7 @@ ORDER BY DEPTNO, JOB;
 
 --------------------------------------------------------------------------------
 
--- EMP я┐╜я┐╜я┐╜╠║я┐╜я┐╜я┐╜ DEPT я┐╜я┐╜я┐╜╠║я┐╜я┐╜я┐╜я┐╜я┐╜ я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜ я┐╜╓┤я┐╜ я┐╜╬╝я┐╜я┐╜я┐╜╚г я┐╜я┐╜я┐╜ (я┐╜я┐╜я┐╜я┐╜я┐╜╧░я┐╜ я┐╜╪░я┐╜я┐╜╧┤я┐╜ я┐╜я┐╜я┐╜)
+-- EMP ┼╫└╠║э░· DEPT ┼╫└╠║э┐б╝н ░°┼ы└╕╖╬ └╓┤┬ ║╬╝н╣°╚г ├т╖┬ (░г┤▄╟╧░╘ ╟╪░с╟╧┤┬ ╣ц╣¤)
 SELECT DISTINCT EMP.DEPTNO
 FROM EMP, DEPT
 ORDER BY DEPT.DEPTNO, EMP.EMPNO;
@@ -92,7 +92,7 @@ ORDER BY DEPT.DEPTNO, E.EMPNO;
 SELECT *
 FROM EMP;
 
--- EMP я┐╜я┐╜я┐╜╠║я┐╜я┐╜я┐╜я┐╜я┐╜ я┐╜┌╜я┐╜я┐╜я┐╜ я┐╜я┐╜я┐╜я┐╜я┐╜ я┐╜╠╕я┐╜я┐╜я┐╜ я┐╜я┐╜я┐╜╪╝я┐╜ я┐╜я┐╜я┐╜
+-- EMP ┼╫└╠║э┐б╝н └┌╜┼└╟ ╗є▒▐└┌ └╠╕з└╗ ┤ї╟╪╝н ├т╖┬
 SELECT E1.EMPNO, E1.ENAME, E1.JOB, E1.MGR, E2.ENAME AS MGR_NAME, E1.HIREDATE, E1.SAL, E1.COMM, E1.DEPTNO 
 FROM EMP E1, EMP E2
 WHERE E1.MGR = E2.EMPNO;
@@ -100,7 +100,7 @@ WHERE E1.MGR = E2.EMPNO;
 SELECT *
 FROM SALGRADE;
 
--- SALGRADE я┐╜я┐╜я┐╜╠║я┐╜я┐╜я┐╜ SAL я┐╜я┐╜я┐╜я┐╜я┐╜ я┐╜▌┐я┐╜я┐╜╪╝я┐╜ я┐╜я┐╜я┐╜
+-- SALGRADE ┼╫└╠║э└╟ SAL ╡ю▒▐└╗ ╣▌┐╡╟╪╝н ├т╖┬
 SELECT E.EMPNO, E.ENAME, E.JOB, E.MGR, E.HIREDATE, E.SAL, S.GRADE AS SAL_GRADE, E.COMM, E.DEPTNO
 FROM EMP E, SALGRADE S
 WHERE E.SAL >= S.LOSAL AND E.SAL <= S.HISAL
@@ -145,24 +145,116 @@ JOIN DEPT D USING(DEPTNO)
 ORDER BY DEPTNO, E.EMPNO;
 
 
--- SALGRADE - HISALя┐╜я┐╜ я┐╜▐┤я┐╜ я┐╜я┐╜я┐╜я┐╜я┐╜ я┐╜╬┐я┐╜ я┐╜я┐╜я┐╜я┐╜ я┐╜я┐╜▐║я┐╜я┐╜я┐╜ я┐╜я┐╜я┐╜я┐╜╪║я┐╜я┐╜я┐╜
-SELECT S.GRADE, COUNT(*) AS TOTLA_COUNT
+-- SALGRADE - HISAL└╗ ╣▐┤┬ ╗ч╢ў└╟ └╬┐° ╝Ў╕ж ╡ю▒▐║░╖╬ ├т╖┬╟╪║╕▒т
+SELECT S.GRADE, COUNT(*) AS TOTAL_COUNT
 FROM EMP E, SALGRADE S
 WHERE E.SAL = S.HISAL
 GROUP BY S.GRADE
 ORDER BY S.GRADE;
 
+SELECT S.GRADE,
+CASE
+WHEN COUNT(E.SAL) = 0 THEN 0
+ELSE COUNT(E.SAL)
+END AS TOTAL_COUNT
+FROM SALGRADE S
+LEFT OUTER JOIN EMP E ON E.SAL = S.HISAL
+GROUP BY S.GRADE
+ORDER BY S.GRADE;
 
--- EMP я┐╜я┐╜я┐╜╠║я┐╜я┐╜я┐╜я┐╜я┐╜ DEPT я┐╜я┐╜я┐╜╠║я┐╜я┐╜я┐╜ я┐╜я┐╜я┐╜я┐╜я┐╜ 'DEPT' я┐╜я┐╜я┐╜я┐╜ я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜ я┐╜я┐╜я┐╜я┐╜ я┐╜╬╝я┐╜ я┐╜╠╕я┐╜я┐╜я┐╜ я┐╜я┐╜─бя┐╜я┐╜ я┐╜я┐╜я┐╜я┐╜╪║я┐╜я┐╜я┐╜
+-- EMP ┼╫└╠║э┐б╝н DEPT ┼╫└╠║э░· ░°┼ы╡╚ 'DEPT' ░к└╗ ░б┴Ў┴Ў ╛╩└║ ║╬╝н └╠╕з░· └з─б╕ж ├т╖┬╟╪║╕▒т
+SELECT DEPT.DEPTNO, DEPT.DNAME, DEPT.LOC
+FROM DEPT
+LEFT OUTER JOIN EMP ON DEPT.DEPTNO = EMP.DEPTNO
+WHERE EMP.DEPTNO IS NULL;
+
 SELECT DEPT.DEPTNO, DEPT.DNAME, DEPT.LOC
 FROM DEPT
 FULL OUTER JOIN EMP ON DEPT.DEPTNO = EMP.DEPTNO
 WHERE DEPT.DEPTNO IS NULL OR EMP.DEPTNO IS NULL;
 
--- EMPя┐╜я┐╜ DEPT я┐╜я┐╜я┐╜я┐╜я┐╜╪╝я┐╜ JOBя┐╜я┐╜ MANAGERя┐╜я┐╜ я┐╜╓╡я┐╜ я┐╜я┐╜я┐╜я┐╜╪║я┐╜я┐╜я┐╜
+-- EMP┐═ DEPT ░с╟╒╟╪╝н JOB└╠ MANAGER└╬ ╛╓╡щ ├т╖┬╟╪║╕▒т
 SELECT *
 FROM EMP E
 JOIN DEPT D USING(DEPTNO)
 WHERE JOB = 'MANAGER'
 ORDER BY E.EMPNO;
 
+--------------------------------------------------------------------------------
+
+-- ▒╫╖ь║░ ├╓░э ▒▐┐й ┴ў┐° ├т╖┬
+SELECT MAX(SAL)
+FROM EMP
+GROUP BY DEPTNO;
+
+SELECT *
+FROM EMP
+WHERE SAL IN (SELECT MAX(SAL) FROM EMP GROUP BY DEPTNO);
+
+SELECT *
+FROM EMP
+WHERE SAL = ANY(SELECT MAX(SAL) FROM EMP GROUP BY DEPTNO);
+
+-- 30╣° ║╬╝н ╗ч┐°╡щ└╟ ├╓┤ы ▒▐┐й║╕┤┘ └√└║ ▒▐┐й╕ж ╣▐┤┬ ╗ч╢ў╡щ ├т╖┬╟╧▒т
+SELECT *
+FROM EMP
+WHERE SAL < (SELECT MAX(SAL) FROM EMP WHERE DEPTNO = 30 GROUP BY DEPTNO);
+
+SELECT *
+FROM EMP
+WHERE SAL < ANY(SELECT MAX(SAL) FROM EMP WHERE DEPTNO = 30);
+
+SELECT E10.EMPNO, E10.ENAME, E10.DEPTNO, D.DNAME, D.LOC
+FROM (SELECT * FROM EMP WHERE DEPTNO = 10) E10, (SELECT * FROM DEPT) D
+WHERE E10.DEPTNO = D.DEPTNO;
+
+WITH E10 AS (SELECT * FROM EMP WHERE DEPTNO = 10), D AS (SELECT * FROM DEPT)
+SELECT E10.EMPNO, E10.ENAME, E10.DEPTNO, D.DNAME, D.LOC
+FROM E10, D
+WHERE E10.DEPTNO = D.DEPTNO;
+
+-- EMP ┼╫└╠║э┐б╝н ░б└х │Ї└║ ▒▐┐й╕ж ╣▐┤┬ ┴ў┐°└╟ └╠╕з░· ▒▐┐й╕ж ├т╖┬
+SELECT ENAME, SAL 
+FROM EMP
+WHERE (SELECT MAX(SAL) FROM EMP) = SAL;
+
+-- DEPT ┼╫└╠║э┐б╝н ░в ║╬╝н║░╖╬ ╝╙╟╤ ┴ў┐°└╟ ╝Ў┐═ ╞Є▒╒ ▒▐┐й╕ж ├т╖┬
+SELECT COUNT(*) FROM EMP GROUP BY DEPTNO;
+
+SELECT ROUND(AVG(SAL)) FROM EMP GROUP BY DEPTNO;
+
+SELECT DEPTNO,
+    (SELECT COUNT(*) FROM EMP WHERE DEPT.DEPTNO = EMP.DEPTNO GROUP BY DEPTNO) AS EMP_COUNT,
+    (SELECT ROUND(AVG(SAL)) FROM EMP WHERE DEPT.DEPTNO = EMP.DEPTNO GROUP BY DEPTNO) AS AVER_SAL
+FROM DEPT;
+
+-- EMP ┼╫└╠║э┐б╝н ┴ў┐°└╟ ▒▐┐й░б ║╬╝н ╞Є▒╒ ▒▐┐й║╕┤┘ │Ї└║ ░ц┐ь┐б╕╕ ├т╖┬
+SELECT AVG(SAL) FROM EMP GROUP BY DEPTNO;
+
+SELECT DEPTNO, AVG(SAL) FROM EMP GROUP BY DEPTNO;
+
+WITH E1 AS(SELECT * FROM EMP), E2 AS (SELECT DEPTNO, ROUND(AVG(SAL)) AS AVG_SAL FROM EMP GROUP BY DEPTNO)
+SELECT *
+FROM E1
+JOIN E2 ON E1.DEPTNO = E2.DEPTNO
+WHERE E1.DEPTNO = E2.DEPTNO AND E1.SAL > E2.AVG_SAL;
+
+SELECT ENAME, SAL
+FROM EMP E1, (SELECT ROUND(AVG(SAL)) AS AVG_SAL, DEPTNO FROM EMP GROUP BY DEPTNO) E2
+WHERE E1.SAL > E2.AVG_SAL AND E1.DEPTNO = E2.DEPTNO;
+
+-- EMP ┼╫└╠║э┐б╝н ║╬╝н ╣°╚г░б 10└╬ ║╬╝н┐б ╝╙╟╤ ┴ў┐°╡щ ┴▀┐б╝н ▒▐┐й░б 3000 └╠╗є└╬ ┴ў┐°└╟ └╠╕з░· ▒▐┐й╕ж ├т╖┬
+SELECT E.ENAME, E.SAL
+FROM (SELECT * FROM EMP WHERE DEPTNO = 10) E
+WHERE E.SAL >= 3000;
+
+SELECT ENAME, SAL
+FROM EMP
+WHERE DEPTNO = 10 AND SAL >= 3000;
+
+--------------------------------------------------------------------------------
+
+--░в ┴ў┐°└╟ └╠╕з░· ║╬╝н └╠╕з└╗ ├т╖┬. (║╬╝н ╣°╚г ┤ы╜┼ ║╬╝н └╠╕з)
+--░в ┴ў┐°└╟ └╠╕з░· ╟╪┤ч ┴ў┐°└╟ ▒▐┐й╕ж ┴╢╚╕╟╧╡╟, ▒▐┐й░б ║╬╝н ╞Є▒╒ ▒▐┐й║╕┤┘ │Ї└║ ░ц┐ь┐б┤┬ "╗є└з"╢є░э ╟е╜├╟╧░э ▒╫ ┐▄┐б┤┬ "└╧╣▌"└╠╢є░э ├т╖┬
+--░в ║╬╝н║░╖╬ ╝╙╟╤ ┴ў┐°└╟ ╝Ў┐═ ╞Є▒╒ ▒▐┐й╕ж ┴╢╚╕╟╧╡╟, ▒▐┐й░б ╟╪┤ч ║╬╝н└╟ ╞Є▒╒ ▒▐┐й║╕┤┘ │Ї└║ ┴ў┐°└╟ └╠╕з░· ▒▐┐й╕ж ╟╘▓▓ ├т╖┬(╞Є▒╒ ▒▐┐й │╗╕▓┬ў╝°└╕╖╬ ┴д╖─)
+--░в ┴ў┐°└╟ └╠╕з░· ║╕│╩╜║╕ж ┴╢╚╕╟╧╡╟, ║╕│╩╜║░б ╛°┤┬ ┴ў┐°╡щ ┴▀┐б╝н ░б└х ▒▐┐й░б │Ї└║ ┴ў┐°└╟ └╠╕з░· ▒▐┐й╕ж ├т╖┬
