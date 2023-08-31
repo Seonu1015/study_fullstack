@@ -1,8 +1,168 @@
-# Ãß°¡ ¼ö´ç 'ÇØ´ç »çÇ× ¾øÀ½', 'Ãß°¡ ¼ö´ç ¾øÀ½', 'Ãß°¡ ¼ö´ç xx'
+DESC EMP;
+DESC DEPT;
+
+-- ï¿½ß°ï¿½ ï¿½ï¿½ï¿½ï¿½ 'ï¿½Ø´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½', 'ï¿½ß°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½', 'ï¿½ß°ï¿½ ï¿½ï¿½ï¿½ï¿½ xx'
 SELECT ENAME,
 CASE
-WHEN COMM IS NULL THEN 'ÇØ´ç »çÇ× ¾øÀ½'
-WHEN COMM = 0 THEN 'ÇØ´ç »çÇ× ¾øÀ½'
-ELSE CONCAT('Ãß°¡ ¼ö´ç ', COMM)
+WHEN COMM IS NULL THEN 'ï¿½Ø´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½'
+WHEN COMM = 0 THEN 'ï¿½ß°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½'
+ELSE CONCAT('ï¿½ß°ï¿½ ï¿½ï¿½ï¿½ï¿½ : ', TO_CHAR(COMM))
 END AS COMM
 FROM EMP;
+
+SELECT EMPNO, ENAME,
+CASE
+WHEN COMM IS NULL THEN 'ï¿½Ø´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½'
+WHEN COMM = 0 THEN 'ï¿½ß°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½'
+WHEN COMM > 0 THEN 'ï¿½ß°ï¿½ ï¿½ï¿½ï¿½ï¿½ : ' || COMM
+END AS COMM
+FROM EMP;
+
+-- EMP ï¿½ï¿½ï¿½Ìºï¿½ï¿½ï¿½ DEPT ï¿½ï¿½ï¿½Ìºï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½Î¼ï¿½ï¿½ï¿½È£ ï¿½ï¿½ï¿½
+SELECT DEPTNO
+FROM EMP
+INTERSECT
+SELECT DEPTNO
+FROM DEPT;
+
+-- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Î¼ï¿½ï¿½ï¿½ ï¿½Î¿ï¿½ï¿½ï¿½
+SELECT EXTRACT(YEAR FROM HIREDATE) AS HIREYEAR, DEPTNO, COUNT(*)
+FROM EMP
+GROUP BY GROUPING SETS((EXTRACT(YEAR FROM HIREDATE)), (DEPTNO), (EXTRACT(YEAR FROM HIREDATE), DEPTNO));
+
+SELECT TO_CHAR(HIREDATE, 'YYYY') AS HIRE_YEAR, DEPTNO, COUNT(*) AS CNT
+FROM EMP
+GROUP BY TO_CHAR(HIREDATE, 'YYYY'), DEPTNO;
+
+
+
+-- ï¿½ï¿½ ï¿½Î¼ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½×·ï¿½È­ï¿½ï¿½ ï¿½Î¼ï¿½ + ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Ã¼ ï¿½Î¿ï¿½ï¿½ï¿½, ï¿½Þ¿ï¿½ ï¿½Ñ¾ï¿½ (ï¿½×·ï¿½È­ï¿½ï¿½ ï¿½Î¼ï¿½ : GROUP_DEPT, ï¿½×·ï¿½È­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ : GROUP_JOB)
+SELECT DEPTNO, JOB, COUNT(*), SUM(SAL), GROUPING(DEPTNO) AS GROUP_DEPT, GROUPING(JOB) AS GROUP_JOB
+FROM EMP
+GROUP BY GROUPING SETS((DEPTNO), (JOB), (DEPTNO, JOB));
+
+SELECT DECODE(GROUPING(DEPTNO), 1, 'GTOUP_DEPT', DEPTNO) AS DEPTNO,
+       DECODE(GROUPING(JOB), 1, 'GTOUP_JOB', JOB) AS JOB,
+       COUNT(*), SUM(SAL)
+FROM EMP
+GROUP BY CUBE(DEPTNO, JOB)
+ORDER BY DEPTNO, JOB;
+
+SELECT 
+CASE
+WHEN GROUPING(DEPTNO) = 1 THEN 'GROUP_DEPT'
+ELSE TO_CHAR(DEPTNO)
+END AS DEPTNO,
+CASE
+WHEN GROUPING(JOB) = 1 THEN 'GROUP_JOB'
+ELSE JOB
+END AS JOB,
+COUNT(*), SUM(SAL)
+FROM EMP
+GROUP BY GROUPING SETS((DEPTNO), (JOB), (DEPTNO, JOB))
+ORDER BY DEPTNO, JOB;
+
+--------------------------------------------------------------------------------
+
+-- EMP ï¿½ï¿½ï¿½Ìºï¿½ï¿½ï¿½ DEPT ï¿½ï¿½ï¿½Ìºï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½Î¼ï¿½ï¿½ï¿½È£ ï¿½ï¿½ï¿½ (ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½Ø°ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½)
+SELECT DISTINCT EMP.DEPTNO
+FROM EMP, DEPT
+ORDER BY DEPT.DEPTNO, EMP.EMPNO;
+
+SELECT E.EMPNO, E.ENAME, E.DEPTNO, D.DNAME, D.LOC
+FROM EMP E, DEPT D
+WHERE E.DEPTNO = D.DEPTNO
+ORDER BY D.DEPTNO, E.EMPNO;
+
+SELECT E.EMPNO, E.ENAME, DEPT.DEPTNO, DEPT.DNAME, DEPT.LOC
+FROM EMP E
+INNER JOIN DEPT ON E.DEPTNO = DEPT.DEPTNO
+ORDER BY DEPT.DEPTNO, E.EMPNO;
+
+SELECT E.EMPNO, E.ENAME, DEPT.DEPTNO, DEPT.DNAME, DEPT.LOC
+FROM EMP E
+RIGHT OUTER JOIN DEPT ON E.DEPTNO = DEPT.DEPTNO
+ORDER BY DEPT.DEPTNO, E.EMPNO;
+
+SELECT E.ENAME, DEPT.DNAME
+FROM EMP E
+INNER JOIN DEPT ON E.DEPTNO = DEPT.DEPTNO
+ORDER BY DEPT.DEPTNO, E.EMPNO;
+
+SELECT *
+FROM EMP;
+
+-- EMP ï¿½ï¿½ï¿½Ìºï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ú½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ø¼ï¿½ ï¿½ï¿½ï¿½
+SELECT E1.EMPNO, E1.ENAME, E1.JOB, E1.MGR, E2.ENAME AS MGR_NAME, E1.HIREDATE, E1.SAL, E1.COMM, E1.DEPTNO 
+FROM EMP E1, EMP E2
+WHERE E1.MGR = E2.EMPNO;
+
+SELECT *
+FROM SALGRADE;
+
+-- SALGRADE ï¿½ï¿½ï¿½Ìºï¿½ï¿½ï¿½ SAL ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ý¿ï¿½ï¿½Ø¼ï¿½ ï¿½ï¿½ï¿½
+SELECT E.EMPNO, E.ENAME, E.JOB, E.MGR, E.HIREDATE, E.SAL, S.GRADE AS SAL_GRADE, E.COMM, E.DEPTNO
+FROM EMP E, SALGRADE S
+WHERE E.SAL >= S.LOSAL AND E.SAL <= S.HISAL
+ORDER BY E.EMPNO;
+
+SELECT E.ENAME, S.GRADE
+FROM EMP E, SALGRADE S
+WHERE E.SAL BETWEEN S.LOSAL AND S.HISAL;
+
+--------------------------------------------------------------------------------
+SELECT *
+FROM EMP E
+LEFT OUTER JOIN EMP ON E.MGR = EMP.EMPNO;
+
+SELECT *
+FROM EMP E1
+RIGHT OUTER JOIN EMP E2 ON E1.MGR = E2.EMPNO;
+
+--------------------------------------------------------------------------------
+
+SELECT *
+FROM EMP E1
+NATURAL JOIN EMP E2;
+
+SELECT *
+FROM EMP
+NATURAL JOIN DEPT;
+
+SELECT E.EMPNO, E.ENAME, E.MGR, DEPTNO, D.DNAME, D.LOC
+FROM EMP E
+NATURAL JOIN DEPT D;
+
+
+SELECT E.EMPNO, E.ENAME, E.JOB, E.MGR, E.HIREDATE, E.SAL, E.COMM, DEPTNO, D.DNAME, D.LOC
+FROM EMP E
+NATURAL JOIN DEPT D
+ORDER BY DEPTNO, E.EMPNO;
+
+SELECT E.EMPNO, E.ENAME, E.JOB, E.MGR, E.HIREDATE, E.SAL, E.COMM, DEPTNO, D.DNAME, D.LOC
+FROM EMP E
+JOIN DEPT D USING(DEPTNO)
+ORDER BY DEPTNO, E.EMPNO;
+
+
+-- SALGRADE - HISALï¿½ï¿½ ï¿½Þ´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Î¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Þºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Øºï¿½ï¿½ï¿½
+SELECT S.GRADE, COUNT(*) AS TOTLA_COUNT
+FROM EMP E, SALGRADE S
+WHERE E.SAL = S.HISAL
+GROUP BY S.GRADE
+ORDER BY S.GRADE;
+
+
+-- EMP ï¿½ï¿½ï¿½Ìºï¿½ï¿½ï¿½ï¿½ï¿½ DEPT ï¿½ï¿½ï¿½Ìºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ 'DEPT' ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Î¼ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Øºï¿½ï¿½ï¿½
+SELECT DEPT.DEPTNO, DEPT.DNAME, DEPT.LOC
+FROM DEPT
+FULL OUTER JOIN EMP ON DEPT.DEPTNO = EMP.DEPTNO
+WHERE DEPT.DEPTNO IS NULL OR EMP.DEPTNO IS NULL;
+
+-- EMPï¿½ï¿½ DEPT ï¿½ï¿½ï¿½ï¿½ï¿½Ø¼ï¿½ JOBï¿½ï¿½ MANAGERï¿½ï¿½ ï¿½Öµï¿½ ï¿½ï¿½ï¿½ï¿½Øºï¿½ï¿½ï¿½
+SELECT *
+FROM EMP E
+JOIN DEPT D USING(DEPTNO)
+WHERE JOB = 'MANAGER'
+ORDER BY E.EMPNO;
+
