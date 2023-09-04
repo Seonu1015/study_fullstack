@@ -5,11 +5,13 @@
         <div>
             <fieldset>
                 <legend>개인 정보</legend>
-                이름 : <input type="text" placeholder="이름"><br>
+                <!-- 이름, 이메일 라벨링 추가하기 -->
+                이름 : <input type="text" placeholder="이름"><br> 
                 이메일 : <input type="email" placeholder="이메일"><br>
-                성별 : <lable><input type="radio" name="gender" value="1">남성</lable>
-                <lable><input type="radio" name="gender" value="2">여성</lable>
-                <lable><input type="radio" name="gender" value="1">기타</lable><br>
+                성별 :
+                <lable><input type="radio" name="gender" value="male">남성</lable>
+                <lable><input type="radio" name="gender" value="female">여성</lable>
+                <lable><input type="radio" name="gender" value="other">기타</lable><br>
                 생일 : <input type="date" value="2023-09-04">
             </fieldset>
         </div>
@@ -67,10 +69,15 @@
 
         <article>
             <header><h3>Article</h3></header>
-            <p>Article 요소는 문서, 페이지, 응용 프로글매 또는 사이트의 자체 구성을 나타내며 신디케이션과 같이 독립적으로 배포 가능하거나 재사용할 수 있도록 작성됩니다. 이는 포럼 게시물, 잡지 또는 신문 기사, 블로그 항목, 객체 지향 코드 또는 광고일 수 있습니다. CSS 적용 이전에는 하나하나 출력이 되는겁니다 ㅠㅠ</p>
+            <p>
+                Article 요소는 문서, 페이지, 응용 프로그램 또는 사이트의 자체 구성을 나타내며
+                신디케이션과 같이 독립적으로 배포 가능하거나 재사용할 수 있도록 작성됩니다.
+                이는 포럼 게시물, 잡지 또는 신문 기사, 블로그 항목, 객체 지향 코드 또는 광고일 수 있습니다.
+                CSS 적용 이전에는 하나하나 출력이 되는겁니다 ㅠㅠ
+            </p>
         </article>
 
         <hr>
-        <footer>ⓒ2023 HTML5 Example. All rights reserved.</footer>
+        <footer>&copy;2023 HTML5 Example. All rights reserved.</footer>
     </body>
 </html>
