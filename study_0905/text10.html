@@ -2,31 +2,43 @@
 <html>
     <head>
         <style>
+            main {
+                background-image: url(restaurant.jpg);
+                background-size: 500px;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
             .flexbox {
                 display: flex;
                 justify-content: center;
             }
             .gridlayout {
                 display: grid;
-                grid-template-columns: repeat(3, 1fr);
+                justify-content: center;
+                grid-template-columns: repeat(3, 200px);
                 gap: 10px;
-                grid-template-rows: auto auto;
             }
             .food {
-                height: 250px;
-                width: 200px;
+                height: 200px;
+                width: 150px;
                 background: lightgray;
                 font-size: 12px;
                 text-align: center;
-                border-radius : 10px;
-                margin: 10px;                
+                border-radius : 5px;
+                margin: 10px;
+                padding: 10px;
             }
-            .food>h4 {
-                font-size: 20px;
+            h4 {
+                font-size: 15px;
+            }
+            a {
+                position: relative;
+                top: 20%;
             }
         </style>
     </head>
     <body>
+        <main>
         <h3>Flexbox Example:</h3>
         <div class="flexbox">
             <div class="food">
@@ -51,20 +63,21 @@
         <div class="gridlayout">
             <div class="food">
                 <h4>스테이크</h4>
-                완벽하게 조리된 스테이크.
+                완벽하게 조리된 스테이크입니다.
             </div>
             <div class="food">
                 <h4>파스타</h4>
-                선택할 수 있는 소스와 함께 신선한 파스타.
+                선택할 수 있는 소스와 함께 신선한 파스타입니다.
             </div>
             <div class="food">
                 <h4>초밥</h4>
-                다양한 초밥 롤과 사시미.
+                다양한 초밥 롤과 사시미입니다.
             </div>
             <div class="food">
                 <h4>버거</h4>
-                <a href="#">모든 재료가 들어간 맛있는 버거</a>
+                <a href="burger.jpg">모든 재료가 들어간 맛있는 버거입니다</a>
             </div>
         </div>
+    </main>
     </body>
 </html>
