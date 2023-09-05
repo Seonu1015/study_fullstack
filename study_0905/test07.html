@@ -2,9 +2,41 @@
 <html>
     <head>
         <style>
-            div {
-                
+            .container {
+                display: flex;
+                justify-content: center;
+            }
+
+            .box {
+                height: 100px;
+                width: 100px;
+                background: lightblue;                
+            }
+
+            .absolute-box {
+                position: absolute;
+                top: 50%;
+            }
+
+            .relative-box:hover {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+            }
+
+            .fixed-box {
+                position: fixed;
+                top:0;
+                right:0;
             }
         </style>
     </head>
+    <body>
+        <div class="container">
+            <div class="box">box</div>
+            <div class="box fixed-box">fixed-box</div>
+            <div class="box relative-box">relative-box</div>
+            <div class="box absolute-box">absolute-box</div>
+        </div>
+    </body>
 </html>

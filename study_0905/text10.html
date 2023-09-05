@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .flexbox {
+                display: flex;
+                justify-content: center;
+            }
+            .gridlayout {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 10px;
+                grid-template-rows: auto auto;
+            }
+            .food {
+                height: 250px;
+                width: 200px;
+                background: lightgray;
+                font-size: 12px;
+                text-align: center;
+                border-radius : 10px;
+                margin: 10px;                
+            }
+            .food>h4 {
+                font-size: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>Flexbox Example:</h3>
+        <div class="flexbox">
+            <div class="food">
+                <h4>스테이크</h4>
+                완벽하게 조리된 스테이크.
+            </div>
+            <div class="food">
+                <h4>파스타</h4>
+                선택할 수 있는 소스와 함께 신선한 파스타.
+            </div>
+            <div class="food">
+                <h4>초밥</h4>
+                다양한 초밥 롤과 사시미.
+            </div>
+            <div class="food">
+                <h4>버거</h4>
+                <img src="burger.jpg" width="150">
+            </div>
+        </div>
+        
+        <h3>Grid Layout Example</h3>
+        <div class="gridlayout">
+            <div class="food">
+                <h4>스테이크</h4>
+                완벽하게 조리된 스테이크.
+            </div>
+            <div class="food">
+                <h4>파스타</h4>
+                선택할 수 있는 소스와 함께 신선한 파스타.
+            </div>
+            <div class="food">
+                <h4>초밥</h4>
+                다양한 초밥 롤과 사시미.
+            </div>
+            <div class="food">
+                <h4>버거</h4>
+                <a href="#">모든 재료가 들어간 맛있는 버거</a>
+            </div>
+        </div>
+    </body>
+</html>
