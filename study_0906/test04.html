@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Porfolio</title>
+        <style>
+        body {
+            background-color: black;
+        }
+        #menubar {
+            position: fixed;
+            top:0;
+            right: 20px;
+            background: rgba(51, 51, 51, 0.733);
+            font-size: 25px;
+            border-radius: 0 0 10px 10px;
+        }
+        #menubar ul {
+            margin: 0;
+            padding: 0;
+            height: 70px; line-height: 70px;
+            justify-content: right;
+        }
+        #menubar ul li {
+            display: inline;
+            list-style-type: none;
+            padding: 0px 15px;
+        }
+        #menubar ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        #menubar ul li a:hover {
+            color: goldenrod;
+        }
+
+        div {
+            position: relative;
+            display: block;
+            justify-content: center;
+            align-items: center;
+            width:auto;
+            height: 500px;
+            margin-bottom: 5px;
+            text-align: center;
+        }
+
+        h3 {
+            position: absolute;
+            top: 7%;
+            left: 5%;
+            text-align: left top;
+            color: whitesmoke;
+            font-size: 40px;
+            transform: rotate(-10deg);
+            margin: 0px;
+        }
+        #home {
+            background-color: rgba(255, 255, 255, 0.377);
+        }
+        #about {
+            background-color: rgba(138, 138, 138, 0.253);
+        }
+        #skill {
+            background-color: rgba(255, 255, 255, 0.377);
+        }
+        #project {
+            background-color: rgba(138, 138, 138, 0.253);
+            display: grid;
+            justify-content: center;
+            grid-template-columns: repeat(3, minmax(200px, auto));
+            gap: 10px;
+        }
+        #project div {
+            border-radius: 10px;
+            justify-content: center;
+            background-color: rgba(255, 241, 223, 0.616);
+            color: black;
+            width: 200px;
+            height: 250px;
+        }
+        #contack {
+            background-color: rgba(255, 255, 255, 0.377);
+        }
+
+    </style>
+    </head>
+
+    <body>
+        <nav id="menubar">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skill">Skill</a></li>
+                <li><a href="#project">Project</a></li>
+                <li><a href="#contack">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div id="home">
+            <h3>Home</h3>
+            <div>
+            </div>
+        </div>
+        
+        <div id="about">
+            <h3>About</h3>
+            <div>
+            </div>
+        </div>
+
+        <div id="skill">
+            <h3>Skill</h3>
+            <div>
+            </div>
+        </div>
+
+        <div id="project">
+            <h3>Project</h3>
+            <div>
+                <div>project1</div>
+                <div>project2</div>
+                <div>project3</div>
+            </div>
+        </div>
+
+        <div id="skill">
+            <h3>Contact</h3>
+            <div>
+            </div>
+        </div>
+    </body>
+</html>
