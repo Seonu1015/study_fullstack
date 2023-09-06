@@ -1,132 +1,37 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Porfolio</title>
-        <style>
-        body {
-            background-color: black;
-        }
-        #menubar {
-            position: fixed;
-            top:0;
-            right: 20px;
-            background: rgba(51, 51, 51, 0.733);
-            font-size: 25px;
-            border-radius: 0 0 10px 10px;
-        }
-        #menubar ul {
-            margin: 0;
-            padding: 0;
-            height: 70px; line-height: 70px;
-            justify-content: right;
-        }
-        #menubar ul li {
-            display: inline;
-            list-style-type: none;
-            padding: 0px 15px;
-        }
-        #menubar ul li a {
-            color: white;
-            text-decoration: none;
-        }
-        #menubar ul li a:hover {
-            color: goldenrod;
-        }
-
-        div {
-            position: relative;
-            display: block;
-            justify-content: center;
-            align-items: center;
-            width:auto;
-            height: 500px;
-            margin-bottom: 5px;
-            text-align: center;
-        }
-
-        h3 {
-            position: absolute;
-            top: 7%;
-            left: 5%;
-            text-align: left top;
-            color: whitesmoke;
-            font-size: 40px;
-            transform: rotate(-10deg);
-            margin: 0px;
-        }
-        #home {
-            background-color: rgba(255, 255, 255, 0.377);
-        }
-        #about {
-            background-color: rgba(138, 138, 138, 0.253);
-        }
-        #skill {
-            background-color: rgba(255, 255, 255, 0.377);
-        }
-        #project {
-            background-color: rgba(138, 138, 138, 0.253);
-            display: grid;
-            justify-content: center;
-            grid-template-columns: repeat(3, minmax(200px, auto));
-            gap: 10px;
-        }
-        #project div {
-            border-radius: 10px;
-            justify-content: center;
-            background-color: rgba(255, 241, 223, 0.616);
-            color: black;
-            width: 200px;
-            height: 250px;
-        }
-        #contack {
-            background-color: rgba(255, 255, 255, 0.377);
-        }
-
-    </style>
+        <title>이벤트 리스너 속성에 자바스크립트 코드</title>
+        <script>
+            function welcome(obj) {
+                var ret = prompt("이름을 입력하세요");
+                if (ret == null) {
+                    javascript:alert('입력이 취소되었습니다.')
+                }
+                else if (ret == "") {
+                    javascript:alert('다시 입력해주세요.')
+                }
+                else {
+                    javascript:alert(ret + '님 반갑습니다!')
+                }
+            }
+        </script>
     </head>
-
     <body>
-        <nav id="menubar">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skill">Skill</a></li>
-                <li><a href="#project">Project</a></li>
-                <li><a href="#contack">Contact</a></li>
-            </ul>
-        </nav>
+        <h3>마우스를 올려보세요</h3>
+        <img src="rabbit.jpg" width="300px" alt="이미지"
+            onmouseover="this.src='racoon.jpg'"  width="300px"
+            onmouseout="this.src='rabbit.jpg'" width="300px">
+        <hr>
 
-        <div id="home">
-            <h3>Home</h3>
-            <div>
-            </div>
-        </div>
+        <h3>링크에 자바스크립트를!</h3>
+        <a href="javascript:alert('클릭하셨어요?')">클릭해보세요</a>
+        <hr>
         
-        <div id="about">
-            <h3>About</h3>
-            <div>
-            </div>
-        </div>
+        <h3>함수를 불러와보자 + alert</h3>
+        <input type="button" value="접속" onclick="welcome(this)">
+        <hr>
 
-        <div id="skill">
-            <h3>Skill</h3>
-            <div>
-            </div>
-        </div>
 
-        <div id="project">
-            <h3>Project</h3>
-            <div>
-                <div>project1</div>
-                <div>project2</div>
-                <div>project3</div>
-            </div>
-        </div>
-
-        <div id="skill">
-            <h3>Contact</h3>
-            <div>
-            </div>
-        </div>
     </body>
 </html>
