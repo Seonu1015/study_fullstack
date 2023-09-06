@@ -5,38 +5,18 @@
 <body>
 <script>
 var str = prompt("문자를 입력해보세요");
-var count = 0
+var count = 1
+var res = ""
 for (var i=0; i<str.length; i++) {
-    if (str[i] == str[i+1]) {
-        continue;
+    if (str[i]==str[i+1]) {
+        count++;
     }
-    for (var j=i; j<str.length; j++) {
-        if (str[i]==str[j]) {
-            count++;
-        }
-        else {
-            break;
-        }
+    else {
+        res += str[i] + count;
+        count=1;
     }
-    document.write(str[i] + count);
-    count=0;
 }
+document.write(res);
 </script>
 </body>
 </html>
-
-
-<!-- var str = prompt("문자를 입력해보세요");
-var count = 0
-for (var i=0; i<str.length; i++) {
-    if (str[i] == str[i+1]) {
-        continue;
-    }
-    for (var j=0; j<str.length; j++) {
-        if (str[i]==str[j]) {
-            count++;
-        }
-    }
-    document.write(str[i] + count);
-    count=0;
-} -->
