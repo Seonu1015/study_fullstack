@@ -11,6 +11,14 @@
                 var parent = document.getElementById("list");
                 parent.removeChild(parent.lastElementChild);
             }
+            // 얘 안됨.... 몰?루
+            function remove2() {
+                lst = document.getElementByTagName("li");
+                if(lst.length > 0) {
+                    lastLst = lst[lst.length - 1];
+                    lastLst.parentElement.removeChild(lastLst);
+                }
+            } 
         </script>
     </head>
 
@@ -22,5 +30,6 @@
 
         <button onclick="add()">추가</button>
         <button onclick="remove()">삭제</button>
+        <button onclick="remove2()">삭제2</button>
     </body>
 </html>
