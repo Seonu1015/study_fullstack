@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .container {
+                /* viewpoint height */
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        </style>
+        <script>
+            var containers = document.getElementsByClassName('container');
+
+            window.addEventListener('scroll', function() {
+                for(var i=0; i<containers.length; i++) {
+                    var rect = containers[i].getBoundingClientRect();
+                    if(rect.top <= window.innerHeight/2 && rect.top >= -rect.height/2) {
+                        if(i==0) {
+                            containers[i].style.backgroundColor = "#FFA6A6";
+                        }
+                        else if(i==1) {
+                            containers[i].style.backgroundColor = "#A6FFCA";
+                        }
+                        else if(i==2) {
+                            containers[i].style.backgroundColor = "#A6A6FF";
+                        }
+                    }
+                    else {
+                        containers[i].style.backgroundColor = "";
+                    }
+                }
+            });
+        </script>
+    </head>
+    <body>
+        <div class="container" id="Container1">Container 1</div>
+        <div class="container" id="Container2">Container 2</div>
+        <div class="container" id="Container3">Container 3</div>
+    </body>
+</html>
