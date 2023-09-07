@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+    <h3>Date 객체</h3>
+    <script>
+        let now = new Date();
+        document.write("현재 시간 : " + now.toUTCString() + "<br><hr>");
+        document.write(now.getFullYear() + "년도<br><hr>");
+
+        var next = new Date(2017, 7, 15, 12, 12, 12);
+        document.write("next.toLocaleString() : " + next.toLocaleString() + "<br>");
+    </script>
+    <hr>
+</body>
+
+</html>

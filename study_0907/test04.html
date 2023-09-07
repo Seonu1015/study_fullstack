@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function add() {
+                var ul_lst = document.createElement('li');
+                ul_lst.textContent = "orange";
+                document.getElementById("list").appendChild(ul_lst);
+            }
+            function remove() {
+                var parent = document.getElementById("list");
+                parent.removeChild(parent.lastElementChild);
+            }
+        </script>
+    </head>
+
+    <body>
+        <ul id="list">
+            <li>apple</li>
+            <li>banana</li>
+        </ul>
+
+        <button onclick="add()">추가</button>
+        <button onclick="remove()">삭제</button>
+    </body>
+</html>
