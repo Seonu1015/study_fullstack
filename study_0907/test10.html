@@ -1,18 +1,61 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <style>
+            .p {
+                display: inline-block;
+                border: 1px solid;
+                border-radius: 5px;
+                padding: 5px;
+            }
+        </style>
         <script>
             function changeImage() {
-                img.onload = function() {
-    
+                var apple = document.getElementById("apple");
+                var banana = document.getElementById("banana");
+                var mango = document.getElementById("mango");
+                var img = document.getElementById("myImg");
+                
+                apple.addEventListener("mouseover", function() {
+                    img.src = "apple.jpg";
+                    apple.style.backgroundColor = "yellow";
+                });
+                
+                apple.addEventListener("mouseout", function() {
+                    apple.style.backgroundColor = "";
+                });
+                
+                banana.addEventListener("mouseover", function() {
+                    img.src = "banana.jpg";
+                    banana.style.backgroundColor = "yellow";
+                });
+                
+                banana.addEventListener("mouseout", function() {
+                    banana.style.backgroundColor = "";
+                });
+                
+                mango.addEventListener("mouseover", function() {
+                    img.src = "mango.jpg";
+                    mango.style.backgroundColor = "yellow";
+                });
+
+                mango.addEventListener("mouseout", function() {
+                    mango.style.backgroundColor = "";
+                });
+
+                img.onload = function () {
+                var mySpan = document.getElementById("mySpan");
+                mySpan.innerHTML = "이미지 크기 : " + img.width + "x" + img.height;
                 }
             }
         </script>
     </head>
-    <body>
-        <div id="apple">Apple</div>
-        <div id="banana">Banana</div>
-        <div id="mango">Mango</div>
+    <body onload="changeImage()">
+        <p class="p" id="apple">Apple</p>
+        <p class="p" id="banana">Banana</p>
+        <p class="p" id="mango">Mango</p>
 
+        <p><img id="myImg" src=""></p>
+        <span id="mySpan"></span>
     </body>
 </html>
