@@ -27,7 +27,7 @@
                 } else {
                     blanks[i].addEventListener("click", function() {
                         this.style.backgroundColor = "red";
-                        blank[i].childElement.textContent = "O";
+                        this.childElement.textContent = "O";
                     });
                 }
             }
@@ -38,15 +38,15 @@
 
     <body onload="mouseClick()">
         <div>
-            <div class="blank">x</div>
-            <div class="blank">x</div>
-            <div class="blank">x</div>
-            <div class="blank">x</div>
-            <div class="blank">x</div>
-            <div class="blank">x</div>
-            <div class="blank">x</div>
-            <div class="blank">x</div>
-            <div class="blank">x</div>
+            <div class="blank"></div>
+            <div class="blank"></div>
+            <div class="blank"></div>
+            <div class="blank"></div>
+            <div class="blank"></div>
+            <div class="blank"></div>
+            <div class="blank"></div>
+            <div class="blank"></div>
+            <div class="blank"></div>
         </div>
     </body>
 </html>
