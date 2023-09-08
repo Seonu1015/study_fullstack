@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .p {
+                display: inline-block;
+                border: 1px solid;
+                border-radius: 5px;
+                padding: 5px;
+            }
+        </style>
+        <script>
+            function changeImage() {
+                var apple = document.getElementById("apple");
+                var banana = document.getElementById("banana");
+                var mango = document.getElementById("mango");
+                var img = document.getElementById("myImg");
+                
+                apple.addEventListener("mouseover", function() {
+                    img.src = "apple.jpg";
+                    apple.style.backgroundColor = "#FAFFA6";
+                    mango.style.backgroundColor = "";
+                    banana.style.backgroundColor = "";
+                });
+                
+                banana.addEventListener("mouseover", function() {
+                    img.src = "banana.jpg";
+                    banana.style.backgroundColor = "#FAFFA6";
+                    apple.style.backgroundColor = "";
+                    mango.style.backgroundColor = "";
+                });
+                
+                mango.addEventListener("mouseover", function() {
+                    img.src = "mango.jpg";
+                    mango.style.backgroundColor = "#FAFFA6";
+                    apple.style.backgroundColor = "";
+                    banana.style.backgroundColor = "";
+                });
+
+                img.onload = function () {
+                var mySpan = document.getElementById("mySpan");
+                mySpan.innerHTML = "이미지 크기 : " + img.width + "x" + img.height;
+                }
+            }
+        </script>
+    </head>
+    <body onload="changeImage()">
+        <p class="p" id="apple">Apple</p>
+        <p class="p" id="banana">Banana</p>
+        <p class="p" id="mango">Mango</p>
+
+        <p><img id="myImg" src=""></p>
+        <span id="mySpan"></span>
+    </body>
+</html>

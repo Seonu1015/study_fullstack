@@ -4,7 +4,7 @@
     <style>
         div {
             display: grid;
-            justify-content: center;
+            text-align: center;
             grid-template-columns: repeat(3, 105px);
             gap: 10px;
         }
@@ -22,7 +22,7 @@
                 if(i%2 == 0) {
                     blanks[i].addEventListener("click", function() {
                         this.style.backgroundColor = "yellow";
-                        blank[i].textContent = "X";
+                        this.textContent = "X";
                     });
                 } else {
                     blanks[i].addEventListener("click", function() {
@@ -38,15 +38,15 @@
 
     <body onload="mouseClick()">
         <div>
-            <div class="blank"></div>
-            <div class="blank"></div>
-            <div class="blank"></div>
-            <div class="blank"></div>
-            <div class="blank"></div>
-            <div class="blank"></div>
-            <div class="blank"></div>
-            <div class="blank"></div>
-            <div class="blank"></div>
+            <div class="blank">x</div>
+            <div class="blank">x</div>
+            <div class="blank">x</div>
+            <div class="blank">x</div>
+            <div class="blank">x</div>
+            <div class="blank">x</div>
+            <div class="blank">x</div>
+            <div class="blank">x</div>
+            <div class="blank">x</div>
         </div>
     </body>
 </html>
