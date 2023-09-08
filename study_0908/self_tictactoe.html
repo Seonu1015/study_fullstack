@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Tic Tac Toe Game</title>
+    <style>
+        div.board {
+            display: grid;
+            text-align: center;
+            grid-template-columns: repeat(3, 105px);
+            gap: 10px;
+        }
+        .blank {
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            border: 3px double;
+            font-size: 90px;
+            text-align: center;
+            align-items: center;
+        }
+    </style>
+    <script>
+        var input = "X";
+
+        function mouseClick(blank) {
+            if (blank.textContent === "X" || blank.textContent === "O") {
+                return;
+            }
+
+            blank.textContent = input;
+
+            if (input === "X") {
+                input = "O";
+            } else {
+                input = "X";
+            }
+
+        }
+        
+    </script>
+    </head>
+
+    <body onload="mouseClick()">
+        <div class="board">
+            <div class="blank" onclick="mouseClick(this)"></div>
+            <div class="blank" onclick="mouseClick(this)"></div>
+            <div class="blank" onclick="mouseClick(this)"></div>
+            <div class="blank" onclick="mouseClick(this)"></div>
+            <div class="blank" onclick="mouseClick(this)"></div>
+            <div class="blank" onclick="mouseClick(this)"></div>
+            <div class="blank" onclick="mouseClick(this)"></div>
+            <div class="blank" onclick="mouseClick(this)"></div>
+            <div class="blank" onclick="mouseClick(this)"></div>
+        </div>
+    </body>
+</html>
