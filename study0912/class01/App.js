@@ -1,7 +1,4 @@
 import './App.css';
-import Login from './login'
-import List from './array'
-import Lotto from './lotto'
 import Context from './Context'
 import Language from './Language'
 
