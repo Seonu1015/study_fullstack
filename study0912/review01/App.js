@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Login from './Login';
 import List from './List';
-import Lotto from './lotto';
+import Lotto from './Lotto';
 
 function App() {
   return (

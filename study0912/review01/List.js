@@ -1,10 +1,10 @@
-import React from "react";
+import React, {useState} from "react";
 
-const ListItem = ({id, text}) => {
+const ListItem = ({ id, text }) => {
     return <li key={id}>{text}</li>
 };
 
-const ListSet = ({data}) => {
+const ListSet = ({ data }) => {
     return (
         <ul>
             {data.map((item) => (
@@ -15,12 +15,30 @@ const ListSet = ({data}) => {
 };
 
 const List = () => {
-    const items = [
-        {id:1, text:'hello'},
-        {id:2, text:'byebye'},
-    ];
+    const [items, setItem] = useState ([
+        { id: 1, text: 'hello' },
+        { id: 2, text: 'byebye' },
+    ]);
 
-    return <ListSet data={items} />
+    const [input, inputValue] = useState('');
+
+    const handleChange = (event) => {
+        inputValue(event.target.value);
+    };
+
+    const handleAdd = () => {
+        const newItem = {id: items.length +1, text: input};
+        setItem([...items, newItem]);
+        inputValue("");
+    };
+
+    return (
+        <div>
+            <input type="text" value={input} onChange={handleChange} />
+            <button onClick={handleAdd}>추가</button>
+            <ListSet data={items} />
+        </div>
+    );
 };
 
 export default List;
