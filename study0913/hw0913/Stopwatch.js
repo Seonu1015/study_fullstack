@@ -12,7 +12,7 @@ function Stopwatch() {
 
             interval = setInterval(() =>
                 {setElapsedTime(performance.now() - start);
-            }, 1000)
+            }, 1000);
         } else {
             clearInterval(interval);
         }
