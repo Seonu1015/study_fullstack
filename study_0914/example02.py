@@ -47,12 +47,10 @@ def reverse(n):
         n //= 10
 
     number = 0
-    value = 1
 
     while queue:
         digit = queue.dequeue()
-        number += digit*value
-        value *=10
+        number = number * 10 + digit
     return number
 
 
