@@ -1,0 +1,9 @@
+.button {
+    background-color: brown;
+    color: bisque;
+    padding: 10px;
+}
+
+.button:hover {
+    background-color: #3b1111;
+}
