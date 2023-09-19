@@ -3,10 +3,10 @@ from urllib.parse import urlencode
 
 url = "http://127.0.0.1:8888/cgi_bin/script.py"
 
-data = {
-    "name" : "이수진",
-    "email" : "leesujin@example.com",
-    "url" : "http://www.google.com",
+data ={
+    "name" : "KIM",
+    "email" : "kim@gamil.com",
+    "url" : "http://www.naver.com",
 }
 
 encData = urlencode(data)
