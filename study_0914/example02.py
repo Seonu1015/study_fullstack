@@ -36,8 +36,6 @@ print(queue.dequeue())
 
 print(queue.is_empty())
 
-# 숫자 뒤집기 <- 자료 올라오면 확인하기!!! 먼가 수상!!!
-
 def reverse(n):
     queue = Queue()
 
