@@ -20,9 +20,10 @@
                 <div class="columns">
                     <div class="column is-offset-4 is-4">
                         <form method="post">
+                            {% csrf_token %}
                             <div class="field has-addons">
                                 <div class="control is-expanded">
-                                    <input class="input" type="text" placeholder="도시 이름">
+                                    {{form.name}}
                                 </div>
                                 <div class="control">
                                     <button class="button is-info">
@@ -41,21 +42,23 @@
                     <div class="column is-offset-4 is-4">
                         {% for weather in weather_data %}
                             <div class="box">
-                                <article class="media">
-                                    <div class="media-left">
-                                        <figurt class="image is-50x50">
-                                            <img src="http://openweathermap.org/img/w/{{weather.icon}}.png" alt="image">
-                                        </figurt>
-                                    </div>
-                                    <div class="media-content">
-                                        <p>
-                                            <span class="title">{{weather.city}}</span>
-                                            <br>
-                                            <span class="subtitle">{{weather.temperature}}°C</span>
-                                            <br> {{weather.description}}
-                                        </p>
-                                    </div>
-                                </article>
+                                <a href="{% url 'weather:detail' weather.id %}">
+                                    <article class="media">
+                                        <div class="media-left">
+                                            <figurt class="image is-50x50">
+                                                <img src="http://openweathermap.org/img/w/{{weather.icon}}.png" alt="image">
+                                            </figurt>
+                                        </div>
+                                        <div class="media-content">
+                                            <p>
+                                                <span class="title">{{weather.city}}</span>
+                                                <br>
+                                                <span class="subtitle">{{weather.temperature}}°C</span>
+                                                <br> {{weather.description}}
+                                            </p>
+                                        </div>
+                                    </article>
+                                </a>
                             </div>
                         {% endfor %}
                     </div>
