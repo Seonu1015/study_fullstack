@@ -11,6 +11,7 @@
     <body>
         <div class="container mt-5">
             <h1>도서관</h1>
+
             <table class="table table-striped mt-3">
                 <thead>
                     <tr>
@@ -26,6 +27,7 @@
                         <td>{{book.author}}</td>
                         <td>{{book.pub_date}}</td>
                     </tr>
+                    
                 {% endfor %}
             </table>
             <a href="{% url 'book-new' %}" class="btn btn-primary">책 추가하기</a>

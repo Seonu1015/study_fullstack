@@ -9,10 +9,10 @@ class BookForm(forms.ModelForm):
         model = Book
         fields = ['title', 'author', 'pub_date']
         labels = {
-            'title': "책 제목",
-            'author' : "저자",
-            'pub_date': "출판일",
+            'title': '제목',
+            'author': '저자',
+            'pub_date': '출판일',
         }
-        widget = {
+        widgets = {
             'pub_date': DateInput(),
         }
