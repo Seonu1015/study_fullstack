@@ -5,7 +5,7 @@ from .models import City
 from .forms import CityForm
 
 class BaseView(View):
-    url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=imperial&appid=287a1975eee8ad6b91676d15218be07b'
+    url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=imperial&appid={API_KEY}}'
 
 class IndexView(BaseView):
     def get(self, request):
