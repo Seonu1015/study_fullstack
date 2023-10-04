@@ -16,7 +16,7 @@ class BookDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        api_key = 'AIzaSyD7O4Qj84BjkbIdvqcNfKLMV6vLLINzTbY'
+        api_key = 'API_KEY'
         context['cover_url'] = get_book_image(self.object.title, api_key)
         return context
 
