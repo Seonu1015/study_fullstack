@@ -14,42 +14,44 @@ matrix = [
 # 시작 위치를 첫 번째 행의 마지막 열로 설정하면??
 
 def searchMatrix(matrix, target):
-    rows = len(matrix)
-    row = 0
-    col = len(matrix[0]) - 1
+    if not matrix:
+        return False
+    
+    row = len(matrix) - 1
+    col = 0
 
-    while row < rows and col >= 0:
-        if matrix[row][col] == target:
-            return True
-        elif matrix[row][col] > target:
-            col -= 1
+    while row >= 0 and col < len(matrix[0]):
+        if matrix[row][col] > target:
+            row -= 1
+        elif matrix[row][col] < target:
+            col += 1
         else:
-            row += 1
-
+            return True
     return False
 
+print(searchMatrix(matrix, 5))
 print(searchMatrix(matrix, 20))
 
 # 2. 주어진 리스트에서 가장 많이 등장하는 값을 찾아 반환하기 -> 5
 arr = [1, 3, 2, 2, 8, 3, 5, 5, 5]
 
-def most_frequent_value(arr):    
-    count_dic = {}
+def most_number(arr):    
+    count = {}
     
-    for value in arr:
-        if value in count_dic:
-            count_dic[value] += 1
+    for i in arr:
+        if i in count:
+            count[i] += 1
         else:
-            count_dic[value] = 1
+            count[i] = 1
 
-    most_idx = None
-    most_count = 0
+    max = 0
+    keyValue = 0
 
-    for idx, count in count_dic.items():
-        if count > most_count:
-            most_idx = idx
-            most_count = count
+    for key, value in count.items():
+        if max < value:
+            max = value
+            keyValue = key
 
-    return most_idx
+    return keyValue
 
-print(most_frequent_value(arr))
+print(most_number(arr))
