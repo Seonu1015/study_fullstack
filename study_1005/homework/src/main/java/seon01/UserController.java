@@ -24,14 +24,13 @@ public class UserController extends HttpServlet {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	private Map<String, String> users;
-	
+
 	@Override
 	public void init() throws ServletException {
 		users = new HashMap<>();
 	}
-    
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
@@ -40,7 +39,31 @@ public class UserController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		request.setCharacterEncoding("utf-8");
+		String userId = request.getParameter("userId");
+		String password = request.getParameter("password");
+
+		response.setContentType("text/html; charset=utf-8");
+
+		if (isVaildUser(userId, password)) {
+			response.setStatus(HttpServletResponse.SC_OK);
+			response.getWriter().println("로그인 성공<br><br>");
+			response.getWriter().println("<a href='/Seon/seon01/login.jsp'>로그인 페이지로 돌아가기</a>");
+		} else {
+			response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+			response.getWriter().println("로그인 실패<br><br>");
+			response.getWriter().println("<a href='/Seon/seon01/login.jsp'>로그인 페이지로 돌아가기</a>");
+		}
+	}
+
+	private boolean isVaildUser(String userId, String password) {
+
+		if (users.containsKey(userId)) {
+			String storedPassword = users.get(userId);
+			return password.equals(storedPassword);
+		}
+
+		return false;
 	}
 
 	/**
@@ -50,29 +73,17 @@ public class UserController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String action = request.getParameter("action");
-		
-		if (action != null && action.equals("login")) {
-			loginUser(request, response);
-		} else if (action != null && action.equals("join")) {
-			joinUser(request, response);
-		} else {
-			response.sendError(HttpServletResponse.SC_BAD_REQUEST);
-		}
-	}
-	
-	private void loginUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String userId = request.getParameter("userId");
 		String password = request.getParameter("password");
-		
-		
-	}
-	
-	private void joinUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String userId = request.getParameter("userId");
-		String password = request.getParameter("password");
-		
-		users.put(userId, password);
-	}
 
+		if (!users.containsKey(userId)) {
+			users.put(userId, password);
+		}
+
+		for (Map.Entry<String, String> entry : users.entrySet()) {
+			System.out.println("ID: " + entry.getKey() + ", password: " + entry.getValue());
+		}
+
+		response.sendRedirect(request.getContextPath() + "/seon01/login.jsp");
+	}
 }
