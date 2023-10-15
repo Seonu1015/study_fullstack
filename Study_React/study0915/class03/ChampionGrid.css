@@ -1,0 +1,28 @@
+.champ-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.champ-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+
+    border-radius: 5px;
+    width: 150px;
+    height: auto;
+    padding: 10px;
+    background-color: lightsteelblue;
+}
+
+.details-top {
+    display: inline-flex;
+    gap:20px
+}
+
+hr {
+    margin-left: 10px;
+    margin-right: 10px;
+}
