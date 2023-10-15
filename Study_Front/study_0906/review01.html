@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            main {
+                background-image: url(restaurant.jpg);
+                background-size: 500px;
+                background-repeat: no-repeat;
+                background-position: center center;
+            }
+            .flexbox {
+                display: flex;
+                
+                /* 강제 줄바꿈 */
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .gridlayout {
+                display: grid;
+                justify-content: center;
+                grid-template-columns: repeat(3, minmax(200px, auto));
+                gap: 10px;
+            }
+            /* fr : fraction
+            repeat(1,2,3,4)
+            1. 몇번 반복할지, auto
+            2. 크기, 얼만큼 너비를 차지할지
+            3,4 ~ 비율
+            minmax(최소값, 최대값) */
+            .food {
+                width: 150px;
+                height: 200px;
+                background: lightgray;
+                font-size: 12px;
+                text-align: center;
+                border-radius : 5px;
+                margin: 10px;
+                padding: 10px;
+            }
+            h4 {
+                font-size: 15px;
+            }
+            a {
+                position: relative;
+                top: 20%;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+        <h3>Flexbox Example:</h3>
+        <div class="flexbox">
+            <div class="food">
+                <h4>스테이크</h4>
+                <p>완벽하게 조리된 스테이크.</p>
+            </div>
+            <div class="food">
+                <h4>파스타</h4>
+                <p>선택할 수 있는 소스와 함께 신선한 파스타.</p>
+            </div>
+            <div class="food">
+                <h4>초밥</h4>
+                <p>다양한 초밥 롤과 사시미.</p>
+            </div>
+            <div class="food">
+                <h4>버거</h4>
+                <img src="burger.jpg" width="150">
+            </div>
+        </div>
+        
+        <h3>Grid Layout Example</h3>
+        <div class="gridlayout">
+            <div class="food">
+                <h4>스테이크</h4>
+                <p>완벽하게 조리된 스테이크입니다.</p>
+            </div>
+            <div class="food">
+                <h4>파스타</h4>
+                <p>선택할 수 있는 소스와 함께 신선한 파스타입니다.</p>
+            </div>
+            <div class="food">
+                <h4>초밥</h4>
+                <p>다양한 초밥 롤과 사시미입니다.</p>
+            </div>
+            <div class="food">
+                <h4>버거</h4>
+                <a href="burger.jpg">모든 재료가 들어간 맛있는 버거입니다</a>
+            </div>
+        </div>
+    </main>
+    </body>
+</html>

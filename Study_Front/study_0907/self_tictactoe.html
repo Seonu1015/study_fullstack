@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Tic Tac Toe Game</title>
+    <style>
+        div {
+            display: grid;
+            justify-content: center;
+            grid-template-columns: repeat(3, 105px);
+            gap: 10px;
+        }
+        .blank {
+            width: 100px;
+            height: 100px;
+            border: 3px double;
+        }
+    </style>
+    <script>
+        function mouseClick() {
+            var blanks = document.getElementsByClassName("blank");
+            
+            for (var i=0; i< blanks.length; i++) {
+                if(i%2 == 0) {
+                    blanks[i].addEventListener("click", function() {
+                        this.style.backgroundColor = "yellow";
+                        this.textContent = "X";
+                    });
+                } else {
+                    blanks[i].addEventListener("click", function() {
+                        this.style.backgroundColor = "red";
+                        this.childElement.textContent = "O";
+                    });
+                }
+            }
+        }
+        
+    </script>
+    </head>
+
+    <body onload="mouseClick()">
+        <div>
+            <div class="blank"></div>
+            <div class="blank"></div>
+            <div class="blank"></div>
+            <div class="blank"></div>
+            <div class="blank"></div>
+            <div class="blank"></div>
+            <div class="blank"></div>
+            <div class="blank"></div>
+            <div class="blank"></div>
+        </div>
+    </body>
+</html>

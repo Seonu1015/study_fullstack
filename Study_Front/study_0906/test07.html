@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head><title>문제2</title>
+</head>
+<body>
+<script>
+var str = prompt("팰린드롬을 입력해보세요.");
+var count = 0
+// 나누기 해서 반복횟수 줄임!!!!
+for (var i=0; i<str.length/2; i++) { 
+    if (str[i] == str[str.length-1-i]) {
+        count++;
+    }
+}
+if (count = str.length-1) {
+    javascript:alert("정확히 입력하셨어요!!!");
+}
+else {
+    javascript:alert("그건 팰린드롬이 아니예요ㅠㅠ");
+}
+</script>
+</body>
+</html>

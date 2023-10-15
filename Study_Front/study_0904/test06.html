@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head><title>텍스트 입력 폼</title></head>
+
+    <body>
+
+        <h3>자기 소개서 작성</h3>
+        <hr>
+        <form>
+            이름 : <input type="text" value=""><br>
+            암호 : <input type="password" value="" maxlength="4"><br>
+            자기소개서<br>
+            <textarea clos="20" rows="5">
+                        이곳에 자기소개서 작성
+                    </textarea>
+        </form>
+
+        <hr>
+        <h3>datalist 예제</h3>
+        <form>
+            나라 : <input type="text" list="countries"><br>
+                        <datalist id="countries">
+                            <option value="가나">
+                            <option value="스위스">
+                            <option value="브라질">
+                        </datalist>
+            보고싶은것 : <input type="text" list="what"><br>
+                        <datalist id="what">
+                            <option value="산">
+                            <option value="바다">
+                            <option value="도시">
+                        </datalist>
+        </form>
+
+        <hr>
+        <h3>checkbox 예제</h3>
+        <form>
+            <input type="checkbox" value="1" checked> 짜장면
+            <input type="checkbox" value="2"> 짬뽕
+            <input type="checkbox" value="3"> 탕수육
+        </form>
+
+        <hr>
+        <h3>label & radio 예제</h3>
+        <form>
+            <label>
+                <input type="radio" name="china" value="1"> 짜장면
+            </label><br>
+            <label>
+                <input type="radio" name="china" value="2" checked> 짬뽕
+            </label><br>
+            <label>
+                <input type="radio" name="china" value="3"> 탕수육
+            </label><br>
+        </form>
+
+        <hr>
+        <h3>컬러 예제</h3>
+        <form>
+            <input type="color" value="#00bfff" onchange="document.body.style.color=this.value">
+        </form>
+
+        <hr>
+        <h3>number, range 예제</h3>
+        <form>
+            지속시간 (0.0~10.0시간) : <input type="number" min="0.0" max="10.0" step="0.5"><br><br>
+            온도 설정 : 10&deg; <input type="range" min="10" max="30" list="temperatures"> 30&deg;
+                <datalist id="temperatures">
+                    <option value="13" label="Low">
+                    <option value="20" label="Medium">
+                    <option value="27" label="High">
+                </datalist>
+        </form>
+
+        <hr>
+        <h3>placeholder 예제</h3>
+        <form>
+            email : <input type="email" placeholder="id@host"><br>
+        </form>
+
+        <hr>
+        <h3></h3>예제</h3>
+        <form>
+            
+        </form>
+
+
+
+    </body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head><h1>HTML5 Example</h1></head>
+    <body>
+        <div>
+            <fieldset>
+                <legend>개인 정보</legend>
+                <!-- 이름, 이메일 라벨링 추가하기 -->
+                이름 : <input type="text" placeholder="이름"><br> 
+                이메일 : <input type="email" placeholder="이메일"><br>
+                성별 :
+                <lable><input type="radio" name="gender" value="male">남성</lable>
+                <lable><input type="radio" name="gender" value="female">여성</lable>
+                <lable><input type="radio" name="gender" value="other">기타</lable><br>
+                생일 : <input type="date" value="2023-09-04">
+            </fieldset>
+        </div>
+        <br>
+        <div>
+            <form>
+                옵션 선택 : <input type="text" list="course" placeholder="선택하세요..."><br>
+                            <datalist id="course">
+                                <option value="Java"></option>
+                                <option value="Python"></option>
+                                <option value="Database"></option>
+                                <option value="HTML"></option>
+                                <option value="CSS"></option>
+                            </datalist>
+                <button type="submit">전송하기</button>
+            </form>
+        </div>
+        <hr>
+        <section>
+            <h3>Ordered, Unordered List</h3>
+            <ul>
+                <li>
+                    항목 1
+                    <ol type="A">
+                        <li>하위 항목 A</li>
+                        <li>하위 항목 B</li>
+                        <li>하위 항목 C</li>
+                    </ol>
+                </li>
+                <li>
+                    항목 2<br>
+                    <img src="https://img.freepik.com/premium-photo/a-drawing-of-a-cat-with-a-pink-background-and-the-word-cat-on-it_860805-3820.jpg?w=740" width="200">
+                </li>
+                <li>
+                    항목 3
+                    <ol type="I">
+                        <li>하위 항목 D</li>
+                        <li>하위 항목 F</li>
+                        <li>하위 항목 G</li>
+                        <li>하위 항목 H</li>
+                        <li>하위 항목 I</li>
+                    </ol>
+                </li>
+            </ul>
+        </section>
+        <hr>
+
+        <section>
+            <header><h3>Youtube Video</h3></header>
+            <div>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/5GrKuaXBg4k?si=7JlTHZfBU6K3at90" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        </section>
+        <hr>
+
+        <article>
+            <header><h3>Article</h3></header>
+            <p>
+                Article 요소는 문서, 페이지, 응용 프로그램 또는 사이트의 자체 구성을 나타내며
+                신디케이션과 같이 독립적으로 배포 가능하거나 재사용할 수 있도록 작성됩니다.
+                이는 포럼 게시물, 잡지 또는 신문 기사, 블로그 항목, 객체 지향 코드 또는 광고일 수 있습니다.
+                CSS 적용 이전에는 하나하나 출력이 되는겁니다 ㅠㅠ
+            </p>
+        </article>
+
+        <hr>
+        <footer>&copy;2023 HTML5 Example. All rights reserved.</footer>
+    </body>
+</html>
